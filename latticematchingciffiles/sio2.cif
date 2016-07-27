@@ -1,0 +1,41 @@
+#======================================================================
+
+# CRYSTAL DATA
+
+#----------------------------------------------------------------------
+
+data_VESTA_phase_1
+
+
+_pd_phase_name                         'O2 Si1                                '
+_cell_length_a                         4.88171
+_cell_length_b                         4.88171
+_cell_length_c                         5.39228
+_cell_angle_alpha                      90
+_cell_angle_beta                       90
+_cell_angle_gamma                      120
+_symmetry_space_group_name_H-M         'P 1'
+_symmetry_Int_Tables_number            1
+
+loop_
+_symmetry_equiv_pos_as_xyz
+   'x, y, z'
+
+loop_
+   _atom_site_label
+   _atom_site_occupancy
+   _atom_site_fract_x
+   _atom_site_fract_y
+   _atom_site_fract_z
+   _atom_site_adp_type
+   _atom_site_B_iso_or_equiv
+   _atom_site_type_symbol
+   Si1        1.0     0.463082      0.000000      0.666667     Biso  1.000000 Si
+   Si2        1.0     1.000000      0.463082      0.333333     Biso  1.000000 Si
+   Si3        1.0     0.536918      0.536918     -0.000000     Biso  1.000000 Si
+   O1         1.0     0.409847      0.278575      0.776836     Biso  1.000000 O
+   O2         1.0     0.721425      0.131272      0.443503     Biso  1.000000 O
+   O3         1.0     0.868728      0.590153      0.110170     Biso  1.000000 O
+   O4         1.0     0.278575      0.409847      0.223164     Biso  1.000000 O
+   O5         1.0     0.131272      0.721425      0.556497     Biso  1.000000 O
+   O6         1.0     0.590153      0.868728      0.889830     Biso  1.000000 O

@@ -1,0 +1,125 @@
+&GLOBAL                                                                                           
+  PROJECT 0H 
+  PRINT_LEVEL MEDIUM
+  RUN_TYPE GEO_OPT
+  EXTENDED_FFT_LENGTHS
+  &TIMINGS
+     THRESHOLD 0.01
+  &END
+&END GLOBAL
+&FORCE_EVAL
+  METHOD Quickstep
+  STRESS_TENSOR ANALYTICAL
+  &DFT
+    CHARGE -1
+    BASIS_SET_FILE_NAME  ./BASIS_RI_cc-TZ
+    BASIS_SET_FILE_NAME  ./BASIS_SET
+    BASIS_SET_FILE_NAME  ./GTH_BASIS_SETS 
+    POTENTIAL_FILE_NAME  ./GTH_POTENTIALS
+    &MGRID
+      CUTOFF  300
+      REL_CUTOFF  50
+    &END MGRID
+    &POISSON
+      PERIODIC XYZ
+    &END POISSON
+    &QS
+      METHOD GPW
+      EPS_DEFAULT 1.0E-12
+      EPS_PGF_ORB 1.0E-20
+    &END QS
+    &SCF
+      SCF_GUESS RESTART
+      EPS_SCF 1.0E-7
+      MAX_SCF 500
+      &OT
+        MINIMIZER DIIS
+        PRECONDITIONER FULL_KINETIC
+      &END
+    &END SCF
+    &XC
+      &XC_FUNCTIONAL PBE
+        &PBE
+          PARAMETRIZATION PBESOL
+        &END PBE
+      &END XC_FUNCTIONAL
+      &VDW_POTENTIAL
+        DISPERSION_FUNCTIONAL PAIR_POTENTIAL
+        &PAIR_POTENTIAL
+          TYPE DFTD3
+          PARAMETER_FILE_NAME ./dftd3.dat
+          REFERENCE_FUNCTIONAL PBE
+        &END PAIR_POTENTIAL
+      &END
+    &END XC
+  &END DFT
+&SUBSYS
+    &CELL
+      ABC  17.724 19.461  48.346
+      ANGLES 90.0 90.0 90.0
+    &END CELL
+    &COORD
+C          9.29830        9.28899       10.92673
+C          9.29518        9.26664       12.41131
+C          8.17547        8.89470       13.18287
+C          8.23820        8.88991       14.57408
+C          9.41750        9.25410       15.23738
+C         10.53145        9.62646       14.47194
+C         10.47718        9.63370       13.08086
+C          9.48906        9.23119       16.78343
+O          8.42363        8.89178       17.36373
+O         10.60731        9.54941       17.26772
+O          8.11692        8.94537       10.31093
+O         10.25372        9.58538       10.22767
+H          7.22370        8.59242       12.71336
+H          7.38843        8.60363       15.20696
+H         11.34171        9.91943       12.47043
+H         11.43561        9.90022       15.03026
+H          8.03912        8.93659        9.34635
+    &END COORD
+#    &KIND Ti
+#      BASIS_SET DZV-GTH-PADE
+#      POTENTIAL GTH-PBE-q12
+#    &END KIND
+    &KIND C
+      BASIS_SET  cc-TZ
+      POTENTIAL  GTH-PBE-q4
+    &END KIND
+#    &KIND Zn
+#      BASIS_SET  DZV-GTH-PADE
+#      POTENTIAL  GTH-PBE-q20
+#    &END KIND
+    &KIND O
+      BASIS_SET  cc-TZ 
+      POTENTIAL  GTH-PBE-q6
+    &END KIND
+   &KIND H
+      BASIS_SET  cc-TZ
+      POTENTIAL  GTH-PBE-q1
+    &END KIND
+  &END SUBSYS
+&END FORCE_EVAL
+&MOTION
+#  &CELL_OPT
+#    KEEP_ANGLES .true.
+#  &END CELL_OPT
+  &GEO_OPT
+    TYPE MINIMIZATION
+#    MAX_DR    1.0E-03
+#    MAX_FORCE 1.0E-03
+#    RMS_DR    1.0E-03
+#    RMS_FORCE 1.0E-03
+    MAX_ITER 200
+    OPTIMIZER CG
+    &CG
+      MAX_STEEP_STEPS  0
+      RESTART_LIMIT 9.0E-01
+    &END CG
+  &END GEO_OPT
+#  &CONSTRAINT
+#    &FIXED_ATOMS
+#      COMPONENTS_TO_FIX XYZ
+#      LIST 1..108
+#    &END FIXED_ATOMS
+#  &END CONSTRAINT
+&END MOTION

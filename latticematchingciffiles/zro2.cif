@@ -1,0 +1,44 @@
+#======================================================================
+
+# CRYSTAL DATA
+
+#----------------------------------------------------------------------
+
+data_VESTA_phase_1
+
+
+_pd_phase_name                         'O2 Zr1                                '
+_cell_length_a                         5.12337
+_cell_length_b                         5.24673
+_cell_length_c                         5.25980
+_cell_angle_alpha                      90
+_cell_angle_beta                       99.48656
+_cell_angle_gamma                      90
+_symmetry_space_group_name_H-M         'P 1'
+_symmetry_Int_Tables_number            1
+
+loop_
+_symmetry_equiv_pos_as_xyz
+   'x, y, z'
+
+loop_
+   _atom_site_label
+   _atom_site_occupancy
+   _atom_site_fract_x
+   _atom_site_fract_y
+   _atom_site_fract_z
+   _atom_site_adp_type
+   _atom_site_B_iso_or_equiv
+   _atom_site_type_symbol
+   Zr1        1.0     0.278986      0.042969      0.208384     Biso  1.000000 Zr
+   Zr2        1.0     0.721014      0.957031      0.791616     Biso  1.000000 Zr
+   Zr3        1.0     0.721014      0.542969      0.291616     Biso  1.000000 Zr
+   Zr4        1.0     0.278986      0.457031      0.708384     Biso  1.000000 Zr
+   O1         1.0     0.077377      0.350365      0.330296     Biso  1.000000 O
+   O2         1.0     0.922623      0.649635      0.669704     Biso  1.000000 O
+   O3         1.0     0.922623      0.850365      0.169704     Biso  1.000000 O
+   O4         1.0     0.077377      0.149635      0.830296     Biso  1.000000 O
+   O5         1.0     0.446141      0.759126      0.484374     Biso  1.000000 O
+   O6         1.0     0.553859      0.240874      0.515626     Biso  1.000000 O
+   O7         1.0     0.553859      0.259126      0.015626     Biso  1.000000 O
+   O8         1.0     0.446141      0.740874      0.984374     Biso  1.000000 O

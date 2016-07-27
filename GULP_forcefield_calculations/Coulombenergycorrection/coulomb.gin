@@ -1,0 +1,19 @@
+# 
+# Keywords:
+# 
+opti qok molmec phon pot prop comp conv  
+# 
+# Options:
+# 
+cell
+  17.724000  19.461000  48.346000  90.000000  90.000000  90.000000
+Cart
+  F  core       9.3655908430        9.4486238759       10.8958289735
+space
+  1
+
+species   1
+F     core -1.000
+
+dump every      1 fit1.res
+output xyz

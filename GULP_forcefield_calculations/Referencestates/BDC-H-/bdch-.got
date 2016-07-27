@@ -1,0 +1,1838 @@
+********************************************************************************
+*                       GENERAL UTILITY LATTICE PROGRAM                        *
+*                                 Julian Gale                                  *
+*                      Nanochemistry Research Institute                        *
+*                           Department of Chemistry                            *
+*                    Curtin University, Western Australia                      *
+********************************************************************************
+* Version = 4.4.0 * Last modified = 31st March 2015                            *
+********************************************************************************
+*  optimise     - perform optimisation run                                     *
+*  conv         - constant volume calculation                                  *
+*  qok          - running with non charge neutral cell is OK                   *
+*  property     - calculate properties for final geometry                      *
+*  phonon       - calculate phonons for final geometry                         *
+*  potential    - calculate electrostatic site potentials                      *
+*  molmec       - molecule option activated, Coulomb subtract 1-2/1-3 terms    *
+*  fix_molecule - fix atoms of molecule as at the start of the run             *
+*  compare      - compare initial and final structures                         *
+********************************************************************************
+
+  Job Started  at 18:07.48 24th May        2016                               
+
+  Number of CPUs =     1
+
+
+  Total number of configurations input =   1
+
+********************************************************************************
+*  Input for Configuration =   1                                               *
+********************************************************************************
+
+  Formula = C8O4H5                                                      
+
+  Number of irreducible atoms/shells =      17
+
+
+  Total number atoms/shells =      17
+
+  Dimensionality = 3               :  Bulk   
+
+
+  Charge on solid   =  -1.000000 =>neutralising background added
+
+
+  Cartesian lattice vectors (Angstroms) :
+
+       17.724000    0.000000    0.000000
+        0.000000   19.461000    0.000000
+        0.000000    0.000000   48.346000
+
+  Cell parameters (Angstroms/Degrees):
+
+  a =      17.7240    alpha =  90.0000
+  b =      19.4610    beta  =  90.0000
+  c =      48.3460    gamma =  90.0000
+
+  Initial cell volume =       16675.829332 Angs**3
+
+  Temperature of configuration =  0.000     K 
+
+  Pressure of configuration =         0.000 GPa 
+
+  Fractional coordinates of asymmetric unit :
+
+--------------------------------------------------------------------------------
+   No.  Atomic       x           y          z         Charge      Occupancy
+        Label      (Frac)      (Frac)     (Frac)        (e)         (Frac)  
+--------------------------------------------------------------------------------
+      1 C914  c    0.502972    0.506056    0.559217     0.51000    1.000000    
+      2 C902  c    0.501393 *  0.505650 *  0.589481 *   0.00500    1.000000    
+      3 C912  c    0.434715 *  0.493379 *  0.604395 *  -0.07025    1.000000    
+      4 C912  c    0.436365 *  0.493436 *  0.633057 *  -0.07025    1.000000    
+      5 C902  c    0.504745 *  0.505193 *  0.646787 *   0.00500    1.000000    
+      6 C912  c    0.571459 *  0.517361 *  0.631988 *  -0.07025    1.000000    
+      7 C912  c    0.569808 *  0.517653 *  0.603283 *  -0.07025    1.000000    
+      8 C913  c    0.502832 *  0.503514 *  0.677550 *   1.32050    1.000000    
+      9 O170  c    0.445505 *  0.494217 *  0.690899 *  -0.83000    1.000000    
+     10 O170  c    0.572002 *  0.513218 *  0.688888 *  -0.83000    1.000000    
+     11 O172  c    0.435356 *  0.503903 *  0.545960 *  -0.79450    1.000000    
+     12 O173  c    0.561919 *  0.508190 *  0.545799 *  -0.77500    1.000000    
+     13 H915  c    0.380819 *  0.481455 *  0.594193 *   0.11250    1.000000    
+     14 H915  c    0.385747 *  0.483785 *  0.645444 *   0.11250    1.000000    
+     15 H915  c    0.620651 *  0.527121 *  0.591017 *   0.11250    1.000000    
+     16 H915  c    0.624153 *  0.526397 *  0.643178 *   0.11250    1.000000    
+     17 H21   c    0.432567 *  0.503926 *  0.525967 *   0.22000    1.000000    
+--------------------------------------------------------------------------------
+
+
+
+  Molecule list generated from bond lengths :
+
+  Total number of molecules =     1
+
+--------------------------------------------------------------------------------
+Molecule No./:  Atoms
+Periodicity  :  
+--------------------------------------------------------------------------------
+     1  0    : C914 c     1 C902 c     2 C912 c     3 C912 c     4 C902 c     5
+             : C912 c     6 C912 c     7 C913 c     8 O170 c     9 O170 c    10
+             : O172 c    11 O173 c    12 H915 c    13 H915 c    14 H915 c    15
+             : H915 c    16 H21  c    17
+--------------------------------------------------------------------------------
+
+
+********************************************************************************
+*  General input information                                                   *
+********************************************************************************
+
+  Species output for all configurations : 
+
+--------------------------------------------------------------------------------
+  Species    Type    Atomic    Atomic    Charge       Radii (Angs)     Library
+                     Number     Mass       (e)     Cova   Ionic  VDW   Symbol
+--------------------------------------------------------------------------------
+    C913     Core        6      12.01   1.320500   0.770  0.000  1.530          
+    O170     Core        8      16.00  -0.830000   0.730  0.000  1.360          
+    C914     Core        6      12.01   0.510000   0.770  0.000  1.530          
+    C902     Core        6      12.01   0.005000   0.770  0.000  1.530          
+    H915     Core        1       1.01   0.112500   0.370  0.000  1.080          
+    C912     Core        6      12.01  -0.070250   0.770  0.000  1.530          
+    O173     Core        8      16.00  -0.775000   0.730  0.000  1.360          
+    O172     Core        8      16.00  -0.794500   0.730  0.000  1.360          
+    H21      Core        1       1.01   0.220000   0.370  0.000  1.080          
+    H22      Core        1       1.01   0.120000   0.370  0.000  1.080          
+    O2       Core        8      16.00  -1.218000   0.730  0.000  1.360          
+    Ti       Core       22      47.88   2.436000   0.000  0.000  2.190          
+    O3       Core        8      16.00  -0.338000   0.730  0.000  1.360          
+--------------------------------------------------------------------------------
+
+
+  Lattice summation method               =    Ewald          (3-D)
+                                         =    Parry          (2-D)
+                                         =    Saunders et al (1-D)
+  Accuracy factor for lattice sums       =   12.000
+
+
+  Time limit = Infinity
+
+  Maximum range for interatomic potentials =    100000.000000 Angstroms
+
+  General interatomic potentials :
+
+--------------------------------------------------------------------------------
+Atom  Types   Potential      Parameter       Value         Units   Cutoffs(Ang)
+  1     2                                                            Min /  Max 
+--------------------------------------------------------------------------------
+O3   c Ti   c MM3buck       MM3buck A        184000.00    None      3Bond 12.000
+                            MM3buck B        11.500000    None      
+                            MM3buck C        2.5500000    None      
+                            MM3buck epsilon 0.44016176E-02eV        
+                            MM3buck rv       3.0441150    Ang       
+--------------------------------------------------------------------------------
+O2   c Ti   c MM3buck       MM3buck A        184000.00    None      3Bond 12.000
+                            MM3buck B        11.500000    None      
+                            MM3buck C        2.5500000    None      
+                            MM3buck epsilon 0.12586926E-01eV        
+                            MM3buck rv       3.0441150    Ang       
+--------------------------------------------------------------------------------
+O3   c O3   c MM3buck       MM3buck A        184000.00    None      3Bond 12.000
+                            MM3buck B        11.500000    None      
+                            MM3buck C        2.5500000    None      
+                            MM3buck epsilon 0.10031500E-02eV        
+                            MM3buck rv       3.1875200    Ang       
+--------------------------------------------------------------------------------
+O2   c O2   c MM3buck       MM3buck A        184000.00    None      3Bond 12.000
+                            MM3buck B        11.500000    None      
+                            MM3buck C        2.5500000    None      
+                            MM3buck epsilon 0.82031500E-02eV        
+                            MM3buck rv       3.1875200    Ang       
+--------------------------------------------------------------------------------
+O2   c O172 c MM3buck       MM3buck A        184000.00    None      3Bond  0.000
+                            MM3buck B        11.500000    None      
+                            MM3buck C        2.5500000    None      
+                            MM3buck epsilon 0.45812399E-02eV        
+                            MM3buck rv       3.4137600    Ang       
+--------------------------------------------------------------------------------
+O2   c O173 c MM3buck       MM3buck A        184000.00    None      3Bond  0.000
+                            MM3buck B        11.500000    None      
+                            MM3buck C        2.5500000    None      
+                            MM3buck epsilon 0.45812399E-02eV        
+                            MM3buck rv       3.4137600    Ang       
+--------------------------------------------------------------------------------
+O2   c O170 c MM3buck       MM3buck A        184000.00    None      3Bond 12.000
+                            MM3buck B        11.500000    None      
+                            MM3buck C        2.5500000    None      
+                            MM3buck epsilon 0.64417105E-02eV        
+                            MM3buck rv       3.4137600    Ang       
+--------------------------------------------------------------------------------
+O3   c O172 c MM3buck       MM3buck A        184000.00    None      3Bond  0.000
+                            MM3buck B        11.500000    None      
+                            MM3buck C        2.5500000    None      
+                            MM3buck epsilon 0.16020485E-02eV        
+                            MM3buck rv       3.4137600    Ang       
+--------------------------------------------------------------------------------
+O3   c O173 c MM3buck       MM3buck A        184000.00    None      3Bond  0.000
+                            MM3buck B        11.500000    None      
+                            MM3buck C        2.5500000    None      
+                            MM3buck epsilon 0.16020485E-02eV        
+                            MM3buck rv       3.4137600    Ang       
+--------------------------------------------------------------------------------
+O3   c O170 c MM3buck       MM3buck A        184000.00    None      3Bond 12.000
+                            MM3buck B        11.500000    None      
+                            MM3buck C        2.5500000    None      
+                            MM3buck epsilon 0.22526505E-02eV        
+                            MM3buck rv       3.4137600    Ang       
+--------------------------------------------------------------------------------
+O172 c Ti   c MM3buck       MM3buck A        184000.00    None      3Bond 12.000
+                            MM3buck B        11.500000    None      
+                            MM3buck C        2.5500000    None      
+                            MM3buck epsilon 0.70294618E-02eV        
+                            MM3buck rv       3.2703550    Ang       
+--------------------------------------------------------------------------------
+O170 c Ti   c MM3buck       MM3buck A        184000.00    None      3Bond 12.000
+                            MM3buck B        11.500000    None      
+                            MM3buck C        2.5500000    None      
+                            MM3buck epsilon 0.98841709E-02eV        
+                            MM3buck rv       3.2703550    Ang       
+--------------------------------------------------------------------------------
+O173 c Ti   c MM3buck       MM3buck A        184000.00    None      3Bond 12.000
+                            MM3buck B        11.500000    None      
+                            MM3buck C        2.5500000    None      
+                            MM3buck epsilon 0.70294618E-02eV        
+                            MM3buck rv       3.2703550    Ang       
+--------------------------------------------------------------------------------
+Ti   c Ti   c MM3buck       MM3buck A        184000.00    None      3Bond 12.000
+                            MM3buck B        11.500000    None      
+                            MM3buck C        2.5500000    None      
+                            MM3buck epsilon 0.19313400E-01eV        
+                            MM3buck rv       2.9007100    Ang       
+--------------------------------------------------------------------------------
+Ti3  c Ti3  c MM3buck       MM3buck A        184000.00    None      3Bond 12.000
+                            MM3buck B        11.500000    None      
+                            MM3buck C        2.5500000    None      
+                            MM3buck epsilon 0.19313400E-01eV        
+                            MM3buck rv       2.9007100    Ang       
+--------------------------------------------------------------------------------
+H22  c C902 c Lenn/es       Lennard epsilon 0.24577764E-02eV        3Bond 12.500
+                            Lennard sigma/m  1.1084500    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+H22  c C914 c Lenn/es       Lennard epsilon 0.24577764E-02eV        3Bond 12.500
+                            Lennard sigma/m  1.1122500    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+H22  c C913 c Lenn/es       Lennard epsilon 0.24577764E-02eV        3Bond 12.500
+                            Lennard sigma/m  1.1122500    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+H22  c C912 c Lenn/es       Lennard epsilon 0.24577764E-02eV        3Bond 12.500
+                            Lennard sigma/m  1.1084500    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+H22  c H915 c Lenn/es       Lennard epsilon 0.16089906E-02eV        3Bond 12.500
+                            Lennard sigma/m 0.79135000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+H22  c O172 c Lenn/es       Lennard epsilon 0.32179843E-02eV        3Bond 12.500
+                            Lennard sigma/m 0.96225000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+H22  c O170 c Lenn/es       Lennard epsilon 0.32179843E-02eV        3Bond 12.500
+                            Lennard sigma/m 0.96225000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+H22  c O173 c Lenn/es       Lennard epsilon 0.32179843E-02eV        3Bond 12.500
+                            Lennard sigma/m 0.96225000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+H21  c H22  c Lenn/es       Lennard epsilon 0.19900000E-02eV        3Bond 12.500
+                            Lennard sigma/m 0.22450000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+C902 c C914 c Lenn/es       Lennard epsilon 0.30355100E-02eV        3Bond 12.500
+                            Lennard sigma/m  1.9962000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+C914 c C914 c Lenn/es       Lennard epsilon 0.30355100E-02eV        3Bond 12.500
+                            Lennard sigma/m  2.0000000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+C913 c C914 c Lenn/es       Lennard epsilon 0.30355100E-02eV        3Bond 12.500
+                            Lennard sigma/m  2.0000000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+C912 c C914 c Lenn/es       Lennard epsilon 0.30355100E-02eV        3Bond 12.500
+                            Lennard sigma/m  1.9962000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+H915 c C914 c Lenn/es       Lennard epsilon 0.19872056E-02eV        3Bond 12.500
+                            Lennard sigma/m  1.6791000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+C914 c O172 c Lenn/es       Lennard epsilon 0.39744150E-02eV        3Bond 12.500
+                            Lennard sigma/m  1.8500000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+C914 c O170 c Lenn/es       Lennard epsilon 0.39744150E-02eV        3Bond 12.500
+                            Lennard sigma/m  1.8500000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+C902 c O173 c Lenn/es       Lennard epsilon 0.39744150E-02eV        3Bond 12.500
+                            Lennard sigma/m  1.8462000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+C914 c O173 c Lenn/es       Lennard epsilon 0.39744150E-02eV        3Bond 12.500
+                            Lennard sigma/m  1.8500000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+C913 c O173 c Lenn/es       Lennard epsilon 0.39744150E-02eV        3Bond 12.500
+                            Lennard sigma/m  1.8500000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+C912 c O173 c Lenn/es       Lennard epsilon 0.39744150E-02eV        3Bond 12.500
+                            Lennard sigma/m  1.8462000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+H915 c O173 c Lenn/es       Lennard epsilon 0.26018625E-02eV        3Bond 12.500
+                            Lennard sigma/m  1.5291000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+H21  c O173 c Lenn/es       Lennard epsilon 0.32179843E-02eV        3Bond 12.500
+                            Lennard sigma/m 0.96225000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+O172 c O173 c Lenn/es       Lennard epsilon 0.52037300E-02eV        3Bond 12.500
+                            Lennard sigma/m  1.7000000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+O170 c O173 c Lenn/es       Lennard epsilon 0.52037300E-02eV        3Bond 12.500
+                            Lennard sigma/m  1.7000000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+O173 c O173 c Lenn/es       Lennard epsilon 0.52037300E-02eV        3Bond 12.500
+                            Lennard sigma/m  1.7000000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+H21  c O3   c Lenn/es       Lennard epsilon  0.0000000    eV        3Bond 12.500
+                            Lennard sigma/m  0.0000000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+H21  c O2   c Lenn/es       Lennard epsilon  0.0000000    eV        3Bond 12.500
+                            Lennard sigma/m  0.0000000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+H21  c H21  c Lenn/es       Lennard epsilon 0.19900000E-02eV        3Bond 12.500
+                            Lennard sigma/m 0.22450000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+H21  c O170 c Lenn/es       Lennard epsilon 0.32179843E-02eV        3Bond 12.500
+                            Lennard sigma/m 0.96225000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+H21  c C913 c Lenn/es       Lennard epsilon 0.24577764E-02eV        3Bond 12.500
+                            Lennard sigma/m  1.1122500    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+H21  c C902 c Lenn/es       Lennard epsilon 0.24577764E-02eV        3Bond 12.500
+                            Lennard sigma/m  1.1084500    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+H21  c C912 c Lenn/es       Lennard epsilon 0.24577764E-02eV        3Bond 12.500
+                            Lennard sigma/m  1.1084500    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+H21  c H915 c Lenn/es       Lennard epsilon 0.16089906E-02eV        3Bond 12.500
+                            Lennard sigma/m 0.79135000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+H21  c O172 c Lenn/es       Lennard epsilon 0.32179843E-02eV        3Bond 12.500
+                            Lennard sigma/m 0.96225000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+H915 c O172 c Lenn/es       Lennard epsilon 0.26018625E-02eV        3Bond 12.500
+                            Lennard sigma/m  1.5291000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+C902 c O172 c Lenn/es       Lennard epsilon 0.39744150E-02eV        3Bond 12.500
+                            Lennard sigma/m  1.8462000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+C912 c O172 c Lenn/es       Lennard epsilon 0.39744150E-02eV        3Bond 12.500
+                            Lennard sigma/m  1.8462000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+C913 c O172 c Lenn/es       Lennard epsilon 0.39744150E-02eV        3Bond 12.500
+                            Lennard sigma/m  1.8500000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+C912 c O170 c Lenn/es       Lennard epsilon 0.39744150E-02eV        3Bond 12.500
+                            Lennard sigma/m  1.8462000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+C912 c C912 c Lenn/es       Lennard epsilon 0.30355100E-02eV        3Bond 12.500
+                            Lennard sigma/m  1.9924000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+C902 c O170 c Lenn/es       Lennard epsilon 0.39744150E-02eV        3Bond 12.500
+                            Lennard sigma/m  1.8462000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+C902 c C912 c Lenn/es       Lennard epsilon 0.30355100E-02eV        3Bond 12.500
+                            Lennard sigma/m  1.9924000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+C902 c C902 c Lenn/es       Lennard epsilon 0.30355100E-02eV        3Bond 12.500
+                            Lennard sigma/m  1.9924000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+H915 c O170 c Lenn/es       Lennard epsilon 0.26018625E-02eV        3Bond 12.500
+                            Lennard sigma/m  1.5291000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+H915 c C912 c Lenn/es       Lennard epsilon 0.19872056E-02eV        3Bond 12.500
+                            Lennard sigma/m  1.6753000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+H915 c C902 c Lenn/es       Lennard epsilon 0.19872056E-02eV        3Bond 12.500
+                            Lennard sigma/m  1.6753000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+H915 c H915 c Lenn/es       Lennard epsilon 0.13009300E-02eV        3Bond 12.500
+                            Lennard sigma/m  1.3582000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+C913 c O170 c Lenn/es       Lennard epsilon 0.39744150E-02eV        3Bond 12.500
+                            Lennard sigma/m  1.8500000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+C912 c C913 c Lenn/es       Lennard epsilon 0.30355100E-02eV        3Bond 12.500
+                            Lennard sigma/m  1.9962000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+C902 c C913 c Lenn/es       Lennard epsilon 0.30355100E-02eV        3Bond 12.500
+                            Lennard sigma/m  1.9962000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+H915 c C913 c Lenn/es       Lennard epsilon 0.19872056E-02eV        3Bond 12.500
+                            Lennard sigma/m  1.6791000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+C913 c C913 c Lenn/es       Lennard epsilon 0.30355100E-02eV        3Bond 12.500
+                            Lennard sigma/m  2.0000000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+
+  Intramolecular potentials :
+
+--------------------------------------------------------------------------------
+Atom  Types   Potential      Parameter       Value         Units   Cutoffs(Ang)
+  1     2                                                            Min /  Max 
+--------------------------------------------------------------------------------
+H21  c O172 c Harmonic      Harmonic k2      47.267000    eV*Ang^-2 0.000 1 Bond
+                            Harmonic r0     0.96000000    Ang       
+                            Harmonic k3      0.0000000    eV*Ang^-3 
+                            Harmonic k4      0.0000000    eV*Ang^-4 
+--------------------------------------------------------------------------------
+H22  c O3   c Harmonic      Harmonic k2      47.267000    eV*Ang^-2 0.000 1 Bond
+                            Harmonic r0     0.96000000    Ang       
+                            Harmonic k3      0.0000000    eV*Ang^-3 
+                            Harmonic k4      0.0000000    eV*Ang^-4 
+--------------------------------------------------------------------------------
+C902 c C913 c Harmonic      Harmonic k2      17.345800    eV*Ang^-2 0.000 1 Bond
+                            Harmonic r0      1.5000000    Ang       
+                            Harmonic k3      0.0000000    eV*Ang^-3 
+                            Harmonic k4      0.0000000    eV*Ang^-4 
+--------------------------------------------------------------------------------
+C902 c C914 c Harmonic      Harmonic k2      17.345800    eV*Ang^-2 0.000 1 Bond
+                            Harmonic r0      1.5000000    Ang       
+                            Harmonic k3      0.0000000    eV*Ang^-3 
+                            Harmonic k4      0.0000000    eV*Ang^-4 
+--------------------------------------------------------------------------------
+C912 c C912 c Harmonic      Harmonic k2      26.452300    eV*Ang^-2 0.000 1 Bond
+                            Harmonic r0      1.3750000    Ang       
+                            Harmonic k3      0.0000000    eV*Ang^-3 
+                            Harmonic k4      0.0000000    eV*Ang^-4 
+--------------------------------------------------------------------------------
+C902 c C912 c Harmonic      Harmonic k2      26.452300    eV*Ang^-2 0.000 1 Bond
+                            Harmonic r0      1.3750000    Ang       
+                            Harmonic k3      0.0000000    eV*Ang^-3 
+                            Harmonic k4      0.0000000    eV*Ang^-4 
+--------------------------------------------------------------------------------
+H915 c C912 c Harmonic      Harmonic k2      29.487800    eV*Ang^-2 0.000 1 Bond
+                            Harmonic r0      1.0800000    Ang       
+                            Harmonic k3      0.0000000    eV*Ang^-3 
+                            Harmonic k4      0.0000000    eV*Ang^-4 
+--------------------------------------------------------------------------------
+C914 c O173 c Harmonic      Harmonic k2      45.532700    eV*Ang^-2 0.000 1 Bond
+                            Harmonic r0      1.2600000    Ang       
+                            Harmonic k3      0.0000000    eV*Ang^-3 
+                            Harmonic k4      0.0000000    eV*Ang^-4 
+--------------------------------------------------------------------------------
+C914 c O172 c Harmonic      Harmonic k2      45.532700    eV*Ang^-2 0.000 1 Bond
+                            Harmonic r0      1.2600000    Ang       
+                            Harmonic k3      0.0000000    eV*Ang^-3 
+                            Harmonic k4      0.0000000    eV*Ang^-4 
+--------------------------------------------------------------------------------
+C913 c O170 c Harmonic      Harmonic k2      45.532700    eV*Ang^-2 0.000 1 Bond
+                            Harmonic r0      1.2600000    Ang       
+                            Harmonic k3      0.0000000    eV*Ang^-3 
+                            Harmonic k4      0.0000000    eV*Ang^-4 
+--------------------------------------------------------------------------------
+
+  Intramolecular Three-body potentials :
+
+--------------------------------------------------------------------------------
+  Atoms       Potential      Parameter       Value         Units   Cutoffs(Ang)
+  1 / 2 / 3                                                          Min /  Max 
+--------------------------------------------------------------------------------
+O172  core    Harmonic      Three-body cnst  4.7700000    eV*rad^-2 0.000 1 Bond
+H21   core                  Three-body angl  115.00000    degrees   0.000 1 Bond
+C914  core                  Three-body k4    0.0000000    eV*rad^-4 0.000 1 Bond
+                            Three-body k3    0.0000000    eV*rad^-3 
+--------------------------------------------------------------------------------
+C914  core    Harmonic      Three-body cnst  8.6729000    eV*rad^-2 0.000 1 Bond
+O172  core                  Three-body angl  133.00000    degrees   0.000 1 Bond
+O173  core                  Three-body k4    0.0000000    eV*rad^-4 0.000 1 Bond
+                            Three-body k3    0.0000000    eV*rad^-3 
+--------------------------------------------------------------------------------
+C913  core    Harmonic      Three-body cnst  8.6729000    eV*rad^-2 0.000 1 Bond
+O170  core                  Three-body angl  133.00000    degrees   0.000 1 Bond
+O170  core                  Three-body k4    0.0000000    eV*rad^-4 0.000 1 Bond
+                            Three-body k3    0.0000000    eV*rad^-3 
+--------------------------------------------------------------------------------
+C912  core    Harmonic      Three-body cnst  3.4692000    eV*rad^-2 0.000 1 Bond
+C902  core                  Three-body angl  120.00000    degrees   0.000 1 Bond
+C912  core                  Three-body k4    0.0000000    eV*rad^-4 0.000 1 Bond
+                            Three-body k3    0.0000000    eV*rad^-3 
+--------------------------------------------------------------------------------
+C902  core    Harmonic      Three-body cnst  3.4692000    eV*rad^-2 0.000 1 Bond
+C912  core                  Three-body angl  120.00000    degrees   0.000 1 Bond
+C912  core                  Three-body k4    0.0000000    eV*rad^-4 0.000 1 Bond
+                            Three-body k3    0.0000000    eV*rad^-3 
+--------------------------------------------------------------------------------
+C902  core    Harmonic      Three-body cnst  3.9028000    eV*rad^-2 0.000 1 Bond
+C912  core                  Three-body angl  119.00000    degrees   0.000 1 Bond
+C913  core                  Three-body k4    0.0000000    eV*rad^-4 0.000 1 Bond
+                            Three-body k3    0.0000000    eV*rad^-3 
+--------------------------------------------------------------------------------
+C902  core    Harmonic      Three-body cnst  3.9028000    eV*rad^-2 0.000 1 Bond
+C912  core                  Three-body angl  119.00000    degrees   0.000 1 Bond
+C914  core                  Three-body k4    0.0000000    eV*rad^-4 0.000 1 Bond
+                            Three-body k3    0.0000000    eV*rad^-3 
+--------------------------------------------------------------------------------
+C912  core    Harmonic      Three-body cnst  2.6019000    eV*rad^-2 0.000 1 Bond
+H915  core                  Three-body angl  120.00000    degrees   0.000 1 Bond
+C902  core                  Three-body k4    0.0000000    eV*rad^-4 0.000 1 Bond
+                            Three-body k3    0.0000000    eV*rad^-3 
+--------------------------------------------------------------------------------
+C912  core    Harmonic      Three-body cnst  2.6019000    eV*rad^-2 0.000 1 Bond
+H915  core                  Three-body angl  120.00000    degrees   0.000 1 Bond
+C912  core                  Three-body k4    0.0000000    eV*rad^-4 0.000 1 Bond
+                            Three-body k3    0.0000000    eV*rad^-3 
+--------------------------------------------------------------------------------
+C913  core    Harmonic      Three-body cnst  3.4692000    eV*rad^-2 0.000 1 Bond
+C902  core                  Three-body angl  116.00000    degrees   0.000 1 Bond
+O170  core                  Three-body k4    0.0000000    eV*rad^-4 0.000 1 Bond
+                            Three-body k3    0.0000000    eV*rad^-3 
+--------------------------------------------------------------------------------
+C914  core    Harmonic      Three-body cnst  3.4692000    eV*rad^-2 0.000 1 Bond
+C902  core                  Three-body angl  116.00000    degrees   0.000 1 Bond
+O172  core                  Three-body k4    0.0000000    eV*rad^-4 0.000 1 Bond
+                            Three-body k3    0.0000000    eV*rad^-3 
+--------------------------------------------------------------------------------
+C914  core    Harmonic      Three-body cnst  3.4692000    eV*rad^-2 0.000 1 Bond
+C902  core                  Three-body angl  116.00000    degrees   0.000 1 Bond
+O173  core                  Three-body k4    0.0000000    eV*rad^-4 0.000 1 Bond
+                            Three-body k3    0.0000000    eV*rad^-3 
+--------------------------------------------------------------------------------
+
+  Intramolecular Four-body potentials :
+
+--------------------------------------------------------------------------------
+  Atoms       Potential      Parameter       Value         Units   Cutoffs(Ang)
+  1 - 4                                                             Min /  Max 
+--------------------------------------------------------------------------------
+C902  core    Standard      Torsional const 0.13443000    eV         Bonded
+C912  core Phase = +  2                                                       
+C912  core                                                              
+C902  core
+--------------------------------------------------------------------------------
+C912  core    Standard      Torsional const 0.13443000    eV         Bonded
+C902  core Phase = +  2                                                       
+C912  core                                                              
+C912  core
+--------------------------------------------------------------------------------
+C902  core    Standard      Torsional const 0.18213000    eV         Bonded
+C912  core Phase = +  2                                                       
+C912  core                                                              
+H915  core
+--------------------------------------------------------------------------------
+C912  core    Standard      Torsional const 0.18213000    eV         Bonded
+C902  core Phase = +  2                                                       
+C912  core                                                              
+H915  core
+--------------------------------------------------------------------------------
+O170  core    Standard      Torsional const  1.0601600    eV         Bonded
+C913  core Phase = +  2                                                       
+C902  core                                                              
+C912  core
+--------------------------------------------------------------------------------
+O172  core    Standard      Torsional const  1.0601600    eV         Bonded
+C914  core Phase = +  2                                                       
+C902  core                                                              
+C912  core
+--------------------------------------------------------------------------------
+O173  core    Standard      Torsional const 0.13443000    eV         Bonded
+C914  core Phase = +  2                                                       
+C902  core                                                              
+C912  core
+--------------------------------------------------------------------------------
+C913  core    Standard      Torsional const 0.13443000    eV         Bonded
+C902  core Phase = +  2                                                       
+C912  core                                                              
+C912  core
+--------------------------------------------------------------------------------
+C913  core    Standard      Torsional const 0.10407000    eV         Bonded
+C902  core Phase = +  2                                                       
+C912  core                                                              
+H915  core
+--------------------------------------------------------------------------------
+H915  core    Standard      Torsional const 0.10407000    eV         Bonded
+C912  core Phase = +  2                                                       
+C912  core                                                              
+H915  core
+--------------------------------------------------------------------------------
+C902  core    Standard      Torsional const 0.88896000E-01eV         Bonded
+C914  core Phase = +  2                                                       
+O172  core                                                              
+H21   core
+--------------------------------------------------------------------------------
+O173  core    Standard      Torsional const 0.88896000E-01eV         Bonded
+C914  core Phase = +  2                                                       
+O172  core                                                              
+H21   core
+--------------------------------------------------------------------------------
+
+********************************************************************************
+*  Output for configuration   1                                                *
+********************************************************************************
+
+
+  Components of energy : 
+
+--------------------------------------------------------------------------------
+  Interatomic potentials     =           0.56300931 eV    
+  Three-body potentials      =           0.44081380 eV    
+  Four-body potentials       =           0.12717954 eV    
+  Improper torsions          =           0.00000000 eV    
+  Out of plane potentials    =           0.00000000 eV    
+  Monopole - monopole (real) =           2.92893329 eV    
+  Monopole - monopole (recip)=          -3.09392926 eV    
+  Monopole - monopole (total)=          -0.16499597 eV    
+  Neutralising energy        =          -0.17574700 eV    
+--------------------------------------------------------------------------------
+  Total lattice energy       =           0.79025969 eV    
+--------------------------------------------------------------------------------
+  Total lattice energy       =              76.2480 kJ/(mole unit cells)
+--------------------------------------------------------------------------------
+
+
+  Number of variables =       48
+
+  Maximum number of calculations  =          1000
+  Maximum Hessian update interval =            10
+  Maximum step size               =   1.000000000
+  Maximum parameter tolerance     =   0.000010000
+  Maximum function  tolerance     =   0.000010000
+  Maximum gradient  tolerance     =   0.001000000
+  Maximum gradient  component     =   0.010000000
+
+  Symmetry not applied to optimisation
+
+  Cell parameters to be optimised using strains
+
+  Newton-Raphson optimiser to be used
+
+  BFGS hessian update to be used
+
+  Dumpfile to be written after every cycle
+
+  Start of bulk optimisation :
+
+  Cycle:      0 Energy:         0.790260  Gnorm:      6.508519  CPU:    0.016
+  ** Hessian calculated **
+  Cycle:      1 Energy:         0.076610  Gnorm:      2.909412  CPU:    0.024
+  Cycle:      2 Energy:        -0.237771  Gnorm:      2.449249  CPU:    0.036
+  Cycle:      3 Energy:        -0.316458  Gnorm:      0.939094  CPU:    0.045
+  Cycle:      4 Energy:        -0.340707  Gnorm:      0.607976  CPU:    0.054
+  Cycle:      5 Energy:        -0.353317  Gnorm:      0.247552  CPU:    0.064
+  Cycle:      6 Energy:        -0.358732  Gnorm:      0.248696  CPU:    0.073
+  Cycle:      7 Energy:        -0.360861  Gnorm:      0.161417  CPU:    0.082
+  Cycle:      8 Energy:        -0.361505  Gnorm:      0.103968  CPU:    0.091
+  Cycle:      9 Energy:        -0.361981  Gnorm:      0.089327  CPU:    0.101
+  Cycle:     10 Energy:        -0.362327  Gnorm:      0.107284  CPU:    0.110
+  ** Hessian calculated **
+  Cycle:     11 Energy:        -0.362487  Gnorm:      0.069600  CPU:    0.124
+  Cycle:     12 Energy:        -0.362665  Gnorm:      0.074408  CPU:    0.133
+  Cycle:     13 Energy:        -0.362972  Gnorm:      0.117080  CPU:    0.144
+  Cycle:     14 Energy:        -0.363492  Gnorm:      0.117306  CPU:    0.156
+  Cycle:     15 Energy:        -0.364125  Gnorm:      0.095501  CPU:    0.167
+  Cycle:     16 Energy:        -0.364557  Gnorm:      0.098906  CPU:    0.176
+  Cycle:     17 Energy:        -0.365040  Gnorm:      0.105832  CPU:    0.186
+  Cycle:     18 Energy:        -0.365403  Gnorm:      0.055012  CPU:    0.195
+  Cycle:     19 Energy:        -0.365498  Gnorm:      0.030183  CPU:    0.204
+  Cycle:     20 Energy:        -0.365534  Gnorm:      0.022850  CPU:    0.214
+  ** Hessian calculated **
+  Cycle:     21 Energy:        -0.365550  Gnorm:      0.015121  CPU:    0.228
+  Cycle:     22 Energy:        -0.365580  Gnorm:      0.027841  CPU:    0.239
+  Cycle:     23 Energy:        -0.365638  Gnorm:      0.033769  CPU:    0.250
+  Cycle:     24 Energy:        -0.365681  Gnorm:      0.022356  CPU:    0.260
+  Cycle:     25 Energy:        -0.365711  Gnorm:      0.023063  CPU:    0.269
+  Cycle:     26 Energy:        -0.365737  Gnorm:      0.018448  CPU:    0.279
+  Cycle:     27 Energy:        -0.365763  Gnorm:      0.019567  CPU:    0.288
+  Cycle:     28 Energy:        -0.365776  Gnorm:      0.014359  CPU:    0.297
+  Cycle:     29 Energy:        -0.365784  Gnorm:      0.015540  CPU:    0.307
+  Cycle:     30 Energy:        -0.365790  Gnorm:      0.012184  CPU:    0.316
+  ** Hessian calculated **
+  Cycle:     31 Energy:        -0.365793  Gnorm:      0.008757  CPU:    0.330
+  Cycle:     32 Energy:        -0.365797  Gnorm:      0.009159  CPU:    0.339
+  Cycle:     33 Energy:        -0.365800  Gnorm:      0.009618  CPU:    0.348
+  Cycle:     34 Energy:        -0.365804  Gnorm:      0.007810  CPU:    0.358
+  Cycle:     35 Energy:        -0.365808  Gnorm:      0.008679  CPU:    0.367
+  Cycle:     36 Energy:        -0.365812  Gnorm:      0.007868  CPU:    0.377
+  Cycle:     37 Energy:        -0.365817  Gnorm:      0.008691  CPU:    0.386
+  Cycle:     38 Energy:        -0.365820  Gnorm:      0.005955  CPU:    0.396
+  Cycle:     39 Energy:        -0.365822  Gnorm:      0.004797  CPU:    0.405
+  Cycle:     40 Energy:        -0.365823  Gnorm:      0.004803  CPU:    0.414
+  ** Hessian calculated **
+  Cycle:     41 Energy:        -0.365824  Gnorm:      0.003187  CPU:    0.428
+  Cycle:     42 Energy:        -0.365825  Gnorm:      0.004167  CPU:    0.438
+  Cycle:     43 Energy:        -0.365826  Gnorm:      0.005541  CPU:    0.447
+  Cycle:     44 Energy:        -0.365828  Gnorm:      0.003864  CPU:    0.456
+  Cycle:     45 Energy:        -0.365829  Gnorm:      0.003960  CPU:    0.466
+  Cycle:     46 Energy:        -0.365829  Gnorm:      0.003079  CPU:    0.475
+  Cycle:     47 Energy:        -0.365830  Gnorm:      0.003407  CPU:    0.485
+  Cycle:     48 Energy:        -0.365831  Gnorm:      0.003028  CPU:    0.494
+  Cycle:     49 Energy:        -0.365831  Gnorm:      0.003138  CPU:    0.503
+  Cycle:     50 Energy:        -0.365831  Gnorm:      0.003146  CPU:    0.513
+  ** Hessian calculated **
+  Cycle:     51 Energy:        -0.365832  Gnorm:      0.002313  CPU:    0.527
+  Cycle:     52 Energy:        -0.365832  Gnorm:      0.002658  CPU:    0.536
+  Cycle:     53 Energy:        -0.365832  Gnorm:      0.002643  CPU:    0.545
+  Cycle:     54 Energy:        -0.365832  Gnorm:      0.002380  CPU:    0.555
+  Cycle:     55 Energy:        -0.365833  Gnorm:      0.002670  CPU:    0.564
+  Cycle:     56 Energy:        -0.365833  Gnorm:      0.002125  CPU:    0.573
+  Cycle:     57 Energy:        -0.365834  Gnorm:      0.002850  CPU:    0.583
+  Cycle:     58 Energy:        -0.365834  Gnorm:      0.001914  CPU:    0.592
+  Cycle:     59 Energy:        -0.365834  Gnorm:      0.001822  CPU:    0.602
+  Cycle:     60 Energy:        -0.365834  Gnorm:      0.001950  CPU:    0.611
+  ** Hessian calculated **
+  Cycle:     61 Energy:        -0.365834  Gnorm:      0.001310  CPU:    0.625
+  Cycle:     62 Energy:        -0.365834  Gnorm:      0.001444  CPU:    0.634
+  Cycle:     63 Energy:        -0.365835  Gnorm:      0.002282  CPU:    0.644
+  Cycle:     64 Energy:        -0.365835  Gnorm:      0.001483  CPU:    0.653
+  Cycle:     65 Energy:        -0.365835  Gnorm:      0.001878  CPU:    0.663
+  Cycle:     66 Energy:        -0.365835  Gnorm:      0.001436  CPU:    0.672
+  Cycle:     67 Energy:        -0.365835  Gnorm:      0.001577  CPU:    0.681
+  Cycle:     68 Energy:        -0.365836  Gnorm:      0.001665  CPU:    0.691
+  Cycle:     69 Energy:        -0.365836  Gnorm:      0.001440  CPU:    0.700
+  Cycle:     70 Energy:        -0.365836  Gnorm:      0.001757  CPU:    0.709
+  ** Hessian calculated **
+  Cycle:     71 Energy:        -0.365836  Gnorm:      0.001279  CPU:    0.724
+  Cycle:     72 Energy:        -0.365836  Gnorm:      0.001608  CPU:    0.733
+  Cycle:     73 Energy:        -0.365836  Gnorm:      0.001452  CPU:    0.742
+  Cycle:     74 Energy:        -0.365836  Gnorm:      0.001178  CPU:    0.752
+  Cycle:     75 Energy:        -0.365836  Gnorm:      0.001501  CPU:    0.761
+  Cycle:     76 Energy:        -0.365836  Gnorm:      0.001351  CPU:    0.770
+  Cycle:     77 Energy:        -0.365837  Gnorm:      0.001766  CPU:    0.780
+  Cycle:     78 Energy:        -0.365837  Gnorm:      0.001483  CPU:    0.789
+  Cycle:     79 Energy:        -0.365837  Gnorm:      0.001290  CPU:    0.799
+  Cycle:     80 Energy:        -0.365837  Gnorm:      0.001806  CPU:    0.808
+  ** Hessian calculated **
+  Cycle:     81 Energy:        -0.365837  Gnorm:      0.001150  CPU:    0.822
+  Cycle:     82 Energy:        -0.365837  Gnorm:      0.001141  CPU:    0.832
+  Cycle:     83 Energy:        -0.365837  Gnorm:      0.001874  CPU:    0.841
+  Cycle:     84 Energy:        -0.365838  Gnorm:      0.001338  CPU:    0.851
+  Cycle:     85 Energy:        -0.365838  Gnorm:      0.001697  CPU:    0.860
+  Cycle:     86 Energy:        -0.365838  Gnorm:      0.001314  CPU:    0.870
+  Cycle:     87 Energy:        -0.365838  Gnorm:      0.001400  CPU:    0.879
+  Cycle:     88 Energy:        -0.365838  Gnorm:      0.001397  CPU:    0.888
+  Cycle:     89 Energy:        -0.365838  Gnorm:      0.001298  CPU:    0.898
+  Cycle:     90 Energy:        -0.365838  Gnorm:      0.001839  CPU:    0.907
+  ** Hessian calculated **
+  Cycle:     91 Energy:        -0.365838  Gnorm:      0.001191  CPU:    0.921
+  Cycle:     92 Energy:        -0.365839  Gnorm:      0.001405  CPU:    0.931
+  Cycle:     93 Energy:        -0.365839  Gnorm:      0.001475  CPU:    0.940
+  Cycle:     94 Energy:        -0.365839  Gnorm:      0.001576  CPU:    0.950
+  Cycle:     95 Energy:        -0.365839  Gnorm:      0.001724  CPU:    0.959
+  Cycle:     96 Energy:        -0.365839  Gnorm:      0.001351  CPU:    0.968
+  Cycle:     97 Energy:        -0.365839  Gnorm:      0.001963  CPU:    0.978
+  Cycle:     98 Energy:        -0.365839  Gnorm:      0.001560  CPU:    0.987
+  Cycle:     99 Energy:        -0.365840  Gnorm:      0.001340  CPU:    0.997
+  Cycle:    100 Energy:        -0.365840  Gnorm:      0.001923  CPU:    1.006
+  ** Hessian calculated **
+  Cycle:    101 Energy:        -0.365840  Gnorm:      0.001168  CPU:    1.020
+  Cycle:    102 Energy:        -0.365840  Gnorm:      0.001282  CPU:    1.030
+  Cycle:    103 Energy:        -0.365840  Gnorm:      0.001999  CPU:    1.039
+  Cycle:    104 Energy:        -0.365840  Gnorm:      0.001459  CPU:    1.049
+  Cycle:    105 Energy:        -0.365840  Gnorm:      0.001916  CPU:    1.058
+  Cycle:    106 Energy:        -0.365840  Gnorm:      0.001373  CPU:    1.067
+  Cycle:    107 Energy:        -0.365841  Gnorm:      0.001470  CPU:    1.077
+  Cycle:    108 Energy:        -0.365841  Gnorm:      0.001334  CPU:    1.086
+  Cycle:    109 Energy:        -0.365841  Gnorm:      0.001302  CPU:    1.096
+  Cycle:    110 Energy:        -0.365841  Gnorm:      0.001708  CPU:    1.105
+  ** Hessian calculated **
+  Cycle:    111 Energy:        -0.365841  Gnorm:      0.001222  CPU:    1.119
+  Cycle:    112 Energy:        -0.365841  Gnorm:      0.001363  CPU:    1.129
+  Cycle:    113 Energy:        -0.365841  Gnorm:      0.001361  CPU:    1.138
+  Cycle:    114 Energy:        -0.365841  Gnorm:      0.001254  CPU:    1.147
+  Cycle:    115 Energy:        -0.365841  Gnorm:      0.001819  CPU:    1.157
+  Cycle:    116 Energy:        -0.365842  Gnorm:      0.001408  CPU:    1.167
+  Cycle:    117 Energy:        -0.365842  Gnorm:      0.001841  CPU:    1.176
+  Cycle:    118 Energy:        -0.365842  Gnorm:      0.001492  CPU:    1.186
+  Cycle:    119 Energy:        -0.365842  Gnorm:      0.001285  CPU:    1.195
+  Cycle:    120 Energy:        -0.365842  Gnorm:      0.001691  CPU:    1.204
+  ** Hessian calculated **
+  Cycle:    121 Energy:        -0.365842  Gnorm:      0.001192  CPU:    1.220
+  Cycle:    122 Energy:        -0.365842  Gnorm:      0.001208  CPU:    1.230
+  Cycle:    123 Energy:        -0.365843  Gnorm:      0.001903  CPU:    1.240
+  Cycle:    124 Energy:        -0.365843  Gnorm:      0.001560  CPU:    1.249
+  Cycle:    125 Energy:        -0.365843  Gnorm:      0.001870  CPU:    1.259
+  Cycle:    126 Energy:        -0.365843  Gnorm:      0.001313  CPU:    1.268
+  Cycle:    127 Energy:        -0.365843  Gnorm:      0.001436  CPU:    1.278
+  Cycle:    128 Energy:        -0.365843  Gnorm:      0.001117  CPU:    1.287
+  Cycle:    129 Energy:        -0.365843  Gnorm:      0.001340  CPU:    1.297
+  Cycle:    130 Energy:        -0.365843  Gnorm:      0.001875  CPU:    1.306
+  ** Hessian calculated **
+  Cycle:    131 Energy:        -0.365844  Gnorm:      0.001343  CPU:    1.320
+  Cycle:    132 Energy:        -0.365844  Gnorm:      0.001244  CPU:    1.329
+  Cycle:    133 Energy:        -0.365844  Gnorm:      0.001206  CPU:    1.338
+  Cycle:    134 Energy:        -0.365844  Gnorm:      0.001383  CPU:    1.348
+  Cycle:    135 Energy:        -0.365844  Gnorm:      0.001410  CPU:    1.357
+  Cycle:    136 Energy:        -0.365844  Gnorm:      0.001702  CPU:    1.367
+  Cycle:    137 Energy:        -0.365844  Gnorm:      0.001737  CPU:    1.376
+  Cycle:    138 Energy:        -0.365845  Gnorm:      0.001334  CPU:    1.386
+  Cycle:    139 Energy:        -0.365845  Gnorm:      0.001095  CPU:    1.395
+  Cycle:    140 Energy:        -0.365845  Gnorm:      0.001602  CPU:    1.405
+  ** Hessian calculated **
+  Cycle:    141 Energy:        -0.365845  Gnorm:      0.001223  CPU:    1.419
+  Cycle:    142 Energy:        -0.365845  Gnorm:      0.001243  CPU:    1.428
+  Cycle:    143 Energy:        -0.365845  Gnorm:      0.001697  CPU:    1.438
+  Cycle:    144 Energy:        -0.365845  Gnorm:      0.001412  CPU:    1.447
+  Cycle:    145 Energy:        -0.365845  Gnorm:      0.001570  CPU:    1.457
+  Cycle:    146 Energy:        -0.365846  Gnorm:      0.001480  CPU:    1.466
+  Cycle:    147 Energy:        -0.365846  Gnorm:      0.001383  CPU:    1.476
+  Cycle:    148 Energy:        -0.365846  Gnorm:      0.001473  CPU:    1.485
+  Cycle:    149 Energy:        -0.365846  Gnorm:      0.001496  CPU:    1.495
+  Cycle:    150 Energy:        -0.365846  Gnorm:      0.001807  CPU:    1.504
+  ** Hessian calculated **
+  Cycle:    151 Energy:        -0.365846  Gnorm:      0.001781  CPU:    1.518
+  Cycle:    152 Energy:        -0.365846  Gnorm:      0.001387  CPU:    1.528
+  Cycle:    153 Energy:        -0.365847  Gnorm:      0.001684  CPU:    1.537
+  Cycle:    154 Energy:        -0.365847  Gnorm:      0.001502  CPU:    1.547
+  Cycle:    155 Energy:        -0.365847  Gnorm:      0.001293  CPU:    1.556
+  Cycle:    156 Energy:        -0.365847  Gnorm:      0.001698  CPU:    1.566
+  Cycle:    157 Energy:        -0.365847  Gnorm:      0.002046  CPU:    1.575
+  Cycle:    158 Energy:        -0.365847  Gnorm:      0.001578  CPU:    1.585
+  Cycle:    159 Energy:        -0.365847  Gnorm:      0.000953  CPU:    1.595
+  Cycle:    160 Energy:        -0.365847  Gnorm:      0.001216  CPU:    1.605
+  ** Hessian calculated **
+  Cycle:    161 Energy:        -0.365848  Gnorm:      0.001029  CPU:    1.619
+  Cycle:    162 Energy:        -0.365848  Gnorm:      0.001128  CPU:    1.629
+  Cycle:    163 Energy:        -0.365848  Gnorm:      0.001530  CPU:    1.638
+  Cycle:    164 Energy:        -0.365848  Gnorm:      0.001130  CPU:    1.648
+  Cycle:    165 Energy:        -0.365848  Gnorm:      0.001493  CPU:    1.657
+  Cycle:    166 Energy:        -0.365848  Gnorm:      0.001764  CPU:    1.667
+  Cycle:    167 Energy:        -0.365848  Gnorm:      0.001843  CPU:    1.676
+  Cycle:    168 Energy:        -0.365848  Gnorm:      0.001542  CPU:    1.686
+  Cycle:    169 Energy:        -0.365849  Gnorm:      0.001339  CPU:    1.696
+  Cycle:    170 Energy:        -0.365849  Gnorm:      0.001656  CPU:    1.705
+  ** Hessian calculated **
+  Cycle:    171 Energy:        -0.365849  Gnorm:      0.001893  CPU:    1.719
+  Cycle:    172 Energy:        -0.365849  Gnorm:      0.001809  CPU:    1.728
+  Cycle:    173 Energy:        -0.365849  Gnorm:      0.001718  CPU:    1.738
+  Cycle:    174 Energy:        -0.365850  Gnorm:      0.001715  CPU:    1.748
+  Cycle:    175 Energy:        -0.365850  Gnorm:      0.001597  CPU:    1.757
+  Cycle:    176 Energy:        -0.365850  Gnorm:      0.001391  CPU:    1.767
+  Cycle:    177 Energy:        -0.365850  Gnorm:      0.001414  CPU:    1.776
+  Cycle:    178 Energy:        -0.365850  Gnorm:      0.001113  CPU:    1.786
+  Cycle:    179 Energy:        -0.365850  Gnorm:      0.000765  CPU:    1.796
+  Cycle:    180 Energy:        -0.365850  Gnorm:      0.001112  CPU:    1.805
+  ** Hessian calculated **
+  Cycle:    181 Energy:        -0.365850  Gnorm:      0.001102  CPU:    1.819
+  Cycle:    182 Energy:        -0.365851  Gnorm:      0.001166  CPU:    1.829
+  Cycle:    183 Energy:        -0.365851  Gnorm:      0.001290  CPU:    1.839
+  Cycle:    184 Energy:        -0.365851  Gnorm:      0.001417  CPU:    1.848
+  Cycle:    185 Energy:        -0.365851  Gnorm:      0.001720  CPU:    1.858
+  Cycle:    186 Energy:        -0.365851  Gnorm:      0.001504  CPU:    1.867
+  Cycle:    187 Energy:        -0.365851  Gnorm:      0.001854  CPU:    1.877
+  Cycle:    188 Energy:        -0.365851  Gnorm:      0.001653  CPU:    1.887
+  Cycle:    189 Energy:        -0.365851  Gnorm:      0.001738  CPU:    1.896
+  Cycle:    190 Energy:        -0.365852  Gnorm:      0.002078  CPU:    1.906
+  ** Hessian calculated **
+  Cycle:    191 Energy:        -0.365852  Gnorm:      0.001493  CPU:    1.920
+  Cycle:    192 Energy:        -0.365852  Gnorm:      0.001590  CPU:    1.929
+  Cycle:    193 Energy:        -0.365852  Gnorm:      0.001792  CPU:    1.939
+  Cycle:    194 Energy:        -0.365852  Gnorm:      0.001805  CPU:    1.949
+  Cycle:    195 Energy:        -0.365852  Gnorm:      0.001562  CPU:    1.958
+  Cycle:    196 Energy:        -0.365853  Gnorm:      0.001463  CPU:    1.968
+  Cycle:    197 Energy:        -0.365853  Gnorm:      0.001667  CPU:    1.978
+  Cycle:    198 Energy:        -0.365853  Gnorm:      0.001745  CPU:    1.988
+  Cycle:    199 Energy:        -0.365853  Gnorm:      0.001203  CPU:    1.999
+  Cycle:    200 Energy:        -0.365853  Gnorm:      0.001569  CPU:    2.010
+  ** Hessian calculated **
+  Cycle:    201 Energy:        -0.365853  Gnorm:      0.001161  CPU:    2.025
+  Cycle:    202 Energy:        -0.365853  Gnorm:      0.001216  CPU:    2.035
+  Cycle:    203 Energy:        -0.365853  Gnorm:      0.001304  CPU:    2.045
+  Cycle:    204 Energy:        -0.365853  Gnorm:      0.001429  CPU:    2.054
+  Cycle:    205 Energy:        -0.365854  Gnorm:      0.001662  CPU:    2.064
+  Cycle:    206 Energy:        -0.365854  Gnorm:      0.001563  CPU:    2.074
+  Cycle:    207 Energy:        -0.365854  Gnorm:      0.001756  CPU:    2.084
+  Cycle:    208 Energy:        -0.365854  Gnorm:      0.001794  CPU:    2.093
+  Cycle:    209 Energy:        -0.365854  Gnorm:      0.001331  CPU:    2.103
+  Cycle:    210 Energy:        -0.365854  Gnorm:      0.002004  CPU:    2.113
+  ** Hessian calculated **
+  Cycle:    211 Energy:        -0.365855  Gnorm:      0.001537  CPU:    2.128
+  Cycle:    212 Energy:        -0.365855  Gnorm:      0.001797  CPU:    2.139
+  Cycle:    213 Energy:        -0.365855  Gnorm:      0.001755  CPU:    2.149
+  Cycle:    214 Energy:        -0.365855  Gnorm:      0.001955  CPU:    2.158
+  Cycle:    215 Energy:        -0.365855  Gnorm:      0.001801  CPU:    2.168
+  Cycle:    216 Energy:        -0.365855  Gnorm:      0.001205  CPU:    2.178
+  Cycle:    217 Energy:        -0.365855  Gnorm:      0.001837  CPU:    2.187
+  Cycle:    218 Energy:        -0.365856  Gnorm:      0.001313  CPU:    2.197
+  Cycle:    219 Energy:        -0.365856  Gnorm:      0.001247  CPU:    2.207
+  Cycle:    220 Energy:        -0.365856  Gnorm:      0.001574  CPU:    2.216
+  ** Hessian calculated **
+  Cycle:    221 Energy:        -0.365856  Gnorm:      0.001111  CPU:    2.230
+  Cycle:    222 Energy:        -0.365856  Gnorm:      0.001337  CPU:    2.240
+  Cycle:    223 Energy:        -0.365856  Gnorm:      0.001260  CPU:    2.250
+  Cycle:    224 Energy:        -0.365856  Gnorm:      0.001350  CPU:    2.260
+  Cycle:    225 Energy:        -0.365856  Gnorm:      0.001607  CPU:    2.270
+  Cycle:    226 Energy:        -0.365856  Gnorm:      0.002130  CPU:    2.279
+  Cycle:    227 Energy:        -0.365857  Gnorm:      0.001654  CPU:    2.289
+  Cycle:    228 Energy:        -0.365857  Gnorm:      0.002129  CPU:    2.298
+  Cycle:    229 Energy:        -0.365857  Gnorm:      0.001911  CPU:    2.308
+  Cycle:    230 Energy:        -0.365857  Gnorm:      0.002744  CPU:    2.318
+  ** Hessian calculated **
+  Cycle:    231 Energy:        -0.365857  Gnorm:      0.001473  CPU:    2.332
+  Cycle:    232 Energy:        -0.365857  Gnorm:      0.002012  CPU:    2.341
+  Cycle:    233 Energy:        -0.365857  Gnorm:      0.001557  CPU:    2.351
+  Cycle:    234 Energy:        -0.365858  Gnorm:      0.001481  CPU:    2.361
+  Cycle:    235 Energy:        -0.365858  Gnorm:      0.001569  CPU:    2.370
+  Cycle:    236 Energy:        -0.365858  Gnorm:      0.001567  CPU:    2.380
+  Cycle:    237 Energy:        -0.365858  Gnorm:      0.001872  CPU:    2.389
+  Cycle:    238 Energy:        -0.365858  Gnorm:      0.001300  CPU:    2.399
+  Cycle:    239 Energy:        -0.365858  Gnorm:      0.001178  CPU:    2.408
+  Cycle:    240 Energy:        -0.365858  Gnorm:      0.001217  CPU:    2.418
+  ** Hessian calculated **
+  Cycle:    241 Energy:        -0.365858  Gnorm:      0.000926  CPU:    2.432
+  Cycle:    242 Energy:        -0.365859  Gnorm:      0.001315  CPU:    2.442
+  Cycle:    243 Energy:        -0.365859  Gnorm:      0.001206  CPU:    2.451
+  Cycle:    244 Energy:        -0.365859  Gnorm:      0.001235  CPU:    2.461
+  Cycle:    245 Energy:        -0.365859  Gnorm:      0.001625  CPU:    2.471
+  Cycle:    246 Energy:        -0.365859  Gnorm:      0.001662  CPU:    2.480
+  Cycle:    247 Energy:        -0.365859  Gnorm:      0.001704  CPU:    2.490
+  Cycle:    248 Energy:        -0.365859  Gnorm:      0.001911  CPU:    2.500
+  Cycle:    249 Energy:        -0.365860  Gnorm:      0.001951  CPU:    2.509
+  Cycle:    250 Energy:        -0.365860  Gnorm:      0.001787  CPU:    2.519
+  ** Hessian calculated **
+  Cycle:    251 Energy:        -0.365860  Gnorm:      0.002388  CPU:    2.533
+  Cycle:    252 Energy:        -0.365860  Gnorm:      0.001490  CPU:    2.543
+  Cycle:    253 Energy:        -0.365860  Gnorm:      0.001442  CPU:    2.553
+  Cycle:    254 Energy:        -0.365860  Gnorm:      0.001660  CPU:    2.562
+  Cycle:    255 Energy:        -0.365860  Gnorm:      0.001283  CPU:    2.572
+  Cycle:    256 Energy:        -0.365861  Gnorm:      0.001627  CPU:    2.582
+  Cycle:    257 Energy:        -0.365861  Gnorm:      0.001518  CPU:    2.591
+  Cycle:    258 Energy:        -0.365861  Gnorm:      0.001501  CPU:    2.601
+  Cycle:    259 Energy:        -0.365861  Gnorm:      0.000897  CPU:    2.611
+  Cycle:    260 Energy:        -0.365861  Gnorm:      0.001901  CPU:    2.620
+  ** Hessian calculated **
+  Cycle:    261 Energy:        -0.365861  Gnorm:      0.000857  CPU:    2.635
+  Cycle:    262 Energy:        -0.365861  Gnorm:      0.001481  CPU:    2.644
+  Cycle:    263 Energy:        -0.365861  Gnorm:      0.001265  CPU:    2.654
+  Cycle:    264 Energy:        -0.365861  Gnorm:      0.001420  CPU:    2.664
+  Cycle:    265 Energy:        -0.365862  Gnorm:      0.000936  CPU:    2.673
+  Cycle:    266 Energy:        -0.365862  Gnorm:      0.001167  CPU:    2.683
+  Cycle:    267 Energy:        -0.365862  Gnorm:      0.001371  CPU:    2.693
+  Cycle:    268 Energy:        -0.365862  Gnorm:      0.001529  CPU:    2.702
+  Cycle:    269 Energy:        -0.365862  Gnorm:      0.001617  CPU:    2.712
+  Cycle:    270 Energy:        -0.365862  Gnorm:      0.001623  CPU:    2.722
+  ** Hessian calculated **
+  Cycle:    271 Energy:        -0.365863  Gnorm:      0.002093  CPU:    2.736
+  Cycle:    272 Energy:        -0.365863  Gnorm:      0.001325  CPU:    2.746
+  Cycle:    273 Energy:        -0.365863  Gnorm:      0.001166  CPU:    2.756
+  Cycle:    274 Energy:        -0.365863  Gnorm:      0.001482  CPU:    2.765
+  Cycle:    275 Energy:        -0.365863  Gnorm:      0.001220  CPU:    2.775
+  Cycle:    276 Energy:        -0.365863  Gnorm:      0.000928  CPU:    2.785
+  Cycle:    277 Energy:        -0.365863  Gnorm:      0.001114  CPU:    2.795
+  Cycle:    278 Energy:        -0.365864  Gnorm:      0.001392  CPU:    2.804
+  Cycle:    279 Energy:        -0.365864  Gnorm:      0.001722  CPU:    2.814
+  Cycle:    280 Energy:        -0.365864  Gnorm:      0.001561  CPU:    2.824
+  ** Hessian calculated **
+  Cycle:    281 Energy:        -0.365864  Gnorm:      0.001468  CPU:    2.838
+  Cycle:    282 Energy:        -0.365864  Gnorm:      0.001231  CPU:    2.848
+  Cycle:    283 Energy:        -0.365864  Gnorm:      0.001127  CPU:    2.858
+  Cycle:    284 Energy:        -0.365864  Gnorm:      0.001357  CPU:    2.868
+  Cycle:    285 Energy:        -0.365864  Gnorm:      0.000976  CPU:    2.877
+  Cycle:    286 Energy:        -0.365865  Gnorm:      0.000844  CPU:    2.887
+  Cycle:    287 Energy:        -0.365865  Gnorm:      0.001178  CPU:    2.896
+  Cycle:    288 Energy:        -0.365865  Gnorm:      0.001333  CPU:    2.906
+  Cycle:    289 Energy:        -0.365865  Gnorm:      0.001982  CPU:    2.916
+  Cycle:    290 Energy:        -0.365865  Gnorm:      0.001813  CPU:    2.926
+  ** Hessian calculated **
+  Cycle:    291 Energy:        -0.365865  Gnorm:      0.001677  CPU:    2.940
+  Cycle:    292 Energy:        -0.365865  Gnorm:      0.001520  CPU:    2.950
+  Cycle:    293 Energy:        -0.365866  Gnorm:      0.001086  CPU:    2.960
+  Cycle:    294 Energy:        -0.365866  Gnorm:      0.000973  CPU:    2.970
+  Cycle:    295 Energy:        -0.365866  Gnorm:      0.001315  CPU:    2.980
+  Cycle:    296 Energy:        -0.365866  Gnorm:      0.001283  CPU:    2.990
+  Cycle:    297 Energy:        -0.365866  Gnorm:      0.001272  CPU:    3.000
+  Cycle:    298 Energy:        -0.365866  Gnorm:      0.001132  CPU:    3.010
+  Cycle:    299 Energy:        -0.365866  Gnorm:      0.001625  CPU:    3.019
+  Cycle:    300 Energy:        -0.365866  Gnorm:      0.001436  CPU:    3.030
+  ** Hessian calculated **
+  Cycle:    301 Energy:        -0.365867  Gnorm:      0.000850  CPU:    3.044
+  Cycle:    302 Energy:        -0.365867  Gnorm:      0.001359  CPU:    3.054
+  Cycle:    303 Energy:        -0.365867  Gnorm:      0.000726  CPU:    3.064
+  Cycle:    304 Energy:        -0.365867  Gnorm:      0.000985  CPU:    3.074
+  Cycle:    305 Energy:        -0.365867  Gnorm:      0.001102  CPU:    3.083
+  Cycle:    306 Energy:        -0.365867  Gnorm:      0.001236  CPU:    3.093
+  Cycle:    307 Energy:        -0.365867  Gnorm:      0.001370  CPU:    3.103
+  Cycle:    308 Energy:        -0.365868  Gnorm:      0.001814  CPU:    3.113
+  Cycle:    309 Energy:        -0.365868  Gnorm:      0.002252  CPU:    3.123
+  Cycle:    310 Energy:        -0.365868  Gnorm:      0.002790  CPU:    3.133
+  ** Hessian calculated **
+  Cycle:    311 Energy:        -0.365868  Gnorm:      0.002227  CPU:    3.147
+  Cycle:    312 Energy:        -0.365869  Gnorm:      0.002300  CPU:    3.157
+  Cycle:    313 Energy:        -0.365869  Gnorm:      0.001731  CPU:    3.167
+  Cycle:    314 Energy:        -0.365869  Gnorm:      0.002677  CPU:    3.177
+  Cycle:    315 Energy:        -0.365869  Gnorm:      0.001800  CPU:    3.187
+  Cycle:    316 Energy:        -0.365869  Gnorm:      0.001385  CPU:    3.197
+  Cycle:    317 Energy:        -0.365870  Gnorm:      0.001509  CPU:    3.207
+  Cycle:    318 Energy:        -0.365870  Gnorm:      0.001364  CPU:    3.217
+  Cycle:    319 Energy:        -0.365870  Gnorm:      0.000957  CPU:    3.226
+  Cycle:    320 Energy:        -0.365870  Gnorm:      0.001285  CPU:    3.236
+  ** Hessian calculated **
+  Cycle:    321 Energy:        -0.365870  Gnorm:      0.000792  CPU:    3.251
+  Cycle:    322 Energy:        -0.365870  Gnorm:      0.000983  CPU:    3.261
+  Cycle:    323 Energy:        -0.365870  Gnorm:      0.000698  CPU:    3.271
+  Cycle:    324 Energy:        -0.365870  Gnorm:      0.001175  CPU:    3.281
+  Cycle:    325 Energy:        -0.365870  Gnorm:      0.001521  CPU:    3.290
+  Cycle:    326 Energy:        -0.365870  Gnorm:      0.001515  CPU:    3.300
+  Cycle:    327 Energy:        -0.365871  Gnorm:      0.002264  CPU:    3.310
+  Cycle:    328 Energy:        -0.365871  Gnorm:      0.002539  CPU:    3.320
+  Cycle:    329 Energy:        -0.365871  Gnorm:      0.002854  CPU:    3.330
+  Cycle:    330 Energy:        -0.365872  Gnorm:      0.002890  CPU:    3.340
+  ** Hessian calculated **
+  Cycle:    331 Energy:        -0.365872  Gnorm:      0.002480  CPU:    3.354
+  Cycle:    332 Energy:        -0.365872  Gnorm:      0.002369  CPU:    3.364
+  Cycle:    333 Energy:        -0.365872  Gnorm:      0.001948  CPU:    3.374
+  Cycle:    334 Energy:        -0.365872  Gnorm:      0.001492  CPU:    3.384
+  Cycle:    335 Energy:        -0.365873  Gnorm:      0.001228  CPU:    3.394
+  Cycle:    336 Energy:        -0.365873  Gnorm:      0.001110  CPU:    3.404
+  Cycle:    337 Energy:        -0.365873  Gnorm:      0.001036  CPU:    3.414
+  Cycle:    338 Energy:        -0.365873  Gnorm:      0.001147  CPU:    3.424
+  Cycle:    339 Energy:        -0.365873  Gnorm:      0.001205  CPU:    3.434
+  Cycle:    340 Energy:        -0.365873  Gnorm:      0.001436  CPU:    3.444
+  ** Hessian calculated **
+  Cycle:    341 Energy:        -0.365873  Gnorm:      0.000893  CPU:    3.459
+  Cycle:    342 Energy:        -0.365873  Gnorm:      0.000950  CPU:    3.469
+  Cycle:    343 Energy:        -0.365873  Gnorm:      0.000709  CPU:    3.479
+  Cycle:    344 Energy:        -0.365874  Gnorm:      0.001421  CPU:    3.489
+  Cycle:    345 Energy:        -0.365874  Gnorm:      0.001024  CPU:    3.499
+  Cycle:    346 Energy:        -0.365874  Gnorm:      0.001073  CPU:    3.509
+  Cycle:    347 Energy:        -0.365874  Gnorm:      0.001368  CPU:    3.519
+  Cycle:    348 Energy:        -0.365874  Gnorm:      0.001783  CPU:    3.528
+  Cycle:    349 Energy:        -0.365875  Gnorm:      0.002228  CPU:    3.539
+  Cycle:    350 Energy:        -0.365875  Gnorm:      0.002943  CPU:    3.549
+  ** Hessian calculated **
+  Cycle:    351 Energy:        -0.365875  Gnorm:      0.002525  CPU:    3.563
+  Cycle:    352 Energy:        -0.365875  Gnorm:      0.002629  CPU:    3.573
+  Cycle:    353 Energy:        -0.365876  Gnorm:      0.001642  CPU:    3.583
+  Cycle:    354 Energy:        -0.365876  Gnorm:      0.001729  CPU:    3.593
+  Cycle:    355 Energy:        -0.365877  Gnorm:      0.001391  CPU:    3.603
+  Cycle:    356 Energy:        -0.365877  Gnorm:      0.001329  CPU:    3.613
+  Cycle:    357 Energy:        -0.365877  Gnorm:      0.001209  CPU:    3.623
+  Cycle:    358 Energy:        -0.365877  Gnorm:      0.000856  CPU:    3.633
+  Cycle:    359 Energy:        -0.365877  Gnorm:      0.001072  CPU:    3.643
+  Cycle:    360 Energy:        -0.365877  Gnorm:      0.000847  CPU:    3.653
+  ** Hessian calculated **
+  Cycle:    361 Energy:        -0.365877  Gnorm:      0.001060  CPU:    3.668
+  Cycle:    362 Energy:        -0.365877  Gnorm:      0.000761  CPU:    3.678
+  Cycle:    363 Energy:        -0.365877  Gnorm:      0.000845  CPU:    3.688
+  Cycle:    364 Energy:        -0.365877  Gnorm:      0.001242  CPU:    3.698
+  Cycle:    365 Energy:        -0.365877  Gnorm:      0.001051  CPU:    3.707
+  Cycle:    366 Energy:        -0.365878  Gnorm:      0.000872  CPU:    3.717
+  Cycle:    367 Energy:        -0.365878  Gnorm:      0.001194  CPU:    3.727
+  Cycle:    368 Energy:        -0.365878  Gnorm:      0.001570  CPU:    3.737
+  Cycle:    369 Energy:        -0.365879  Gnorm:      0.002089  CPU:    3.747
+  Cycle:    370 Energy:        -0.365879  Gnorm:      0.002651  CPU:    3.758
+  ** Hessian calculated **
+  Cycle:    371 Energy:        -0.365880  Gnorm:      0.003350  CPU:    3.772
+  Cycle:    372 Energy:        -0.365880  Gnorm:      0.002064  CPU:    3.782
+  Cycle:    373 Energy:        -0.365880  Gnorm:      0.002288  CPU:    3.792
+  Cycle:    374 Energy:        -0.365880  Gnorm:      0.001938  CPU:    3.802
+  Cycle:    375 Energy:        -0.365881  Gnorm:      0.000967  CPU:    3.812
+  Cycle:    376 Energy:        -0.365881  Gnorm:      0.000890  CPU:    3.822
+  Cycle:    377 Energy:        -0.365881  Gnorm:      0.000884  CPU:    3.832
+  Cycle:    378 Energy:        -0.365881  Gnorm:      0.001322  CPU:    3.842
+  Cycle:    379 Energy:        -0.365881  Gnorm:      0.000951  CPU:    3.852
+  Cycle:    380 Energy:        -0.365881  Gnorm:      0.001553  CPU:    3.862
+  ** Hessian calculated **
+  Cycle:    381 Energy:        -0.365881  Gnorm:      0.000839  CPU:    3.876
+  Cycle:    382 Energy:        -0.365881  Gnorm:      0.001188  CPU:    3.886
+  Cycle:    383 Energy:        -0.365881  Gnorm:      0.000625  CPU:    3.896
+  Cycle:    384 Energy:        -0.365881  Gnorm:      0.001234  CPU:    3.906
+  Cycle:    385 Energy:        -0.365882  Gnorm:      0.001022  CPU:    3.916
+  Cycle:    386 Energy:        -0.365882  Gnorm:      0.000764  CPU:    3.926
+  Cycle:    387 Energy:        -0.365882  Gnorm:      0.000932  CPU:    3.936
+  Cycle:    388 Energy:        -0.365882  Gnorm:      0.001245  CPU:    3.946
+  Cycle:    389 Energy:        -0.365883  Gnorm:      0.001646  CPU:    3.956
+  Cycle:    390 Energy:        -0.365883  Gnorm:      0.002327  CPU:    3.966
+  ** Hessian calculated **
+  Cycle:    391 Energy:        -0.365883  Gnorm:      0.002318  CPU:    3.981
+  Cycle:    392 Energy:        -0.365883  Gnorm:      0.001896  CPU:    3.991
+  Cycle:    393 Energy:        -0.365884  Gnorm:      0.002541  CPU:    4.001
+  Cycle:    394 Energy:        -0.365884  Gnorm:      0.002137  CPU:    4.011
+  Cycle:    395 Energy:        -0.365884  Gnorm:      0.001668  CPU:    4.021
+  Cycle:    396 Energy:        -0.365884  Gnorm:      0.000663  CPU:    4.031
+  Cycle:    397 Energy:        -0.365884  Gnorm:      0.000909  CPU:    4.041
+  Cycle:    398 Energy:        -0.365884  Gnorm:      0.000850  CPU:    4.051
+  Cycle:    399 Energy:        -0.365885  Gnorm:      0.000940  CPU:    4.061
+  Cycle:    400 Energy:        -0.365885  Gnorm:      0.001073  CPU:    4.071
+  ** Hessian calculated **
+  Cycle:    401 Energy:        -0.365885  Gnorm:      0.000709  CPU:    4.085
+  Cycle:    402 Energy:        -0.365885  Gnorm:      0.000573  CPU:    4.095
+  Cycle:    403 Energy:        -0.365885  Gnorm:      0.000771  CPU:    4.105
+  Cycle:    404 Energy:        -0.365885  Gnorm:      0.000874  CPU:    4.115
+  Cycle:    405 Energy:        -0.365885  Gnorm:      0.001015  CPU:    4.125
+  Cycle:    406 Energy:        -0.365885  Gnorm:      0.001093  CPU:    4.135
+  Cycle:    407 Energy:        -0.365885  Gnorm:      0.001392  CPU:    4.145
+  Cycle:    408 Energy:        -0.365886  Gnorm:      0.001677  CPU:    4.155
+  Cycle:    409 Energy:        -0.365886  Gnorm:      0.002263  CPU:    4.166
+  Cycle:    410 Energy:        -0.365887  Gnorm:      0.002888  CPU:    4.176
+  ** Hessian calculated **
+  Cycle:    411 Energy:        -0.365888  Gnorm:      0.003764  CPU:    4.190
+  Cycle:    412 Energy:        -0.365888  Gnorm:      0.002167  CPU:    4.200
+  Cycle:    413 Energy:        -0.365889  Gnorm:      0.002657  CPU:    4.210
+  Cycle:    414 Energy:        -0.365889  Gnorm:      0.002124  CPU:    4.220
+  Cycle:    415 Energy:        -0.365889  Gnorm:      0.001746  CPU:    4.230
+  Cycle:    416 Energy:        -0.365889  Gnorm:      0.002186  CPU:    4.240
+  Cycle:    417 Energy:        -0.365889  Gnorm:      0.001573  CPU:    4.250
+  Cycle:    418 Energy:        -0.365890  Gnorm:      0.000676  CPU:    4.260
+  Cycle:    419 Energy:        -0.365890  Gnorm:      0.001170  CPU:    4.270
+  Cycle:    420 Energy:        -0.365890  Gnorm:      0.001284  CPU:    4.280
+  ** Hessian calculated **
+  Cycle:    421 Energy:        -0.365890  Gnorm:      0.000812  CPU:    4.295
+  Cycle:    422 Energy:        -0.365890  Gnorm:      0.000844  CPU:    4.305
+  Cycle:    423 Energy:        -0.365890  Gnorm:      0.000853  CPU:    4.315
+  Cycle:    424 Energy:        -0.365890  Gnorm:      0.000857  CPU:    4.325
+  Cycle:    425 Energy:        -0.365890  Gnorm:      0.000952  CPU:    4.335
+  Cycle:    426 Energy:        -0.365890  Gnorm:      0.001053  CPU:    4.345
+  Cycle:    427 Energy:        -0.365890  Gnorm:      0.001260  CPU:    4.355
+  Cycle:    428 Energy:        -0.365891  Gnorm:      0.001976  CPU:    4.365
+  Cycle:    429 Energy:        -0.365891  Gnorm:      0.002358  CPU:    4.375
+  Cycle:    430 Energy:        -0.365891  Gnorm:      0.002608  CPU:    4.385
+  ** Hessian calculated **
+  Cycle:    431 Energy:        -0.365892  Gnorm:      0.002630  CPU:    4.399
+  Cycle:    432 Energy:        -0.365892  Gnorm:      0.002164  CPU:    4.409
+  Cycle:    433 Energy:        -0.365892  Gnorm:      0.002143  CPU:    4.419
+  Cycle:    434 Energy:        -0.365893  Gnorm:      0.002272  CPU:    4.429
+  Cycle:    435 Energy:        -0.365893  Gnorm:      0.001711  CPU:    4.439
+  Cycle:    436 Energy:        -0.365893  Gnorm:      0.000962  CPU:    4.449
+  Cycle:    437 Energy:        -0.365893  Gnorm:      0.001042  CPU:    4.459
+  Cycle:    438 Energy:        -0.365893  Gnorm:      0.000883  CPU:    4.469
+  Cycle:    439 Energy:        -0.365893  Gnorm:      0.001048  CPU:    4.479
+  Cycle:    440 Energy:        -0.365893  Gnorm:      0.001144  CPU:    4.489
+  ** Hessian calculated **
+  Cycle:    441 Energy:        -0.365894  Gnorm:      0.001169  CPU:    4.503
+  Cycle:    442 Energy:        -0.365894  Gnorm:      0.001094  CPU:    4.513
+  Cycle:    443 Energy:        -0.365894  Gnorm:      0.001294  CPU:    4.523
+  Cycle:    444 Energy:        -0.365894  Gnorm:      0.000956  CPU:    4.533
+  Cycle:    445 Energy:        -0.365894  Gnorm:      0.001197  CPU:    4.543
+  Cycle:    446 Energy:        -0.365894  Gnorm:      0.001324  CPU:    4.553
+  Cycle:    447 Energy:        -0.365894  Gnorm:      0.001545  CPU:    4.563
+  Cycle:    448 Energy:        -0.365895  Gnorm:      0.001542  CPU:    4.573
+  Cycle:    449 Energy:        -0.365895  Gnorm:      0.001921  CPU:    4.583
+  Cycle:    450 Energy:        -0.365895  Gnorm:      0.002810  CPU:    4.593
+  ** Hessian calculated **
+  Cycle:    451 Energy:        -0.365896  Gnorm:      0.002626  CPU:    4.608
+  Cycle:    452 Energy:        -0.365896  Gnorm:      0.002264  CPU:    4.618
+  Cycle:    453 Energy:        -0.365896  Gnorm:      0.002193  CPU:    4.628
+  Cycle:    454 Energy:        -0.365897  Gnorm:      0.002294  CPU:    4.638
+  Cycle:    455 Energy:        -0.365897  Gnorm:      0.002206  CPU:    4.648
+  Cycle:    456 Energy:        -0.365897  Gnorm:      0.001044  CPU:    4.658
+  Cycle:    457 Energy:        -0.365897  Gnorm:      0.001052  CPU:    4.668
+  Cycle:    458 Energy:        -0.365897  Gnorm:      0.000767  CPU:    4.678
+  Cycle:    459 Energy:        -0.365897  Gnorm:      0.001467  CPU:    4.688
+  Cycle:    460 Energy:        -0.365897  Gnorm:      0.001535  CPU:    4.698
+  ** Hessian calculated **
+  Cycle:    461 Energy:        -0.365898  Gnorm:      0.001005  CPU:    4.713
+  Cycle:    462 Energy:        -0.365898  Gnorm:      0.001053  CPU:    4.723
+  Cycle:    463 Energy:        -0.365898  Gnorm:      0.001122  CPU:    4.733
+  Cycle:    464 Energy:        -0.365898  Gnorm:      0.001090  CPU:    4.743
+  Cycle:    465 Energy:        -0.365898  Gnorm:      0.000707  CPU:    4.753
+  Cycle:    466 Energy:        -0.365898  Gnorm:      0.001259  CPU:    4.763
+  Cycle:    467 Energy:        -0.365898  Gnorm:      0.001535  CPU:    4.773
+  Cycle:    468 Energy:        -0.365899  Gnorm:      0.001868  CPU:    4.783
+  Cycle:    469 Energy:        -0.365899  Gnorm:      0.002337  CPU:    4.794
+  Cycle:    470 Energy:        -0.365899  Gnorm:      0.003473  CPU:    4.804
+  ** Hessian calculated **
+  Cycle:    471 Energy:        -0.365900  Gnorm:      0.002932  CPU:    4.818
+  Cycle:    472 Energy:        -0.365900  Gnorm:      0.002174  CPU:    4.828
+  Cycle:    473 Energy:        -0.365900  Gnorm:      0.002143  CPU:    4.838
+  Cycle:    474 Energy:        -0.365901  Gnorm:      0.002352  CPU:    4.848
+  Cycle:    475 Energy:        -0.365901  Gnorm:      0.002557  CPU:    4.858
+  Cycle:    476 Energy:        -0.365901  Gnorm:      0.001320  CPU:    4.868
+  Cycle:    477 Energy:        -0.365901  Gnorm:      0.000932  CPU:    4.878
+  Cycle:    478 Energy:        -0.365901  Gnorm:      0.000862  CPU:    4.888
+  Cycle:    479 Energy:        -0.365901  Gnorm:      0.001302  CPU:    4.898
+  Cycle:    480 Energy:        -0.365902  Gnorm:      0.001210  CPU:    4.908
+  ** Hessian calculated **
+  Cycle:    481 Energy:        -0.365902  Gnorm:      0.001109  CPU:    4.923
+  Cycle:    482 Energy:        -0.365902  Gnorm:      0.000913  CPU:    4.933
+  Cycle:    483 Energy:        -0.365902  Gnorm:      0.001221  CPU:    4.943
+  Cycle:    484 Energy:        -0.365902  Gnorm:      0.000942  CPU:    4.953
+  Cycle:    485 Energy:        -0.365902  Gnorm:      0.001075  CPU:    4.963
+  Cycle:    486 Energy:        -0.365902  Gnorm:      0.001523  CPU:    4.973
+  Cycle:    487 Energy:        -0.365902  Gnorm:      0.001947  CPU:    4.984
+  Cycle:    488 Energy:        -0.365903  Gnorm:      0.002133  CPU:    4.994
+  Cycle:    489 Energy:        -0.365903  Gnorm:      0.002565  CPU:    5.004
+  Cycle:    490 Energy:        -0.365904  Gnorm:      0.003370  CPU:    5.014
+  ** Hessian calculated **
+  Cycle:    491 Energy:        -0.365904  Gnorm:      0.003092  CPU:    5.029
+  Cycle:    492 Energy:        -0.365904  Gnorm:      0.002818  CPU:    5.039
+  Cycle:    493 Energy:        -0.365905  Gnorm:      0.001979  CPU:    5.049
+  Cycle:    494 Energy:        -0.365905  Gnorm:      0.002279  CPU:    5.059
+  Cycle:    495 Energy:        -0.365906  Gnorm:      0.002138  CPU:    5.069
+  Cycle:    496 Energy:        -0.365906  Gnorm:      0.001580  CPU:    5.079
+  Cycle:    497 Energy:        -0.365906  Gnorm:      0.000792  CPU:    5.090
+  Cycle:    498 Energy:        -0.365906  Gnorm:      0.000804  CPU:    5.100
+  Cycle:    499 Energy:        -0.365906  Gnorm:      0.000724  CPU:    5.110
+  Cycle:    500 Energy:        -0.365906  Gnorm:      0.000689  CPU:    5.120
+  ** Hessian calculated **
+  Cycle:    501 Energy:        -0.365906  Gnorm:      0.000711  CPU:    5.135
+  Cycle:    502 Energy:        -0.365906  Gnorm:      0.000663  CPU:    5.145
+  Cycle:    503 Energy:        -0.365906  Gnorm:      0.000701  CPU:    5.155
+  Cycle:    504 Energy:        -0.365906  Gnorm:      0.000883  CPU:    5.165
+  Cycle:    505 Energy:        -0.365907  Gnorm:      0.001263  CPU:    5.175
+  Cycle:    506 Energy:        -0.365907  Gnorm:      0.001303  CPU:    5.185
+  Cycle:    507 Energy:        -0.365907  Gnorm:      0.001717  CPU:    5.195
+  Cycle:    508 Energy:        -0.365907  Gnorm:      0.001897  CPU:    5.205
+  Cycle:    509 Energy:        -0.365908  Gnorm:      0.002263  CPU:    5.216
+  Cycle:    510 Energy:        -0.365909  Gnorm:      0.002880  CPU:    5.225
+  ** Hessian calculated **
+  Cycle:    511 Energy:        -0.365909  Gnorm:      0.003819  CPU:    5.240
+  Cycle:    512 Energy:        -0.365910  Gnorm:      0.002738  CPU:    5.250
+  Cycle:    513 Energy:        -0.365910  Gnorm:      0.002980  CPU:    5.261
+  Cycle:    514 Energy:        -0.365910  Gnorm:      0.002775  CPU:    5.271
+  Cycle:    515 Energy:        -0.365911  Gnorm:      0.002112  CPU:    5.281
+  Cycle:    516 Energy:        -0.365911  Gnorm:      0.001917  CPU:    5.291
+  Cycle:    517 Energy:        -0.365911  Gnorm:      0.001274  CPU:    5.301
+  Cycle:    518 Energy:        -0.365911  Gnorm:      0.001060  CPU:    5.311
+  Cycle:    519 Energy:        -0.365911  Gnorm:      0.000768  CPU:    5.321
+  Cycle:    520 Energy:        -0.365911  Gnorm:      0.001110  CPU:    5.331
+  ** Hessian calculated **
+  Cycle:    521 Energy:        -0.365911  Gnorm:      0.000907  CPU:    5.346
+  Cycle:    522 Energy:        -0.365911  Gnorm:      0.000776  CPU:    5.356
+  Cycle:    523 Energy:        -0.365912  Gnorm:      0.000890  CPU:    5.366
+  Cycle:    524 Energy:        -0.365912  Gnorm:      0.001287  CPU:    5.376
+  Cycle:    525 Energy:        -0.365912  Gnorm:      0.001346  CPU:    5.386
+  Cycle:    526 Energy:        -0.365912  Gnorm:      0.001416  CPU:    5.396
+  Cycle:    527 Energy:        -0.365912  Gnorm:      0.001986  CPU:    5.406
+  Cycle:    528 Energy:        -0.365913  Gnorm:      0.003247  CPU:    5.416
+  Cycle:    529 Energy:        -0.365913  Gnorm:      0.003211  CPU:    5.427
+  Cycle:    530 Energy:        -0.365913  Gnorm:      0.003546  CPU:    5.437
+  ** Hessian calculated **
+  Cycle:    531 Energy:        -0.365914  Gnorm:      0.002805  CPU:    5.451
+  Cycle:    532 Energy:        -0.365914  Gnorm:      0.002952  CPU:    5.462
+  Cycle:    533 Energy:        -0.365914  Gnorm:      0.001891  CPU:    5.472
+  Cycle:    534 Energy:        -0.365915  Gnorm:      0.002409  CPU:    5.482
+  Cycle:    535 Energy:        -0.365915  Gnorm:      0.002376  CPU:    5.492
+  Cycle:    536 Energy:        -0.365915  Gnorm:      0.001512  CPU:    5.502
+  Cycle:    537 Energy:        -0.365915  Gnorm:      0.001792  CPU:    5.512
+  Cycle:    538 Energy:        -0.365915  Gnorm:      0.000918  CPU:    5.522
+  Cycle:    539 Energy:        -0.365915  Gnorm:      0.000925  CPU:    5.532
+  Cycle:    540 Energy:        -0.365915  Gnorm:      0.000928  CPU:    5.543
+  ** Hessian calculated **
+  Cycle:    541 Energy:        -0.365915  Gnorm:      0.000837  CPU:    5.557
+  Cycle:    542 Energy:        -0.365915  Gnorm:      0.000878  CPU:    5.567
+  Cycle:    543 Energy:        -0.365916  Gnorm:      0.001039  CPU:    5.577
+  Cycle:    544 Energy:        -0.365916  Gnorm:      0.001083  CPU:    5.588
+  Cycle:    545 Energy:        -0.365916  Gnorm:      0.001053  CPU:    5.598
+  Cycle:    546 Energy:        -0.365916  Gnorm:      0.001305  CPU:    5.608
+  Cycle:    547 Energy:        -0.365916  Gnorm:      0.001945  CPU:    5.618
+  Cycle:    548 Energy:        -0.365916  Gnorm:      0.002690  CPU:    5.628
+  Cycle:    549 Energy:        -0.365917  Gnorm:      0.003566  CPU:    5.638
+  Cycle:    550 Energy:        -0.365917  Gnorm:      0.003055  CPU:    5.648
+  ** Hessian calculated **
+  Cycle:    551 Energy:        -0.365917  Gnorm:      0.002277  CPU:    5.663
+  Cycle:    552 Energy:        -0.365918  Gnorm:      0.003207  CPU:    5.673
+  Cycle:    553 Energy:        -0.365918  Gnorm:      0.001539  CPU:    5.683
+  Cycle:    554 Energy:        -0.365918  Gnorm:      0.001278  CPU:    5.693
+  Cycle:    555 Energy:        -0.365918  Gnorm:      0.001379  CPU:    5.703
+  Cycle:    556 Energy:        -0.365919  Gnorm:      0.001139  CPU:    5.713
+  Cycle:    557 Energy:        -0.365919  Gnorm:      0.001091  CPU:    5.723
+  Cycle:    558 Energy:        -0.365919  Gnorm:      0.000775  CPU:    5.734
+  Cycle:    559 Energy:        -0.365919  Gnorm:      0.001456  CPU:    5.744
+  Cycle:    560 Energy:        -0.365919  Gnorm:      0.001277  CPU:    5.754
+  ** Hessian calculated **
+  Cycle:    561 Energy:        -0.365919  Gnorm:      0.000974  CPU:    5.769
+  Cycle:    562 Energy:        -0.365919  Gnorm:      0.000767  CPU:    5.779
+  Cycle:    563 Energy:        -0.365919  Gnorm:      0.001180  CPU:    5.789
+  Cycle:    564 Energy:        -0.365919  Gnorm:      0.001151  CPU:    5.799
+  Cycle:    565 Energy:        -0.365920  Gnorm:      0.000927  CPU:    5.809
+  Cycle:    566 Energy:        -0.365920  Gnorm:      0.000864  CPU:    5.820
+  Cycle:    567 Energy:        -0.365920  Gnorm:      0.001142  CPU:    5.830
+  Cycle:    568 Energy:        -0.365920  Gnorm:      0.001529  CPU:    5.840
+  Cycle:    569 Energy:        -0.365920  Gnorm:      0.002104  CPU:    5.850
+  Cycle:    570 Energy:        -0.365921  Gnorm:      0.003289  CPU:    5.860
+  ** Hessian calculated **
+  Cycle:    571 Energy:        -0.365921  Gnorm:      0.002530  CPU:    5.875
+  Cycle:    572 Energy:        -0.365921  Gnorm:      0.002624  CPU:    5.885
+  Cycle:    573 Energy:        -0.365922  Gnorm:      0.001894  CPU:    5.895
+  Cycle:    574 Energy:        -0.365922  Gnorm:      0.001884  CPU:    5.906
+  Cycle:    575 Energy:        -0.365923  Gnorm:      0.002058  CPU:    5.916
+  Cycle:    576 Energy:        -0.365923  Gnorm:      0.000836  CPU:    5.926
+  Cycle:    577 Energy:        -0.365923  Gnorm:      0.001146  CPU:    5.936
+  Cycle:    578 Energy:        -0.365923  Gnorm:      0.000887  CPU:    5.946
+  Cycle:    579 Energy:        -0.365923  Gnorm:      0.001037  CPU:    5.957
+  Cycle:    580 Energy:        -0.365923  Gnorm:      0.000966  CPU:    5.967
+  ** Hessian calculated **
+  Cycle:    581 Energy:        -0.365923  Gnorm:      0.001072  CPU:    5.982
+  Cycle:    582 Energy:        -0.365923  Gnorm:      0.000822  CPU:    5.992
+
+  XYZ File written as gulp.xyz                                
+
+
+
+  **** Optimisation achieved ****
+
+
+  Final energy =      -0.36592326 eV
+  Final Gnorm  =       0.00055816
+
+  Components of energy : 
+
+--------------------------------------------------------------------------------
+  Interatomic potentials     =          -0.00499078 eV    
+  Three-body potentials      =           0.04063347 eV    
+  Four-body potentials       =           0.00000036 eV    
+  Improper torsions          =           0.00000000 eV    
+  Out of plane potentials    =           0.00000000 eV    
+  Monopole - monopole (real) =           2.85808774 eV    
+  Monopole - monopole (recip)=          -3.08390707 eV    
+  Monopole - monopole (total)=          -0.22581932 eV    
+  Neutralising energy        =          -0.17574700 eV    
+--------------------------------------------------------------------------------
+  Total lattice energy       =          -0.36592326 eV    
+--------------------------------------------------------------------------------
+  Total lattice energy       =             -35.3060 kJ/(mole unit cells)
+--------------------------------------------------------------------------------
+
+  Final fractional coordinates of atoms :
+
+--------------------------------------------------------------------------------
+   No.  Atomic        x           y          z          Radius
+        Label       (Frac)      (Frac)     (Frac)       (Angs) 
+--------------------------------------------------------------------------------
+     1  C914  c     0.502972    0.506056    0.559217    0.000000
+     2  C902  c     0.503734    0.505831    0.590202    0.000000
+     3  C912  c     0.438236    0.493123    0.604433    0.000000
+     4  C912  c     0.438937    0.492924    0.632893    0.000000
+     5  C902  c     0.505610    0.505528    0.646788    0.000000
+     6  C912  c     0.571359    0.518283    0.632331    0.000000
+     7  C912  c     0.570126    0.518381    0.603872    0.000000
+     8  C913  c     0.506516    0.505341    0.678013    0.000000
+     9  O170  c     0.443144    0.493080    0.688880    0.000000
+    10  O170  c     0.570414    0.517460    0.688477    0.000000
+    11  O172  c     0.440006    0.494125    0.548558    0.000000
+    12  O173  c     0.565692    0.518224    0.548257    0.000000
+    13  H915  c     0.387479    0.483551    0.592617    0.000000
+    14  H915  c     0.387777    0.483001    0.644458    0.000000
+    15  H915  c     0.619998    0.528069    0.591559    0.000000
+    16  H915  c     0.623301    0.528092    0.643432    0.000000
+    17  H21   c     0.443571    0.495075    0.528803    0.000000
+--------------------------------------------------------------------------------
+
+  Final internal derivatives :
+
+--------------------------------------------------------------------------------
+   No.  Atomic          a             b             c           Radius
+        Label          (eV)          (eV)          (eV)        (eV/Angs)
+--------------------------------------------------------------------------------
+      1 C914  c       0.000000      0.000000      0.000000      0.000000
+      2 C902  c      -0.006840      0.000424      0.004660      0.000000
+      3 C912  c      -0.006188      0.000938     -0.003293      0.000000
+      4 C912  c      -0.000857      0.002396     -0.000020      0.000000
+      5 C902  c      -0.000970     -0.003845      0.005495      0.000000
+      6 C912  c      -0.000907     -0.002882     -0.008279      0.000000
+      7 C912  c       0.001507     -0.000251     -0.007910      0.000000
+      8 C913  c      -0.006931     -0.001437     -0.004150      0.000000
+      9 O170  c      -0.006721      0.000779      0.003989      0.000000
+     10 O170  c      -0.001815     -0.002451     -0.000051      0.000000
+     11 O172  c      -0.005540      0.003455     -0.000426      0.000000
+     12 O173  c       0.000371     -0.000584      0.001702      0.000000
+     13 H915  c      -0.001680     -0.000366      0.005696      0.000000
+     14 H915  c      -0.004579      0.000295     -0.005199      0.000000
+     15 H915  c       0.001489     -0.000092      0.009525      0.000000
+     16 H915  c       0.000940     -0.001525      0.000013      0.000000
+     17 H21   c      -0.001551      0.001164     -0.006018      0.000000
+--------------------------------------------------------------------------------
+  Maximum abs         0.006931      0.003845      0.009525      0.000000
+--------------------------------------------------------------------------------
+
+  Comparison of initial and final structures : 
+
+--------------------------------------------------------------------------------
+  Parameter   Initial value   Final value   Difference    Units      Percent
+--------------------------------------------------------------------------------
+      1 x          0.502972      0.502972     0.000000    Fractional   0.00
+      1 y          0.506056      0.506056     0.000000    Fractional   0.00
+      1 z          0.559217      0.559217     0.000000    Fractional   0.00
+      2 x          0.501393      0.503734     0.002341    Fractional   0.47
+      2 y          0.505650      0.505831     0.000182    Fractional   0.04
+      2 z          0.589481      0.590202     0.000721    Fractional   0.12
+      3 x          0.434715      0.438236     0.003521    Fractional   0.81
+      3 y          0.493379      0.493123     0.000256    Fractional   0.05
+      3 z          0.604395      0.604433     0.000038    Fractional   0.01
+      4 x          0.436365      0.438937     0.002573    Fractional   0.59
+      4 y          0.493436      0.492924     0.000513    Fractional   0.10
+      4 z          0.633057      0.632893     0.000164    Fractional   0.03
+      5 x          0.504745      0.505610     0.000865    Fractional   0.17
+      5 y          0.505193      0.505528     0.000334    Fractional   0.07
+      5 z          0.646787      0.646788     0.000001    Fractional   0.00
+      6 x          0.571459      0.571359     0.000101    Fractional   0.02
+      6 y          0.517361      0.518283     0.000922    Fractional   0.18
+      6 z          0.631988      0.632331     0.000343    Fractional   0.05
+      7 x          0.569808      0.570126     0.000318    Fractional   0.06
+      7 y          0.517653      0.518381     0.000728    Fractional   0.14
+      7 z          0.603283      0.603872     0.000589    Fractional   0.10
+      8 x          0.502832      0.506516     0.003684    Fractional   0.73
+      8 y          0.503514      0.505341     0.001828    Fractional   0.36
+      8 z          0.677550      0.678013     0.000463    Fractional   0.07
+      9 x          0.445505      0.443144     0.002361    Fractional   0.53
+      9 y          0.494217      0.493080     0.001137    Fractional   0.23
+      9 z          0.690899      0.688880     0.002019    Fractional   0.29
+     10 x          0.572002      0.570414     0.001588    Fractional   0.28
+     10 y          0.513218      0.517460     0.004242    Fractional   0.83
+     10 z          0.688888      0.688477     0.000411    Fractional   0.06
+     11 x          0.435356      0.440006     0.004650    Fractional   1.07
+     11 y          0.503903      0.494125     0.009778    Fractional   1.94
+     11 z          0.545960      0.548558     0.002598    Fractional   0.48
+     12 x          0.561919      0.565692     0.003773    Fractional   0.67
+     12 y          0.508190      0.518224     0.010034    Fractional   1.97
+     12 z          0.545799      0.548257     0.002458    Fractional   0.45
+     13 x          0.380819      0.387479     0.006660    Fractional   1.75
+     13 y          0.481455      0.483551     0.002097    Fractional   0.44
+     13 z          0.594193      0.592617     0.001575    Fractional   0.27
+     14 x          0.385747      0.387777     0.002030    Fractional   0.53
+     14 y          0.483785      0.483001     0.000784    Fractional   0.16
+     14 z          0.645444      0.644458     0.000986    Fractional   0.15
+     15 x          0.620651      0.619998     0.000653    Fractional   0.11
+     15 y          0.527121      0.528069     0.000948    Fractional   0.18
+     15 z          0.591017      0.591559     0.000542    Fractional   0.09
+     16 x          0.624153      0.623301     0.000852    Fractional   0.14
+     16 y          0.526397      0.528092     0.001695    Fractional   0.32
+     16 z          0.643178      0.643432     0.000255    Fractional   0.04
+     17 x          0.432567      0.443571     0.011005    Fractional   2.54
+     17 y          0.503926      0.495075     0.008850    Fractional   1.76
+     17 z          0.525967      0.528803     0.002836    Fractional   0.54
+--------------------------------------------------------------------------------
+
+
+  Born effective charge tensors : 
+
+-------------------------------------------------------------------------------
+  Atom             x           y             z
+-------------------------------------------------------------------------------
+   1 C914  x       0.5100      0.0000      0.0000
+           y       0.0000      0.5100      0.0000
+           z       0.0000      0.0000      0.5100
+-------------------------------------------------------------------------------
+   2 C902  x       0.0050      0.0000      0.0000
+           y       0.0000      0.0050      0.0000
+           z       0.0000      0.0000      0.0050
+-------------------------------------------------------------------------------
+   3 C912  x      -0.0703      0.0000      0.0000
+           y       0.0000     -0.0703      0.0000
+           z       0.0000      0.0000     -0.0703
+-------------------------------------------------------------------------------
+   4 C912  x      -0.0703      0.0000      0.0000
+           y       0.0000     -0.0703      0.0000
+           z       0.0000      0.0000     -0.0703
+-------------------------------------------------------------------------------
+   5 C902  x       0.0050      0.0000      0.0000
+           y       0.0000      0.0050      0.0000
+           z       0.0000      0.0000      0.0050
+-------------------------------------------------------------------------------
+   6 C912  x      -0.0703      0.0000      0.0000
+           y       0.0000     -0.0703      0.0000
+           z       0.0000      0.0000     -0.0703
+-------------------------------------------------------------------------------
+   7 C912  x      -0.0703      0.0000      0.0000
+           y       0.0000     -0.0703      0.0000
+           z       0.0000      0.0000     -0.0703
+-------------------------------------------------------------------------------
+   8 C913  x       1.3205      0.0000      0.0000
+           y       0.0000      1.3205      0.0000
+           z       0.0000      0.0000      1.3205
+-------------------------------------------------------------------------------
+   9 O170  x      -0.8300      0.0000      0.0000
+           y       0.0000     -0.8300      0.0000
+           z       0.0000      0.0000     -0.8300
+-------------------------------------------------------------------------------
+  10 O170  x      -0.8300      0.0000      0.0000
+           y       0.0000     -0.8300      0.0000
+           z       0.0000      0.0000     -0.8300
+-------------------------------------------------------------------------------
+  11 O172  x      -0.7945      0.0000      0.0000
+           y       0.0000     -0.7945      0.0000
+           z       0.0000      0.0000     -0.7945
+-------------------------------------------------------------------------------
+  12 O173  x      -0.7750      0.0000      0.0000
+           y       0.0000     -0.7750      0.0000
+           z       0.0000      0.0000     -0.7750
+-------------------------------------------------------------------------------
+  13 H915  x       0.1125      0.0000      0.0000
+           y       0.0000      0.1125      0.0000
+           z       0.0000      0.0000      0.1125
+-------------------------------------------------------------------------------
+  14 H915  x       0.1125      0.0000      0.0000
+           y       0.0000      0.1125      0.0000
+           z       0.0000      0.0000      0.1125
+-------------------------------------------------------------------------------
+  15 H915  x       0.1125      0.0000      0.0000
+           y       0.0000      0.1125      0.0000
+           z       0.0000      0.0000      0.1125
+-------------------------------------------------------------------------------
+  16 H915  x       0.1125      0.0000      0.0000
+           y       0.0000      0.1125      0.0000
+           z       0.0000      0.0000      0.1125
+-------------------------------------------------------------------------------
+  17 H21   x       0.2200      0.0000      0.0000
+           y       0.0000      0.2200      0.0000
+           z       0.0000      0.0000      0.2200
+-------------------------------------------------------------------------------
+
+
+
+
+  Elastic Constant Matrix: (Units=GPa)
+
+-------------------------------------------------------------------------------
+  Indices      1         2         3         4         5         6    
+-------------------------------------------------------------------------------
+       1      0.0095    0.0005   -0.0093   -0.0000    0.0001    0.0002
+       2      0.0005    0.0082   -0.0093    0.0000    0.0000   -0.0002
+       3     -0.0093   -0.0093    0.0110    0.0000   -0.0000   -0.0000
+       4     -0.0000    0.0000    0.0000   -0.0053    0.0000    0.0000
+       5      0.0001    0.0000   -0.0000    0.0000   -0.0058    0.0000
+       6      0.0002   -0.0002   -0.0000    0.0000    0.0000   -0.0008
+-------------------------------------------------------------------------------
+
+
+  Elastic Compliance Matrix: (Units=1/GPa)
+
+-------------------------------------------------------------------------------
+  Indices      1         2         3         4         5         6    
+-------------------------------------------------------------------------------
+       1   -6.533004******************** -0.351146 -0.027797 29.041911
+       2  **********-31.384718********** -0.295663 -1.779305-25.538359
+       3  ****************************** -0.541347 -1.541215  2.862522
+       4   -0.351146 -0.295663 -0.541347********** -0.235248 -8.197845
+       5   -0.027797 -1.779305 -1.541215 -0.235248********** -1.789336
+       6   29.041911-25.538359  2.862522 -8.197845 -1.789336**********
+-------------------------------------------------------------------------------
+
+  Mechanical properties :
+
+-------------------------------------------------------------------------------
+  Convention :                    Reuss         Voigt         Hill
+-------------------------------------------------------------------------------
+  Bulk  Modulus (GPa)     =      -0.00104      -0.00084      -0.00094
+  Shear Modulus (GPa)     =      -0.00406       0.00073      -0.00166
+-------------------------------------------------------------------------------
+  Velocity S-wave (km/s)  =      -0.49698       0.21134      -0.31806
+  Velocity P-wave (km/s)  =       0.62638       0.09296       0.43801
+-------------------------------------------------------------------------------
+  Compressibility (1/GPa) = -964.74570075
+-------------------------------------------------------------------------------
+  Stress axis :                     x             y             z
+-------------------------------------------------------------------------------
+  Youngs Moduli (GPa)     =      -0.15307      -0.03186      -0.00764
+-------------------------------------------------------------------------------
+  Poissons Ratio (x)      =                    -4.32977      -0.92127
+  Poissons Ratio (y)      =     -20.80034                    -1.08161
+  Poissons Ratio (z)      =     -18.45355      -4.50979
+-------------------------------------------------------------------------------
+
+
+  Piezoelectric Strain Matrix: (Units=C/m**2)
+
+-------------------------------------------------------------------------------
+  Indices      1         2         3         4         5         6    
+-------------------------------------------------------------------------------
+       x     0.02835  -0.00762  -0.00119   0.00020   0.03913   0.00721
+       y    -0.05063   0.04475  -0.00054   0.03963  -0.00016  -0.02151
+       z    -0.00108  -0.00021   0.04003  -0.00009   0.00018   0.00005
+-------------------------------------------------------------------------------
+
+
+  Piezoelectric Stress Matrix: (Units=10**-11 C/N)
+
+-------------------------------------------------------------------------------
+  Indices      1         2         3         4         5         6    
+-------------------------------------------------------------------------------
+       x   120.11509-369.99497-222.47242 -11.31534-675.07996-753.46886
+       y  -632.35264 608.93658 -24.25080-728.25643  -2.057222234.96469
+       z  -478.86774-551.43828-507.87106  -0.53734  -9.19854   3.60968
+-------------------------------------------------------------------------------
+
+
+  Static dielectric constant tensor : 
+
+-------------------------------------------------------------------------------
+              x         y         z
+-------------------------------------------------------------------------------
+       x     1.38380   0.90571  -0.22107
+       y     0.90571  -2.53267  -0.08122
+       z    -0.22107  -0.08122   1.09947
+--------------------------------------------------------------------------------
+
+  Static refractive indices : 
+
+-------------------------------------------------------------------------------
+    1 =   -1.65295      2 =    1.00273      3 =    1.29514
+-------------------------------------------------------------------------------
+
+
+  Phonon Calculation : 
+
+  Number of k points for this configuration =        1
+
+--------------------------------------------------------------------------------
+  K point      1 =   0.000000  0.000000  0.000000  Weight =    1.000
+--------------------------------------------------------------------------------
+
+  Frequencies (cm-1) [NB: Negative implies an imaginary mode]:
+
+   -2.81   -0.00   -0.00    0.00    6.73    7.24   74.62  103.18  161.95
+  167.74  201.62  246.25  312.00  345.93  349.75  399.43  490.87  492.78
+  525.08  578.95  650.63  659.09  703.91  722.96  770.57  807.99  820.15
+  871.89  901.24  922.91  938.97  950.95  988.09  991.40 1137.59 1150.00
+ 1186.02 1214.52 1279.67 1322.47 1397.37 1402.84 1421.94 1484.95 1642.41
+ 1664.62 2943.70 2944.35 2945.46 2946.57 3685.00
+
+
+--------------------------------------------------------------------------------
+  Phonon properties (per mole of unit cells): Temperature =      0.000 K
+--------------------------------------------------------------------------------
+  Zero point energy            =        2.971569 eV
+--------------------------------------------------------------------------------
+
+  Phonon density of states : 
+
+--------------------------------------------------------------------------------
+ Frequency (cm-1) Density of States                                             
+--------------------------------------------------------------------------------
+    0.00000 |*********************************************                 0.062
+   57.57807 |******************************                                0.042
+  115.15614 |******************************                                0.042
+  172.73421 |***************                                               0.021
+  230.31228 |***************                                               0.021
+  287.89035 |***************                                               0.021
+  345.46842 |*********************************************                 0.062
+  403.04649 |                                                              0.000
+  460.62456 |******************************                                0.042
+  518.20263 |***************                                               0.021
+  575.78070 |***************                                               0.021
+  633.35877 |******************************                                0.042
+  690.93684 |******************************                                0.042
+  748.51491 |***************                                               0.021
+  806.09298 |******************************                                0.042
+  863.67105 |******************************                                0.042
+  921.24912 |*********************************************                 0.062
+  978.82719 |******************************                                0.042
+ 1036.40526 |                                                              0.000
+ 1093.98334 |******************************                                0.042
+ 1151.56141 |***************                                               0.021
+ 1209.13948 |***************                                               0.021
+ 1266.71755 |******************************                                0.042
+ 1324.29562 |                                                              0.000
+ 1381.87369 |*********************************************                 0.062
+ 1439.45176 |***************                                               0.021
+ 1497.02983 |                                                              0.000
+ 1554.60790 |                                                              0.000
+ 1612.18597 |******************************                                0.042
+ 1669.76404 |                                                              0.000
+ 1727.34211 |                                                              0.000
+ 1784.92018 |                                                              0.000
+ 1842.49825 |                                                              0.000
+ 1900.07632 |                                                              0.000
+ 1957.65439 |                                                              0.000
+ 2015.23246 |                                                              0.000
+ 2072.81053 |                                                              0.000
+ 2130.38860 |                                                              0.000
+ 2187.96667 |                                                              0.000
+ 2245.54474 |                                                              0.000
+ 2303.12281 |                                                              0.000
+ 2360.70088 |                                                              0.000
+ 2418.27895 |                                                              0.000
+ 2475.85702 |                                                              0.000
+ 2533.43509 |                                                              0.000
+ 2591.01316 |                                                              0.000
+ 2648.59123 |                                                              0.000
+ 2706.16930 |                                                              0.000
+ 2763.74737 |                                                              0.000
+ 2821.32544 |                                                              0.000
+ 2878.90351 |                                                              0.000
+ 2936.48158 |************************************************************  0.083
+ 2994.05965 |                                                              0.000
+ 3051.63772 |                                                              0.000
+ 3109.21579 |                                                              0.000
+ 3166.79387 |                                                              0.000
+ 3224.37194 |                                                              0.000
+ 3281.95001 |                                                              0.000
+ 3339.52808 |                                                              0.000
+ 3397.10615 |                                                              0.000
+ 3454.68422 |                                                              0.000
+ 3512.26229 |                                                              0.000
+ 3569.84036 |                                                              0.000
+ 3627.41843 |***************                                               0.021
+--------------------------------------------------------------------------------
+
+
+
+  Time to end of optimisation =       6.0232 seconds
+
+
+
+  Electrostatic potential at atomic positions :
+
+-------------------------------------------------------------------------------
+ Site  Atomic      Potential                Derivatives (V/Angs)
+ No.   Label          (V)                 x           y           z
+-------------------------------------------------------------------------------
+     1 C914  c    -15.487572          -0.316287   -0.094622    5.249804
+     2 C902  c     -3.425139          -0.086638   -0.016876   -0.398127
+     3 C912  c     -1.626946          -1.172286   -0.247785    0.051294
+     4 C912  c     -0.404618          -0.577117   -0.130791    1.827360
+     5 C902  c      0.825399           0.049933   -0.015134    5.510863
+     6 C912  c     -0.447627           0.593662    0.116840    1.842638
+     7 C912  c     -1.738149           1.099470    0.231058    0.102739
+     8 C913  c    -19.471235          -0.062093    0.013947   -5.849024
+     9 O170  c      9.525970           8.302927    1.767650   -4.833439
+    10 O170  c      9.514630          -8.403704   -1.744775   -4.685237
+    11 O172  c      5.117262           2.252175    0.480642   -1.378997
+    12 O173  c      2.999450          -2.407032   -0.515953    1.869311
+    13 H915  c     -4.520296          -1.222881   -0.263823    0.957753
+    14 H915  c     -3.210718          -0.365615   -0.078903    0.032778
+    15 H915  c     -4.757761           1.228504    0.254102    1.098706
+    16 H915  c     -3.252949           0.353728    0.075706    0.064344
+    17 H21   c    -11.806491           0.365877    0.137684  -11.365302
+-------------------------------------------------------------------------------
+
+  Total time to end of lattice properties =       6.0274 s
+
+
+  Peak dynamic memory used =       0.75 MB 
+
+
+  Timing analysis for GULP :
+
+--------------------------------------------------------------------------------
+  Task / Subroutine                                          Time (Seconds)
+--------------------------------------------------------------------------------
+  Calculation of reciprocal space energy and derivatives          0.8122
+  Calculation of real space energy and derivatives                3.4336
+  Calculation of three-body energy and derivatives                0.4969
+  Calculation of four-body energy and derivatives                 0.4457
+  Calculation of molecules and connectivity                       0.0209
+  Calculation of phonons                                          0.0066
+  Calculation of scattering                                       0.0000
+  Calculation of matrix inversion                                 0.0044
+  Global summation overhead                                       0.0035
+--------------------------------------------------------------------------------
+  Total CPU time                                                  6.0275
+--------------------------------------------------------------------------------
+
+
+  Dump file written as fit1.res                                                
+
+
+  Job Finished at 18:07.54 24th May        2016                               
+

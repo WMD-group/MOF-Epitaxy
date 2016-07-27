@@ -1,0 +1,718 @@
+********************************************************************************
+*                       GENERAL UTILITY LATTICE PROGRAM                        *
+*                                 Julian Gale                                  *
+*                      Nanochemistry Research Institute                        *
+*                           Department of Chemistry                            *
+*                    Curtin University, Western Australia                      *
+********************************************************************************
+* Version = 4.4.0 * Last modified = 31st March 2015                            *
+********************************************************************************
+*  optimise     - perform optimisation run                                     *
+*  conv         - constant volume calculation                                  *
+*  qok          - running with non charge neutral cell is OK                   *
+*  property     - calculate properties for final geometry                      *
+*  phonon       - calculate phonons for final geometry                         *
+*  potential    - calculate electrostatic site potentials                      *
+*  molmec       - molecule option activated, Coulomb subtract 1-2/1-3 terms    *
+*  compare      - compare initial and final structures                         *
+********************************************************************************
+
+  Job Started  at 06:23.11 11th May        2016                               
+
+  Number of CPUs =     1
+
+
+  Total number of configurations input =   1
+
+********************************************************************************
+*  Input for Configuration =   1                                               *
+********************************************************************************
+
+  Formula = F                                                           
+
+  Number of irreducible atoms/shells =       1
+
+
+  Total number atoms/shells =       1
+
+  Dimensionality = 3               :  Bulk   
+
+
+  Charge on solid   =  -1.000000 =>neutralising background added
+
+
+  Cartesian lattice vectors (Angstroms) :
+
+       17.724000    0.000000    0.000000
+        0.000000   19.461000    0.000000
+        0.000000    0.000000   48.346000
+
+  Cell parameters (Angstroms/Degrees):
+
+  a =      17.7240    alpha =  90.0000
+  b =      19.4610    beta  =  90.0000
+  c =      48.3460    gamma =  90.0000
+
+  Initial cell volume =       16675.829332 Angs**3
+
+  Temperature of configuration =  0.000     K 
+
+  Pressure of configuration =         0.000 GPa 
+
+  Fractional coordinates of asymmetric unit :
+
+--------------------------------------------------------------------------------
+   No.  Atomic       x           y          z         Charge      Occupancy
+        Label      (Frac)      (Frac)     (Frac)        (e)         (Frac)  
+--------------------------------------------------------------------------------
+      1 F     c    0.528413    0.485516    0.225372    -1.00000    1.000000    
+--------------------------------------------------------------------------------
+
+
+
+  Molecule list generated from bond lengths :
+
+  Total number of molecules =     0
+
+
+********************************************************************************
+*  General input information                                                   *
+********************************************************************************
+
+  Species output for all configurations : 
+
+--------------------------------------------------------------------------------
+  Species    Type    Atomic    Atomic    Charge       Radii (Angs)     Library
+                     Number     Mass       (e)     Cova   Ionic  VDW   Symbol
+--------------------------------------------------------------------------------
+    F        Core        9      19.00  -1.000000   0.710  0.000  1.300          
+    C913     Core        6      12.01   1.140000   0.770  0.000  1.530          
+    C902     Core        6      12.01   0.005000   0.770  0.000  1.530          
+    H915     Core        1       1.01   0.112500   0.370  0.000  1.080          
+    C912     Core        6      12.01  -0.070250   0.770  0.000  1.530          
+    O170     Core        8      16.00  -0.735000   0.730  0.000  1.360          
+    O172     Core        8      16.00  -0.714500   0.730  0.000  1.360          
+    H21      Core        1       1.01   0.220000   0.370  0.000  1.080          
+    O2       Core        8      16.00  -1.218000   0.730  0.000  1.360          
+    Ti       Core       22      47.88   2.436000   0.000  0.000  2.190          
+--------------------------------------------------------------------------------
+
+
+  Lattice summation method               =    Ewald          (3-D)
+                                         =    Parry          (2-D)
+                                         =    Saunders et al (1-D)
+  Accuracy factor for lattice sums       =   12.000
+
+
+  Time limit = Infinity
+
+  Maximum range for interatomic potentials =    100000.000000 Angstroms
+
+  General interatomic potentials :
+
+--------------------------------------------------------------------------------
+Atom  Types   Potential      Parameter       Value         Units   Cutoffs(Ang)
+  1     2                                                            Min /  Max 
+--------------------------------------------------------------------------------
+O2   c Ti   c MM3buck       MM3buck A        184000.00    None      3Bond 12.000
+                            MM3buck B        11.500000    None      
+                            MM3buck C        2.5500000    None      
+                            MM3buck epsilon 0.12586926E-01eV        
+                            MM3buck rv       3.0441150    Ang       
+--------------------------------------------------------------------------------
+O2   c O2   c MM3buck       MM3buck A        184000.00    None      3Bond 12.000
+                            MM3buck B        11.500000    None      
+                            MM3buck C        2.5500000    None      
+                            MM3buck epsilon 0.82031500E-02eV        
+                            MM3buck rv       3.1875200    Ang       
+--------------------------------------------------------------------------------
+O2   c O172 c MM3buck       MM3buck A        184000.00    None      3Bond  0.000
+                            MM3buck B        11.500000    None      
+                            MM3buck C        2.5500000    None      
+                            MM3buck epsilon 0.45812399E-02eV        
+                            MM3buck rv       3.4137600    Ang       
+--------------------------------------------------------------------------------
+O2   c O170 c MM3buck       MM3buck A        184000.00    None      3Bond 12.000
+                            MM3buck B        11.500000    None      
+                            MM3buck C        2.5500000    None      
+                            MM3buck epsilon 0.45812399E-02eV        
+                            MM3buck rv       3.4137600    Ang       
+--------------------------------------------------------------------------------
+O172 c Ti   c MM3buck       MM3buck A        184000.00    None      3Bond 12.000
+                            MM3buck B        11.500000    None      
+                            MM3buck C        2.5500000    None      
+                            MM3buck epsilon 0.70294618E-02eV        
+                            MM3buck rv       3.2703550    Ang       
+--------------------------------------------------------------------------------
+O170 c Ti   c MM3buck       MM3buck A        184000.00    None      3Bond 12.000
+                            MM3buck B        11.500000    None      
+                            MM3buck C        2.5500000    None      
+                            MM3buck epsilon 0.70294618E-02eV        
+                            MM3buck rv       3.2703550    Ang       
+--------------------------------------------------------------------------------
+Ti   c Ti   c MM3buck       MM3buck A        184000.00    None      3Bond 12.000
+                            MM3buck B        11.500000    None      
+                            MM3buck C        2.5500000    None      
+                            MM3buck epsilon 0.19313400E-01eV        
+                            MM3buck rv       2.9007100    Ang       
+--------------------------------------------------------------------------------
+H21  c O2   c Lenn/es       Lennard epsilon  0.0000000    eV        3Bond 12.500
+                            Lennard sigma/m  0.0000000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+H21  c H21  c Lenn/es       Lennard epsilon 0.19900000E-02eV        3Bond 12.500
+                            Lennard sigma/m 0.22450000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+H21  c O170 c Lenn/es       Lennard epsilon 0.32179843E-02eV        3Bond 12.500
+                            Lennard sigma/m 0.96225000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+H21  c C913 c Lenn/es       Lennard epsilon 0.24577764E-02eV        3Bond 12.500
+                            Lennard sigma/m  1.1122500    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+H21  c C902 c Lenn/es       Lennard epsilon 0.24577764E-02eV        3Bond 12.500
+                            Lennard sigma/m  1.1084500    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+H21  c C912 c Lenn/es       Lennard epsilon 0.24577764E-02eV        3Bond 12.500
+                            Lennard sigma/m  1.1084500    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+H21  c H915 c Lenn/es       Lennard epsilon 0.16089906E-02eV        3Bond 12.500
+                            Lennard sigma/m 0.79135000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+H21  c O172 c Lenn/es       Lennard epsilon 0.32179843E-02eV        3Bond 12.500
+                            Lennard sigma/m 0.96225000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+H915 c O172 c Lenn/es       Lennard epsilon 0.26018625E-02eV        3Bond 12.500
+                            Lennard sigma/m  1.5291000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+C902 c O172 c Lenn/es       Lennard epsilon 0.39744150E-02eV        3Bond 12.500
+                            Lennard sigma/m  1.8462000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+C912 c O172 c Lenn/es       Lennard epsilon 0.39744150E-02eV        3Bond 12.500
+                            Lennard sigma/m  1.8462000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+C913 c O172 c Lenn/es       Lennard epsilon 0.39744150E-02eV        3Bond 12.500
+                            Lennard sigma/m  1.8500000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+C912 c O170 c Lenn/es       Lennard epsilon 0.39744150E-02eV        3Bond 12.500
+                            Lennard sigma/m  1.8462000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+C912 c C912 c Lenn/es       Lennard epsilon 0.30355100E-02eV        3Bond 12.500
+                            Lennard sigma/m  1.9924000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+C902 c O170 c Lenn/es       Lennard epsilon 0.39744150E-02eV        3Bond 12.500
+                            Lennard sigma/m  1.8462000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+C902 c C912 c Lenn/es       Lennard epsilon 0.30355100E-02eV        3Bond 12.500
+                            Lennard sigma/m  1.9924000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+C902 c C902 c Lenn/es       Lennard epsilon 0.30355100E-02eV        3Bond 12.500
+                            Lennard sigma/m  1.9924000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+H915 c O170 c Lenn/es       Lennard epsilon 0.26018625E-02eV        3Bond 12.500
+                            Lennard sigma/m  1.5291000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+H915 c C912 c Lenn/es       Lennard epsilon 0.19872056E-02eV        3Bond 12.500
+                            Lennard sigma/m  1.6753000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+H915 c C902 c Lenn/es       Lennard epsilon 0.19872056E-02eV        3Bond 12.500
+                            Lennard sigma/m  1.6753000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+H915 c H915 c Lenn/es       Lennard epsilon 0.13009300E-02eV        3Bond 12.500
+                            Lennard sigma/m  1.3582000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+C913 c O170 c Lenn/es       Lennard epsilon 0.39744150E-02eV        3Bond 12.500
+                            Lennard sigma/m  1.8500000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+C912 c C913 c Lenn/es       Lennard epsilon 0.30355100E-02eV        3Bond 12.500
+                            Lennard sigma/m  1.9962000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+C902 c C913 c Lenn/es       Lennard epsilon 0.30355100E-02eV        3Bond 12.500
+                            Lennard sigma/m  1.9962000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+H915 c C913 c Lenn/es       Lennard epsilon 0.19872056E-02eV        3Bond 12.500
+                            Lennard sigma/m  1.6791000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+C913 c C913 c Lenn/es       Lennard epsilon 0.30355100E-02eV        3Bond 12.500
+                            Lennard sigma/m  2.0000000    Ang       
+                            Exponent m        12          None
+                            Exponent n         6          None
+--------------------------------------------------------------------------------
+
+  Intramolecular potentials :
+
+--------------------------------------------------------------------------------
+Atom  Types   Potential      Parameter       Value         Units   Cutoffs(Ang)
+  1     2                                                            Min /  Max 
+--------------------------------------------------------------------------------
+H21  c O172 c Harmonic      Harmonic k2      47.267000    eV*Ang^-2 0.000 1 Bond
+                            Harmonic r0     0.96000000    Ang       
+                            Harmonic k3      0.0000000    eV*Ang^-3 
+                            Harmonic k4      0.0000000    eV*Ang^-4 
+--------------------------------------------------------------------------------
+C902 c C913 c Harmonic      Harmonic k2      17.345800    eV*Ang^-2 0.000 1 Bond
+                            Harmonic r0      1.5000000    Ang       
+                            Harmonic k3      0.0000000    eV*Ang^-3 
+                            Harmonic k4      0.0000000    eV*Ang^-4 
+--------------------------------------------------------------------------------
+C912 c C912 c Harmonic      Harmonic k2      26.452300    eV*Ang^-2 0.000 1 Bond
+                            Harmonic r0      1.3750000    Ang       
+                            Harmonic k3      0.0000000    eV*Ang^-3 
+                            Harmonic k4      0.0000000    eV*Ang^-4 
+--------------------------------------------------------------------------------
+C902 c C912 c Harmonic      Harmonic k2      26.452300    eV*Ang^-2 0.000 1 Bond
+                            Harmonic r0      1.3750000    Ang       
+                            Harmonic k3      0.0000000    eV*Ang^-3 
+                            Harmonic k4      0.0000000    eV*Ang^-4 
+--------------------------------------------------------------------------------
+H915 c C912 c Harmonic      Harmonic k2      29.487800    eV*Ang^-2 0.000 1 Bond
+                            Harmonic r0      1.0800000    Ang       
+                            Harmonic k3      0.0000000    eV*Ang^-3 
+                            Harmonic k4      0.0000000    eV*Ang^-4 
+--------------------------------------------------------------------------------
+C913 c O170 c Harmonic      Harmonic k2      45.532700    eV*Ang^-2 0.000 1 Bond
+                            Harmonic r0      1.2600000    Ang       
+                            Harmonic k3      0.0000000    eV*Ang^-3 
+                            Harmonic k4      0.0000000    eV*Ang^-4 
+--------------------------------------------------------------------------------
+C913 c O172 c Harmonic      Harmonic k2      45.532700    eV*Ang^-2 0.000 1 Bond
+                            Harmonic r0      1.2600000    Ang       
+                            Harmonic k3      0.0000000    eV*Ang^-3 
+                            Harmonic k4      0.0000000    eV*Ang^-4 
+--------------------------------------------------------------------------------
+
+  Intramolecular Three-body potentials :
+
+--------------------------------------------------------------------------------
+  Atoms       Potential      Parameter       Value         Units   Cutoffs(Ang)
+  1 / 2 / 3                                                          Min /  Max 
+--------------------------------------------------------------------------------
+O172  core    Harmonic      Three-body cnst  4.7700000    eV*rad^-2 0.000 1 Bond
+H21   core                  Three-body angl  115.00000    degrees   0.000 1 Bond
+C913  core                  Three-body k4    0.0000000    eV*rad^-4 0.000 1 Bond
+                            Three-body k3    0.0000000    eV*rad^-3 
+--------------------------------------------------------------------------------
+C913  core    Harmonic      Three-body cnst  8.6729000    eV*rad^-2 0.000 1 Bond
+O170  core                  Three-body angl  133.00000    degrees   0.000 1 Bond
+O172  core                  Three-body k4    0.0000000    eV*rad^-4 0.000 1 Bond
+                            Three-body k3    0.0000000    eV*rad^-3 
+--------------------------------------------------------------------------------
+C912  core    Harmonic      Three-body cnst  3.4692000    eV*rad^-2 0.000 1 Bond
+C902  core                  Three-body angl  120.00000    degrees   0.000 1 Bond
+C912  core                  Three-body k4    0.0000000    eV*rad^-4 0.000 1 Bond
+                            Three-body k3    0.0000000    eV*rad^-3 
+--------------------------------------------------------------------------------
+C902  core    Harmonic      Three-body cnst  3.4692000    eV*rad^-2 0.000 1 Bond
+C912  core                  Three-body angl  120.00000    degrees   0.000 1 Bond
+C912  core                  Three-body k4    0.0000000    eV*rad^-4 0.000 1 Bond
+                            Three-body k3    0.0000000    eV*rad^-3 
+--------------------------------------------------------------------------------
+C902  core    Harmonic      Three-body cnst  3.9028000    eV*rad^-2 0.000 1 Bond
+C912  core                  Three-body angl  119.00000    degrees   0.000 1 Bond
+C913  core                  Three-body k4    0.0000000    eV*rad^-4 0.000 1 Bond
+                            Three-body k3    0.0000000    eV*rad^-3 
+--------------------------------------------------------------------------------
+C912  core    Harmonic      Three-body cnst  2.6019000    eV*rad^-2 0.000 1 Bond
+H915  core                  Three-body angl  120.00000    degrees   0.000 1 Bond
+C902  core                  Three-body k4    0.0000000    eV*rad^-4 0.000 1 Bond
+                            Three-body k3    0.0000000    eV*rad^-3 
+--------------------------------------------------------------------------------
+C912  core    Harmonic      Three-body cnst  2.6019000    eV*rad^-2 0.000 1 Bond
+H915  core                  Three-body angl  120.00000    degrees   0.000 1 Bond
+C912  core                  Three-body k4    0.0000000    eV*rad^-4 0.000 1 Bond
+                            Three-body k3    0.0000000    eV*rad^-3 
+--------------------------------------------------------------------------------
+C913  core    Harmonic      Three-body cnst  3.4692000    eV*rad^-2 0.000 1 Bond
+C902  core                  Three-body angl  116.00000    degrees   0.000 1 Bond
+O170  core                  Three-body k4    0.0000000    eV*rad^-4 0.000 1 Bond
+                            Three-body k3    0.0000000    eV*rad^-3 
+--------------------------------------------------------------------------------
+C913  core    Harmonic      Three-body cnst  3.4692000    eV*rad^-2 0.000 1 Bond
+C902  core                  Three-body angl  116.00000    degrees   0.000 1 Bond
+O172  core                  Three-body k4    0.0000000    eV*rad^-4 0.000 1 Bond
+                            Three-body k3    0.0000000    eV*rad^-3 
+--------------------------------------------------------------------------------
+
+  Intramolecular Four-body potentials :
+
+--------------------------------------------------------------------------------
+  Atoms       Potential      Parameter       Value         Units   Cutoffs(Ang)
+  1 - 4                                                             Min /  Max 
+--------------------------------------------------------------------------------
+C902  core    Standard      Torsional const 0.13443000    eV         Bonded
+C912  core Phase = +  2                                                       
+C912  core                                                              
+C902  core
+--------------------------------------------------------------------------------
+C912  core    Standard      Torsional const 0.13443000    eV         Bonded
+C902  core Phase = +  2                                                       
+C912  core                                                              
+C912  core
+--------------------------------------------------------------------------------
+C902  core    Standard      Torsional const 0.18213000    eV         Bonded
+C912  core Phase = +  2                                                       
+C912  core                                                              
+H915  core
+--------------------------------------------------------------------------------
+C912  core    Standard      Torsional const 0.18213000    eV         Bonded
+C902  core Phase = +  2                                                       
+C912  core                                                              
+H915  core
+--------------------------------------------------------------------------------
+O170  core    Standard      Torsional const 0.13443000    eV         Bonded
+C913  core Phase = +  2                                                       
+C902  core                                                              
+C912  core
+--------------------------------------------------------------------------------
+O172  core    Standard      Torsional const 0.13443000    eV         Bonded
+C913  core Phase = +  2                                                       
+C902  core                                                              
+C912  core
+--------------------------------------------------------------------------------
+C913  core    Standard      Torsional const 0.13443000    eV         Bonded
+C902  core Phase = +  2                                                       
+C912  core                                                              
+C912  core
+--------------------------------------------------------------------------------
+C913  core    Standard      Torsional const 0.10407000    eV         Bonded
+C902  core Phase = +  2                                                       
+C912  core                                                              
+H915  core
+--------------------------------------------------------------------------------
+H915  core    Standard      Torsional const 0.10407000    eV         Bonded
+C912  core Phase = +  2                                                       
+C912  core                                                              
+H915  core
+--------------------------------------------------------------------------------
+C902  core    Standard      Torsional const 0.88896000E-01eV         Bonded
+C913  core Phase = +  2                                                       
+O172  core                                                              
+H21   core
+--------------------------------------------------------------------------------
+O170  core    Standard      Torsional const 0.88896000E-01eV         Bonded
+C913  core Phase = +  2                                                       
+O172  core                                                              
+H21   core
+--------------------------------------------------------------------------------
+O172  core    Standard      Torsional const 0.88896000E-01eV         Bonded
+C913  core Phase = +  2                                                       
+O172  core                                                              
+H21   core
+--------------------------------------------------------------------------------
+
+********************************************************************************
+*  Output for configuration   1                                                *
+********************************************************************************
+
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!! WARNING : No variables to optimise - single point performed
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+  Components of energy : 
+
+--------------------------------------------------------------------------------
+  Interatomic potentials     =           0.00000000 eV    
+  Three-body potentials      =           0.00000000 eV    
+  Four-body potentials       =           0.00000000 eV    
+  Improper torsions          =           0.00000000 eV    
+  Out of plane potentials    =           0.00000000 eV    
+  Monopole - monopole (real) =           0.11930375 eV    
+  Monopole - monopole (recip)=          -0.29056448 eV    
+  Monopole - monopole (total)=          -0.17126073 eV    
+  Neutralising energy        =          -0.28181411 eV    
+--------------------------------------------------------------------------------
+  Total lattice energy       =          -0.45307484 eV    
+--------------------------------------------------------------------------------
+  Total lattice energy       =             -43.7148 kJ/(mole unit cells)
+--------------------------------------------------------------------------------
+
+  Born effective charge tensors : 
+
+-------------------------------------------------------------------------------
+  Atom             x           y             z
+-------------------------------------------------------------------------------
+   1 F     x      -1.0000      0.0000      0.0000
+           y       0.0000     -1.0000      0.0000
+           z       0.0000      0.0000     -1.0000
+-------------------------------------------------------------------------------
+
+
+
+
+  Elastic Constant Matrix: (Units=GPa)
+
+-------------------------------------------------------------------------------
+  Indices      1         2         3         4         5         6    
+-------------------------------------------------------------------------------
+       1      0.0117    0.0017   -0.0102   -0.0000   -0.0000    0.0000
+       2      0.0017    0.0109   -0.0102    0.0000    0.0000   -0.0000
+       3     -0.0102   -0.0102    0.0102    0.0000    0.0000    0.0000
+       4     -0.0000    0.0000    0.0000   -0.0063   -0.0000    0.0000
+       5     -0.0000    0.0000    0.0000   -0.0000   -0.0067   -0.0000
+       6      0.0000   -0.0000    0.0000    0.0000   -0.0000   -0.0012
+-------------------------------------------------------------------------------
+
+
+  Elastic Compliance Matrix: (Units=1/GPa)
+
+-------------------------------------------------------------------------------
+  Indices      1         2         3         4         5         6    
+-------------------------------------------------------------------------------
+       1  -10.181216******************** -0.000000 -0.000000  0.000000
+       2  **********-22.942384********** -0.000000 -0.000000 -0.000000
+       3  ****************************** -0.000000 -0.000000  0.000000
+       4   -0.000000 -0.000000 -0.000000**********  0.000000 -0.000000
+       5   -0.000000 -0.000000 -0.000000  0.000000**********  0.000000
+       6    0.000000 -0.000000  0.000000 -0.000000  0.000000**********
+-------------------------------------------------------------------------------
+
+  Mechanical properties :
+
+-------------------------------------------------------------------------------
+  Convention :                    Reuss         Voigt         Hill
+-------------------------------------------------------------------------------
+  Bulk  Modulus (GPa)     =      -0.00100      -0.00048      -0.00074
+  Shear Modulus (GPa)     =      -0.00539       0.00058      -0.00241
+-------------------------------------------------------------------------------
+  Velocity S-wave (km/s)  =      -1.68799       0.55387      -1.12751
+  Velocity P-wave (km/s)  =       2.08012       0.39164       1.44456
+-------------------------------------------------------------------------------
+  Compressibility (1/GPa) = *************
+-------------------------------------------------------------------------------
+  Stress axis :                     x             y             z
+-------------------------------------------------------------------------------
+  Youngs Moduli (GPa)     =      -0.09822      -0.04359      -0.00567
+-------------------------------------------------------------------------------
+  Poissons Ratio (x)      =                    -5.27080      -0.74292
+  Poissons Ratio (y)      =     -11.87724                    -0.81520
+  Poissons Ratio (z)      =     -12.87700      -6.27046
+-------------------------------------------------------------------------------
+
+
+  Piezoelectric Strain Matrix: (Units=C/m**2)
+
+-------------------------------------------------------------------------------
+  Indices      1         2         3         4         5         6    
+-------------------------------------------------------------------------------
+       x     0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+       y     0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+       z     0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+-------------------------------------------------------------------------------
+
+
+  Piezoelectric Stress Matrix: (Units=10**-11 C/N)
+
+-------------------------------------------------------------------------------
+  Indices      1         2         3         4         5         6    
+-------------------------------------------------------------------------------
+       x     0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+       y     0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+       z     0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+-------------------------------------------------------------------------------
+
+
+  Static dielectric constant tensor : 
+
+-------------------------------------------------------------------------------
+              x         y         z
+-------------------------------------------------------------------------------
+       x     1.00000   0.00000   0.00000
+       y     0.00000   1.00000   0.00000
+       z     0.00000   0.00000   1.00000
+--------------------------------------------------------------------------------
+
+  Static refractive indices : 
+
+-------------------------------------------------------------------------------
+    1 =    1.00000      2 =    1.00000      3 =    1.00000
+-------------------------------------------------------------------------------
+
+
+  Phonon Calculation : 
+
+  Number of k points for this configuration =        1
+
+--------------------------------------------------------------------------------
+  K point      1 =   0.000000  0.000000  0.000000  Weight =    1.000
+--------------------------------------------------------------------------------
+
+  Frequencies (cm-1) [NB: Negative implies an imaginary mode]:
+
+    0.00    0.00    0.00
+
+
+--------------------------------------------------------------------------------
+  Phonon properties (per mole of unit cells): Temperature =      0.000 K
+--------------------------------------------------------------------------------
+  Zero point energy            =        0.000000 eV
+--------------------------------------------------------------------------------
+
+  Phonon density of states : 
+
+--------------------------------------------------------------------------------
+ Frequency (cm-1) Density of States                                             
+--------------------------------------------------------------------------------
+    0.00000 |                                                              0.000
+    0.00000 |                                                              0.000
+    0.00000 |                                                              0.000
+    0.00000 |                                                              0.000
+    0.00000 |                                                              0.000
+    0.00000 |                                                              0.000
+    0.00001 |                                                              0.000
+    0.00001 |                                                              0.000
+    0.00001 |                                                              0.000
+    0.00001 |                                                              0.000
+    0.00001 |                                                              0.000
+    0.00001 |                                                              0.000
+    0.00001 |                                                              0.000
+    0.00001 |                                                              0.000
+    0.00001 |                                                              0.000
+    0.00001 |                                                              0.000
+    0.00002 |                                                              0.000
+    0.00002 |                                                              0.000
+    0.00002 |                                                              0.000
+    0.00002 |                                                              0.000
+    0.00002 |                                                              0.000
+    0.00002 |                                                              0.000
+    0.00002 |                                                              0.000
+    0.00002 |                                                              0.000
+    0.00002 |                                                              0.000
+    0.00002 |                                                              0.000
+    0.00003 |                                                              0.000
+    0.00003 |                                                              0.000
+    0.00003 |                                                              0.000
+    0.00003 |                                                              0.000
+    0.00003 |                                                              0.000
+    0.00003 |                                                              0.000
+    0.00003 |                                                              0.000
+    0.00003 |                                                              0.000
+    0.00003 |                                                              0.000
+    0.00003 |                                                              0.000
+    0.00004 |                                                              0.000
+    0.00004 |                                                              0.000
+    0.00004 |                                                              0.000
+    0.00004 |                                                              0.000
+    0.00004 |                                                              0.000
+    0.00004 |                                                              0.000
+    0.00004 |                                                              0.000
+    0.00004 |                                                              0.000
+    0.00004 |                                                              0.000
+    0.00004 |                                                              0.000
+    0.00005 |                                                              0.000
+    0.00005 |                                                              0.000
+    0.00005 |                                                              0.000
+    0.00005 |                                                              0.000
+    0.00005 |                                                              0.000
+    0.00005 |                                                              0.000
+    0.00005 |                                                              0.000
+    0.00005 |                                                              0.000
+    0.00005 |                                                              0.000
+    0.00005 |                                                              0.000
+    0.00006 |                                                              0.000
+    0.00006 |                                                              0.000
+    0.00006 |                                                              0.000
+    0.00006 |                                                              0.000
+    0.00006 |                                                              0.000
+    0.00006 |                                                              0.000
+    0.00006 |                                                              0.000
+    0.00006 |                                                              0.000
+--------------------------------------------------------------------------------
+
+
+
+  XYZ File written as gulp.xyz                                
+
+
+  Time to end of properties =       0.0120 seconds
+
+
+
+  Electrostatic potential at atomic positions :
+
+-------------------------------------------------------------------------------
+ Site  Atomic      Potential                Derivatives (V/Angs)
+ No.   Label          (V)                 x           y           z
+-------------------------------------------------------------------------------
+     1 F     c      0.342521           0.000000   -0.000000   -0.000000
+-------------------------------------------------------------------------------
+
+  Total time to end of lattice properties =       0.0128 s
+
+
+  Peak dynamic memory used =       0.54 MB 
+
+
+  Timing analysis for GULP :
+
+--------------------------------------------------------------------------------
+  Task / Subroutine                                          Time (Seconds)
+--------------------------------------------------------------------------------
+  Calculation of reciprocal space energy and derivatives          0.0007
+  Calculation of real space energy and derivatives                0.0002
+  Calculation of molecules and connectivity                       0.0001
+  Calculation of phonons                                          0.0010
+  Calculation of scattering                                       0.0000
+--------------------------------------------------------------------------------
+  Total CPU time                                                  0.0129
+--------------------------------------------------------------------------------
+
+
+  Dump file written as fit1.res                                                
+
+
+
+  **** GULP has completed with 1 warning - beware! ****
+
+  Job Finished at 06:23.11 11th May        2016                               
+

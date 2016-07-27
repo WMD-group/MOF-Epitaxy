@@ -1,0 +1,3660 @@
+ DBCSR| Multiplication driver                                               BLAS
+ DBCSR| Multrec recursion limit                                              512
+ DBCSR| Multiplication stack size                                           1000
+ DBCSR| Maximum elements for images                                    UNLIMITED
+ DBCSR| Randmat seed                                                    12341313
+ DBCSR| Multiplication size stacks                                             3
+ DBCSR| Use MPI memory allocation                                              T
+ DBCSR| Use RMA algorithm                                                      F
+ DBCSR| Use Communication thread                                               T
+ DBCSR| Communication thread load                                             87
+
+
+  **** **** ******  **  PROGRAM STARTED AT               2016-04-21 10:15:12.304
+ ***** ** ***  *** **   PROGRAM STARTED ON                           node-sw-001
+ **    ****   ******    PROGRAM STARTED BY                                 jb459
+ ***** **    ** ** **   PROGRAM PROCESS ID                                  2567
+  **** **  *******  **  PROGRAM STARTED IN /beegfs/scratch/user/g/jb459/new_surf
+                                           ace_Curtin/NEW/110_surface_540atoms/b
+                                           etterbasis/referencestates/2coordinat
+                                           e/OH-inbox
+
+ CP2K| version string:                                          CP2K version 3.0
+ CP2K| source code revision number:                                    svn:16458
+ CP2K| cp2kflags: fftw3 parallel mpi2 scalapack                                 
+ CP2K| is freely available from                            https://www.cp2k.org/
+ CP2K| Program compiled at                          Thu Mar 24 15:10:21 GMT 2016
+ CP2K| Program compiled on                                           itd-ngpu-01
+ CP2K| Program compiled for                              Linux-x86-64-intel-host
+ CP2K| Data directory path                      /apps/cp2k/offline/cp2k-3.0/data
+ CP2K| Input file name                                                  cp2k.inp
+ 
+ GLOBAL| Force Environment number                                              1
+ GLOBAL| Basis set file name                                    ./GTH_POTENTIALS
+ GLOBAL| MM Potential file name                                     MM_POTENTIAL
+ GLOBAL| Coordinate file name                                      __STD_INPUT__
+ GLOBAL| Method name                                                        CP2K
+ GLOBAL| Project name                                                   TiO2_110
+ GLOBAL| Preferred FFT library                                             FFTW3
+ GLOBAL| Preferred diagonalization lib.                                       SL
+ GLOBAL| Run type                                                        GEO_OPT
+ GLOBAL| All-to-all communication in single precision                          F
+ GLOBAL| FFTs using library dependent lengths                                  T
+ GLOBAL| Global print level                                               MEDIUM
+ GLOBAL| Total number of message passing processes                           256
+ GLOBAL| Number of threads for this process                                    1
+ GLOBAL| This output is from process                                           0
+ GLOBAL| CPU model name :  Intel(R) Xeon(R) CPU E5-2650 v2 @ 2.60GHz
+
+ MEMORY| system memory details [Kb]
+ MEMORY|                        rank 0           min           max       average
+ MEMORY| MemTotal            132237328     132237324     132237328     132237324
+ MEMORY| MemFree             128710508     108225076     128710508     122740884
+ MEMORY| Buffers                147248        132608        218644        167935
+ MEMORY| Cached                1363776       1363776      20794476       6405866
+ MEMORY| Slab                   113636        113636       2565992        951696
+ MEMORY| SReclaimable            40112         40112       1940564        703864
+ MEMORY| MemLikelyFree       130261644     129530724     130261644     130018550
+
+
+ *** Fundamental physical constants (SI units) ***
+
+ *** Literature: B. J. Mohr and B. N. Taylor,
+ ***             CODATA recommended values of the fundamental physical
+ ***             constants: 2006, Web Version 5.1
+ ***             http://physics.nist.gov/constants
+
+ Speed of light in vacuum [m/s]                             2.99792458000000E+08
+ Magnetic constant or permeability of vacuum [N/A**2]       1.25663706143592E-06
+ Electric constant or permittivity of vacuum [F/m]          8.85418781762039E-12
+ Planck constant (h) [J*s]                                  6.62606896000000E-34
+ Planck constant (h-bar) [J*s]                              1.05457162825177E-34
+ Elementary charge [C]                                      1.60217648700000E-19
+ Electron mass [kg]                                         9.10938215000000E-31
+ Electron g factor [ ]                                     -2.00231930436220E+00
+ Proton mass [kg]                                           1.67262163700000E-27
+ Fine-structure constant                                    7.29735253760000E-03
+ Rydberg constant [1/m]                                     1.09737315685270E+07
+ Avogadro constant [1/mol]                                  6.02214179000000E+23
+ Boltzmann constant [J/K]                                   1.38065040000000E-23
+ Atomic mass unit [kg]                                      1.66053878200000E-27
+ Bohr radius [m]                                            5.29177208590000E-11
+
+ *** Conversion factors ***
+
+ [u] -> [a.u.]                                              1.82288848426455E+03
+ [Angstrom] -> [Bohr] = [a.u.]                              1.88972613288564E+00
+ [a.u.] = [Bohr] -> [Angstrom]                              5.29177208590000E-01
+ [a.u.] -> [s]                                              2.41888432650478E-17
+ [a.u.] -> [fs]                                             2.41888432650478E-02
+ [a.u.] -> [J]                                              4.35974393937059E-18
+ [a.u.] -> [N]                                              8.23872205491840E-08
+ [a.u.] -> [K]                                              3.15774647902944E+05
+ [a.u.] -> [kJ/mol]                                         2.62549961709828E+03
+ [a.u.] -> [kcal/mol]                                       6.27509468713739E+02
+ [a.u.] -> [Pa]                                             2.94210107994716E+13
+ [a.u.] -> [bar]                                            2.94210107994716E+08
+ [a.u.] -> [atm]                                            2.90362800883016E+08
+ [a.u.] -> [eV]                                             2.72113838565563E+01
+ [a.u.] -> [Hz]                                             6.57968392072181E+15
+ [a.u.] -> [1/cm] (wave numbers)                            2.19474631370540E+05
+ [a.u./Bohr**2] -> [1/cm]                                   5.14048714338585E+03
+ 
+
+ CELL_TOP| Volume [angstrom^3]:                                        16675.829
+ CELL_TOP| Vector a [angstrom    17.724     0.000     0.000    |a| =      17.724
+ CELL_TOP| Vector b [angstrom     0.000    19.461     0.000    |b| =      19.461
+ CELL_TOP| Vector c [angstrom     0.000     0.000    48.346    |c| =      48.346
+ CELL_TOP| Angle (b,c), alpha [degree]:                                   90.000
+ CELL_TOP| Angle (a,c), beta  [degree]:                                   90.000
+ CELL_TOP| Angle (a,b), gamma [degree]:                                   90.000
+ CELL_TOP| Numerically orthorhombic:                                         YES
+ 
+ GENERATE| WARNING:: No connections detected for Hydrogen - Atom Nr:         1 !
+ GENERATE|  Preliminary Number of Bonds generated:                             0
+ GENERATE|  Achieved consistency in connectivity generation.
+
+ CELL| Volume [angstrom^3]:                                            16675.829
+ CELL| Vector a [angstrom]:      17.724     0.000     0.000    |a| =      17.724
+ CELL| Vector b [angstrom]:       0.000    19.461     0.000    |b| =      19.461
+ CELL| Vector c [angstrom]:       0.000     0.000    48.346    |c| =      48.346
+ CELL| Angle (b,c), alpha [degree]:                                       90.000
+ CELL| Angle (a,c), beta  [degree]:                                       90.000
+ CELL| Angle (a,b), gamma [degree]:                                       90.000
+ CELL| Numerically orthorhombic:                                             YES
+
+ CELL_REF| Volume [angstrom^3]:                                        16675.829
+ CELL_REF| Vector a [angstrom    17.724     0.000     0.000    |a| =      17.724
+ CELL_REF| Vector b [angstrom     0.000    19.461     0.000    |b| =      19.461
+ CELL_REF| Vector c [angstrom     0.000     0.000    48.346    |c| =      48.346
+ CELL_REF| Angle (b,c), alpha [degree]:                                   90.000
+ CELL_REF| Angle (a,c), beta  [degree]:                                   90.000
+ CELL_REF| Angle (a,b), gamma [degree]:                                   90.000
+ CELL_REF| Numerically orthorhombic:                                         YES
+
+ *******************************************************************************
+ *******************************************************************************
+ **                                                                           **
+ **     #####                         ##              ##                      **
+ **    ##   ##            ##          ##              ##                      **
+ **   ##     ##                       ##            ######                    **
+ **   ##     ##  ##   ##  ##   #####  ##  ##   ####   ##    #####    #####    **
+ **   ##     ##  ##   ##  ##  ##      ## ##   ##      ##   ##   ##  ##   ##   **
+ **   ##  ## ##  ##   ##  ##  ##      ####     ###    ##   ######   ######    **
+ **    ##  ###   ##   ##  ##  ##      ## ##      ##   ##   ##       ##        **
+ **     #######   #####   ##   #####  ##  ##  ####    ##    #####   ##        **
+ **           ##                                                    ##        **
+ **                                                                           **
+ **                                                ... make the atoms dance   **
+ **                                                                           **
+ **            Copyright (C) by CP2K Developers Group (2000 - 2015)           **
+ **                                                                           **
+ *******************************************************************************
+
+ DFT| Spin restricted Kohn-Sham (RKS) calculation                            RKS
+ DFT| Multiplicity                                                             1
+ DFT| Number of spin states                                                    1
+ DFT| Charge                                                                   1
+ DFT| Self-interaction correction (SIC)                                       NO
+ DFT| Cutoffs: density                                              1.000000E-10
+ DFT|          gradient                                             1.000000E-10
+ DFT|          tau                                                  1.000000E-10
+ DFT|          cutoff_smoothing_range                               0.000000E+00
+ DFT| XC density smoothing                                                  NONE
+ DFT| XC derivatives                                                          PW
+ FUNCTIONAL| ROUTINE=NEW
+ FUNCTIONAL| PBE:
+ FUNCTIONAL| PBEsol, J.P. Perdew et al., Phys. Rev. Letter, vol 100,n 13, p. 136
+ FUNCTIONAL| 406, (2008) {spin unpolarized}                                     
+ vdW POTENTIAL|                                                   Pair Potential
+ vdW POTENTIAL|          DFT-D3 (Version 3.1)
+ vdW POTENTIAL|          Potential Form: S. Grimme et al, JCP 132: 154104 (2010)
+ vdW POTENTIAL|          Zero Damping
+ vdW POTENTIAL|          Cutoff Radius [Bohr]:                             20.00
+ vdW POTENTIAL|          s6 Scaling Factor:                               1.0000
+ vdW POTENTIAL|          sr6 Scaling Factor:                              1.2170
+ vdW POTENTIAL|          s8 Scaling Factor:                               0.7220
+ vdW POTENTIAL|          Cutoff for CN calculation:                   0.1000E-05
+
+ QS| Method:                                                                 GPW
+ QS| Density plane wave grid type                        NON-SPHERICAL FULLSPACE
+ QS| Number of grid levels:                                                    4
+ QS| Density cutoff [a.u.]:                                                150.0
+ QS| Multi grid cutoff [a.u.]: 1) grid level                               150.0
+ QS|                           2) grid level                                50.0
+ QS|                           3) grid level                                16.7
+ QS|                           4) grid level                                 5.6
+ QS| Grid level progression factor:                                          3.0
+ QS| Relative density cutoff [a.u.]:                                        25.0
+ QS| Consistent realspace mapping and integration 
+ QS| Interaction thresholds: eps_pgf_orb:                                1.0E-20
+ QS|                         eps_filter_matrix:                          0.0E+00
+ QS|                         eps_core_charge:                            1.0E-14
+ QS|                         eps_rho_gspace:                             1.0E-12
+ QS|                         eps_rho_rspace:                             1.0E-12
+ QS|                         eps_gvg_rspace:                             1.0E-06
+ QS|                         eps_ppl:                                    1.0E-02
+ QS|                         eps_ppnl:                                   1.0E-08
+
+
+ ATOMIC KIND INFORMATION
+
+  1. Atomic kind: H                                     Number of atoms:       1
+
+     Orbital Basis Set                                                     cc-TZ
+
+       Number of orbital shell sets:                                           6
+       Number of orbital shells:                                               6
+       Number of primitive Cartesian functions:                                8
+       Number of Cartesian basis functions:                                   15
+       Number of spherical basis functions:                                   14
+       Norm type:                                                              2
+
+       Normalised Cartesian orbitals:
+
+                        Set   Shell   Orbital            Exponent    Coefficient
+
+                          1       1    1s               10.882724      -0.281396
+                                                         3.096875      -0.411840
+                                                         0.987452      -0.533977
+
+                          2       1    1s                0.345069       0.320878
+
+                          3       1    1s                0.149269       0.171154
+
+                          4       1    2px               1.407000       2.184277
+                          4       1    2py               1.407000       2.184277
+                          4       1    2pz               1.407000       2.184277
+
+                          5       1    2px               0.388000       0.436495
+                          5       1    2py               0.388000       0.436495
+                          5       1    2pz               0.388000       0.436495
+
+                          6       1    3dx2              1.057000       1.813597
+                          6       1    3dxy              1.057000       3.141241
+                          6       1    3dxz              1.057000       3.141241
+                          6       1    3dy2              1.057000       1.813597
+                          6       1    3dyz              1.057000       3.141241
+                          6       1    3dz2              1.057000       1.813597
+
+     Potential information for                                        GTH-PBE-q1
+
+       Description:                       Goedecker-Teter-Hutter pseudopotential
+                                           Goedecker et al., PRB 54, 1703 (1996)
+                                          Hartwigsen et al., PRB 58, 3641 (1998)
+                                                      Krack, TCA 114, 145 (2005)
+
+       Gaussian exponent of the core charge distribution:              12.500000
+       Electronic configuration (s p d ...):                                   1
+
+       Parameters of the local part of the GTH pseudopotential:
+
+                          rloc        C1          C2          C3          C4
+                        0.200000   -4.178900    0.724463
+
+
+ MOLECULE KIND INFORMATION
+
+
+ All atoms are their own molecule, skipping detailed information
+
+
+ TOTAL NUMBERS AND MAXIMUM NUMBERS
+
+  Total number of            - Atomic kinds:                                   1
+                             - Atoms:                                          1
+                             - Shell sets:                                     6
+                             - Shells:                                         6
+                             - Primitive Cartesian functions:                  8
+                             - Cartesian basis functions:                     15
+                             - Spherical basis functions:                     14
+
+  Maximum angular momentum of- Orbital basis functions:                        2
+                             - Local part of the GTH pseudopotential:          2
+
+
+ MODULE QUICKSTEP:  ATOMIC COORDINATES IN angstrom
+
+  Atom  Kind  Element       X           Y           Z          Z(eff)       Mass
+
+       1     1 H    1    7.374714    6.529718   16.459436      1.00       1.0079
+
+
+
+
+ SCF PARAMETERS         Density guess:                                   RESTART
+                        --------------------------------------------------------
+                        max_scf:                                             500
+                        max_scf_history:                                       0
+                        max_diis:                                              4
+                        --------------------------------------------------------
+                        eps_scf:                                        1.00E-07
+                        eps_scf_history:                                0.00E+00
+                        eps_diis:                                       1.00E-01
+                        eps_eigval:                                     1.00E-05
+                        --------------------------------------------------------
+                        level_shift [a.u.]:                                 0.00
+                        --------------------------------------------------------
+                        No outer SCF
+
+ PW_GRID| Information for grid number                                          1
+ PW_GRID| Grid distributed over                                   256 processors
+ PW_GRID| Real space group dimensions                                    16   16
+ PW_GRID| the grid is blocked:                                               YES
+ PW_GRID| Cutoff [a.u.]                                                    150.0
+ PW_GRID| spherical cutoff:                                                   NO
+ PW_GRID|   Bounds   1            -94      94                Points:         189
+ PW_GRID|   Bounds   2           -105     104                Points:         210
+ PW_GRID|   Bounds   3           -252     251                Points:         504
+ PW_GRID| Volume element (a.u.^3)  0.5626E-02     Volume (a.u.^3)    112534.0758
+ PW_GRID| Grid span                                                    FULLSPACE
+ PW_GRID|   Distribution                         Average         Max         Min
+ PW_GRID|   G-Vectors                            78139.7       84672       76167
+ PW_GRID|   G-Rays                                 413.4         448         403
+ PW_GRID|   Real Space Points                    78139.7       84672       76167
+
+ PW_GRID| Information for grid number                                          2
+ PW_GRID| Grid distributed over                                   256 processors
+ PW_GRID| Real space group dimensions                                    16   16
+ PW_GRID| the grid is blocked:                                                NO
+ PW_GRID| Cutoff [a.u.]                                                     50.0
+ PW_GRID| spherical cutoff:                                                   NO
+ PW_GRID|   Bounds   1            -54      53                Points:         108
+ PW_GRID|   Bounds   2            -60      59                Points:         120
+ PW_GRID|   Bounds   3           -148     148                Points:         297
+ PW_GRID| Volume element (a.u.^3)  0.2924E-01     Volume (a.u.^3)    112534.0758
+ PW_GRID| Grid span                                                    FULLSPACE
+ PW_GRID|   Distribution                         Average         Max         Min
+ PW_GRID|   G-Vectors                            15035.6       48384           0
+ PW_GRID|   G-Rays                                 139.2         448           0
+ PW_GRID|   Real Space Points                    15035.6       16632       12474
+
+ PW_GRID| Information for grid number                                          3
+ PW_GRID| Grid distributed over                                   256 processors
+ PW_GRID| Real space group dimensions                                    16   16
+ PW_GRID| the grid is blocked:                                                NO
+ PW_GRID| Cutoff [a.u.]                                                     16.7
+ PW_GRID| spherical cutoff:                                                   NO
+ PW_GRID|   Bounds   1            -31      31                Points:          63
+ PW_GRID|   Bounds   2            -35      34                Points:          70
+ PW_GRID|   Bounds   3            -84      83                Points:         168
+ PW_GRID| Volume element (a.u.^3)  0.1519         Volume (a.u.^3)    112534.0758
+ PW_GRID| Grid span                                                    FULLSPACE
+ PW_GRID|   Distribution                         Average         Max         Min
+ PW_GRID|   G-Vectors                             2894.1       26208           0
+ PW_GRID|   G-Rays                                  45.9         416           0
+ PW_GRID|   Real Space Points                     2894.1        3360        2016
+
+ PW_GRID| Information for grid number                                          4
+ PW_GRID| Grid distributed over                                   256 processors
+ PW_GRID| Real space group dimensions                                    16   16
+ PW_GRID| the grid is blocked:                                                NO
+ PW_GRID| Cutoff [a.u.]                                                      5.6
+ PW_GRID| spherical cutoff:                                                   NO
+ PW_GRID|   Bounds   1            -17      17                Points:          35
+ PW_GRID|   Bounds   2            -20      19                Points:          40
+ PW_GRID|   Bounds   3            -49      49                Points:          99
+ PW_GRID| Volume element (a.u.^3)  0.8119         Volume (a.u.^3)    112534.0758
+ PW_GRID| Grid span                                                    FULLSPACE
+ PW_GRID|   Distribution                         Average         Max         Min
+ PW_GRID|   G-Vectors                              541.4       14560           0
+ PW_GRID|   G-Rays                                  15.5         416           0
+ PW_GRID|   Real Space Points                      541.4         891         396
+
+ POISSON| Solver                                                        PERIODIC
+ POISSON| Periodicity                                                        XYZ
+
+ RS_GRID| Information for grid number                                          1
+ RS_GRID|   Bounds   1            -94      94                Points:         189
+ RS_GRID|   Bounds   2           -105     104                Points:         210
+ RS_GRID|   Bounds   3           -252     251                Points:         504
+ RS_GRID| Real space distribution over                                  4 groups
+ RS_GRID| Real space distribution along direction                              1
+ RS_GRID| Border size                                                         25
+ RS_GRID| Real space distribution over                                  4 groups
+ RS_GRID| Real space distribution along direction                              2
+ RS_GRID| Border size                                                         25
+ RS_GRID| Real space distribution over                                 16 groups
+ RS_GRID| Real space distribution along direction                              3
+ RS_GRID| Border size                                                         25
+ RS_GRID|   Distribution                         Average         Max         Min
+ RS_GRID|   Planes                                  97.2          98          97
+ RS_GRID|   Distribution                         Average         Max         Min
+ RS_GRID|   Planes                                 102.5         103         102
+ RS_GRID|   Distribution                         Average         Max         Min
+ RS_GRID|   Planes                                  81.5          82          81
+
+ RS_GRID| Information for grid number                                          2
+ RS_GRID|   Bounds   1            -54      53                Points:         108
+ RS_GRID|   Bounds   2            -60      59                Points:         120
+ RS_GRID|   Bounds   3           -148     148                Points:         297
+ RS_GRID| Real space distribution over                                  4 groups
+ RS_GRID| Real space distribution along direction                              1
+ RS_GRID| Border size                                                         23
+ RS_GRID| Real space distribution over                                  4 groups
+ RS_GRID| Real space distribution along direction                              2
+ RS_GRID| Border size                                                         23
+ RS_GRID| Real space distribution over                                 16 groups
+ RS_GRID| Real space distribution along direction                              3
+ RS_GRID| Border size                                                         23
+ RS_GRID|   Distribution                         Average         Max         Min
+ RS_GRID|   Planes                                  73.0          73          73
+ RS_GRID|   Distribution                         Average         Max         Min
+ RS_GRID|   Planes                                  76.0          76          76
+ RS_GRID|   Distribution                         Average         Max         Min
+ RS_GRID|   Planes                                  64.6          65          64
+
+ RS_GRID| Information for grid number                                          3
+ RS_GRID|   Bounds   1            -31      31                Points:          63
+ RS_GRID|   Bounds   2            -35      34                Points:          70
+ RS_GRID|   Bounds   3            -84      83                Points:         168
+ RS_GRID| Real space fully replicated
+ RS_GRID| Group size                                                           1
+
+ RS_GRID| Information for grid number                                          4
+ RS_GRID|   Bounds   1            -17      17                Points:          35
+ RS_GRID|   Bounds   2            -20      19                Points:          40
+ RS_GRID|   Bounds   3            -49      49                Points:          99
+ RS_GRID| Real space fully replicated
+ RS_GRID| Group size                                                           1
+
+ DISTRIBUTION OF THE PARTICLES (ROWS)
+              Process row      Number of particles         Number of matrix rows
+                        0                        1                            -1
+                        1                        0                            -1
+                        2                        0                            -1
+                        3                        0                            -1
+                        4                        0                            -1
+                        5                        0                            -1
+                        6                        0                            -1
+                        7                        0                            -1
+                        8                        0                            -1
+                        9                        0                            -1
+                       10                        0                            -1
+                       11                        0                            -1
+                       12                        0                            -1
+                       13                        0                            -1
+                       14                        0                            -1
+                       15                        0                            -1
+                      Sum                        1                            -1
+
+ DISTRIBUTION OF THE PARTICLES (COLUMNS)
+              Process col      Number of particles      Number of matrix columns
+                        0                        1                            -1
+                        1                        0                            -1
+                        2                        0                            -1
+                        3                        0                            -1
+                        4                        0                            -1
+                        5                        0                            -1
+                        6                        0                            -1
+                        7                        0                            -1
+                        8                        0                            -1
+                        9                        0                            -1
+                       10                        0                            -1
+                       11                        0                            -1
+                       12                        0                            -1
+                       13                        0                            -1
+                       14                        0                            -1
+                       15                        0                            -1
+                      Sum                        1                            -1
+
+ *******************************************************************************
+ ***                     STARTING GEOMETRY OPTIMIZATION                      ***
+ ***                           CONJUGATE GRADIENTS                           ***
+ *******************************************************************************
+
+ DISTRIBUTION OF THE NEIGHBOR LISTS
+              Total number of particle pairs:                                  3
+              Total number of matrix elements:                               588
+              Average number of particle pairs:                                1
+              Maximum number of particle pairs:                                3
+              Average number of matrix element:                                3
+              Maximum number of matrix elements:                             588
+
+
+ DISTRIBUTION OF THE OVERLAP MATRIX
+              Number  of non-zero blocks:                                      1
+              Percentage non-zero blocks:                                 100.00
+              Average number of blocks per CPU:                                1
+              Maximum number of blocks per CPU:                                1
+              Average number of matrix elements per CPU:                       1
+              Maximum number of matrix elements per CPU:                     206
+
+ Number of electrons:                                                          0
+ Number of occupied orbitals:                                                  0
+ Number of molecular orbitals:                                                 0
+
+ Number of orbital functions:                                                 14
+ Number of independent orbital functions:                                     14
+
+ Extrapolation method: initial_guess
+
+ *** WARNING in qs_initial_guess.F:277 :: User requested to restart the   ***
+ *** wavefunction from the file named: TiO2_110-RESTART.wfn. This file    ***
+ *** does not exist. Please check the existence of the file or change     ***
+ *** properly the value of the keyword WFN_RESTART_FILE_NAME. Calculation ***
+ *** continues using ATOMIC GUESS.                                        ***
+
+
+ Atomic guess: The first density matrix is obtained in terms of atomic orbitals
+               and electronic configurations assigned to each atomic kind
+
+ Guess for atomic kind: H
+
+ Electronic structure
+    Total number of core electrons                                          0.00
+    Total number of valence electrons                                       1.00
+    Total number of electrons                                               1.00
+    Multiplicity                                                   not specified
+    S      1.00
+ 
+
+ *******************************************************************************
+                  Iteration          Convergence                     Energy [au]
+ *******************************************************************************
+                          1        0.429980E-02                  -0.423513531970
+                          2        0.332099E-03                  -0.423525175186
+                          3        0.241018E-04                  -0.423525335541
+                          4        0.614505E-08                  -0.423525336420
+
+ Energy components [Hartree]           Total Energy ::           -0.423525336420
+                                        Band Energy ::           -0.195262559383
+                                     Kinetic Energy ::            0.470173284674
+                                   Potential Energy ::           -0.893698621094
+                                      Virial (-V/T) ::            1.900785625696
+                                        Core Energy ::           -0.479699819139
+                                          XC Energy ::           -0.247097449670
+                                     Coulomb Energy ::            0.303271932388
+                       Total Pseudopotential Energy ::           -0.967738859557
+                       Local Pseudopotential Energy ::           -0.967738859557
+                    Nonlocal Pseudopotential Energy ::            0.000000000000
+                                        Confinement ::            0.178657557441
+
+ Orbital energies  State     L     Occupation   Energy[a.u.]          Energy[eV]
+
+                       1     0          1.000      -0.195263           -5.313364
+ 
+ Re-scaling the density matrix to get the right number of electrons
+                  # Electrons              Trace(P)               Scaling factor
+                            0                 1.000                        0.000
+
+
+ SCF WAVEFUNCTION OPTIMIZATION
+
+  ----------------------------------- OT ---------------------------------------
+  Minimizer      : DIIS                : direct inversion
+                                         in the iterative subspace
+                                         using   7 DIIS vectors
+                                         safer DIIS on
+  Preconditioner : FULL_KINETIC        : inversion of T + eS
+  Precond_solver : DEFAULT
+  stepsize       :    0.15000000                  energy_gap     :    0.20000000
+  eps_taylor     :   0.10000E-15                  max_taylor     :             4
+  ----------------------------------- OT ---------------------------------------
+
+  Step     Update method      Time    Convergence         Total energy    Change
+  ------------------------------------------------------------------------------
+
+  Trace(PS):                                    0.0000000000
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+     1 OT DIIS     0.15E+00    0.3     0.0000E+00        -0.0166493712 -1.66E-02
+
+  *** SCF run converged in     1 steps ***
+
+
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+  Overlap energy of the core charge distribution:               0.00000000000000
+  Self energy of the core charge distribution:                 -1.41047395886939
+  Core Hamiltonian energy:                                      0.00000000000000
+  Hartree energy:                                               1.39382459598412
+  Exchange-correlation energy:                                  0.00000000000000
+  Dispersion energy:                                           -0.00000000828723
+
+  Total energy:                                                -0.01664937117250
+
+ !-----------------------------------------------------------------------------!
+                     Mulliken Population Analysis
+
+ #  Atom  Element  Kind  Atomic population                           Net charge
+       1     H        1          0.000000                              1.000000
+ # Total charge                              0.000000                  1.000000
+
+ !-----------------------------------------------------------------------------!
+
+ !-----------------------------------------------------------------------------!
+                           Hirshfeld Charges
+
+  #Atom  Element  Kind  Ref Charge     Population                    Net charge
+      1       H      1       1.000          0.000                         1.000
+
+  Total Charge                                                            1.000
+ !-----------------------------------------------------------------------------!
+
+  Trace(PS):                                    0.0000000000
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+
+ ENERGY| Total FORCE_EVAL ( QS ) energy (a.u.):               -0.016649371172499
+
+
+ --------  Informations at step =     0 ------------
+  Optimization Method        =                   SD
+  Total Energy               =        -0.0166493712
+  Used time                  =                1.237
+ ---------------------------------------------------
+
+ --------------------------
+ OPTIMIZATION STEP:      1
+ --------------------------
+
+ DISTRIBUTION OF THE NEIGHBOR LISTS
+              Total number of particle pairs:                                  3
+              Total number of matrix elements:                               588
+              Average number of particle pairs:                                1
+              Maximum number of particle pairs:                                3
+              Average number of matrix element:                                3
+              Maximum number of matrix elements:                             588
+
+
+ DISTRIBUTION OF THE OVERLAP MATRIX
+              Number  of non-zero blocks:                                      1
+              Percentage non-zero blocks:                                 100.00
+              Average number of blocks per CPU:                                1
+              Maximum number of blocks per CPU:                                1
+              Average number of matrix elements per CPU:                       1
+              Maximum number of matrix elements per CPU:                     206
+
+ Number of electrons:                                                          0
+ Number of occupied orbitals:                                                  0
+ Number of molecular orbitals:                                                 0
+
+ Number of orbital functions:                                                 14
+ Number of independent orbital functions:                                     14
+
+ Parameters for the always stable predictor-corrector (ASPC) method:
+
+  ASPC order: 0
+
+  B(1) =   1.000000
+
+ Extrapolation method: ASPC
+
+
+ SCF WAVEFUNCTION OPTIMIZATION
+
+  ----------------------------------- OT ---------------------------------------
+  Minimizer      : DIIS                : direct inversion
+                                         in the iterative subspace
+                                         using   7 DIIS vectors
+                                         safer DIIS on
+  Preconditioner : FULL_KINETIC        : inversion of T + eS
+  Precond_solver : DEFAULT
+  stepsize       :    0.15000000                  energy_gap     :    0.20000000
+  eps_taylor     :   0.10000E-15                  max_taylor     :             4
+  ----------------------------------- OT ---------------------------------------
+
+  Step     Update method      Time    Convergence         Total energy    Change
+  ------------------------------------------------------------------------------
+
+  Trace(PS):                                    0.0000000000
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+     1 OT DIIS     0.15E+00    0.3     0.0000E+00        -0.0166493712 -1.66E-02
+
+  *** SCF run converged in     1 steps ***
+
+
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+  Overlap energy of the core charge distribution:               0.00000000000000
+  Self energy of the core charge distribution:                 -1.41047395886939
+  Core Hamiltonian energy:                                      0.00000000000000
+  Hartree energy:                                               1.39382459598412
+  Exchange-correlation energy:                                  0.00000000000000
+  Dispersion energy:                                           -0.00000000828723
+
+  Total energy:                                                -0.01664937117250
+
+ !-----------------------------------------------------------------------------!
+                     Mulliken Population Analysis
+
+ #  Atom  Element  Kind  Atomic population                           Net charge
+       1     H        1          0.000000                              1.000000
+ # Total charge                              0.000000                  1.000000
+
+ !-----------------------------------------------------------------------------!
+
+ !-----------------------------------------------------------------------------!
+                           Hirshfeld Charges
+
+  #Atom  Element  Kind  Ref Charge     Population                    Net charge
+      1       H      1       1.000          0.000                         1.000
+
+  Total Charge                                                            1.000
+ !-----------------------------------------------------------------------------!
+
+ ENERGY| Total FORCE_EVAL ( QS ) energy (a.u.):               -0.016649371172499
+
+
+ DISTRIBUTION OF THE NEIGHBOR LISTS
+              Total number of particle pairs:                                  3
+              Total number of matrix elements:                               588
+              Average number of particle pairs:                                1
+              Maximum number of particle pairs:                                3
+              Average number of matrix element:                                3
+              Maximum number of matrix elements:                             588
+
+
+ DISTRIBUTION OF THE OVERLAP MATRIX
+              Number  of non-zero blocks:                                      1
+              Percentage non-zero blocks:                                 100.00
+              Average number of blocks per CPU:                                1
+              Maximum number of blocks per CPU:                                1
+              Average number of matrix elements per CPU:                       1
+              Maximum number of matrix elements per CPU:                     206
+
+ Number of electrons:                                                          0
+ Number of occupied orbitals:                                                  0
+ Number of molecular orbitals:                                                 0
+
+ Number of orbital functions:                                                 14
+ Number of independent orbital functions:                                     14
+
+ Parameters for the always stable predictor-corrector (ASPC) method:
+
+  ASPC order: 0
+
+  B(1) =   2.000000
+  B(2) =  -1.000000
+
+ Extrapolation method: ASPC
+
+
+ SCF WAVEFUNCTION OPTIMIZATION
+
+  ----------------------------------- OT ---------------------------------------
+  Minimizer      : DIIS                : direct inversion
+                                         in the iterative subspace
+                                         using   7 DIIS vectors
+                                         safer DIIS on
+  Preconditioner : FULL_KINETIC        : inversion of T + eS
+  Precond_solver : DEFAULT
+  stepsize       :    0.15000000                  energy_gap     :    0.20000000
+  eps_taylor     :   0.10000E-15                  max_taylor     :             4
+  ----------------------------------- OT ---------------------------------------
+
+  Step     Update method      Time    Convergence         Total energy    Change
+  ------------------------------------------------------------------------------
+
+  Trace(PS):                                    0.0000000000
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                1.0000000001        0.0000000001
+  Total charge density on r-space grids:        1.0000000001
+  Total charge density g-space grids:           1.0000000001
+
+     1 OT DIIS     0.15E+00    0.3     0.0000E+00        -0.0166468263 -1.66E-02
+
+  *** SCF run converged in     1 steps ***
+
+
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                1.0000000001        0.0000000001
+  Total charge density on r-space grids:        1.0000000001
+  Total charge density g-space grids:           1.0000000001
+
+  Overlap energy of the core charge distribution:               0.00000000000000
+  Self energy of the core charge distribution:                 -1.41047395886939
+  Core Hamiltonian energy:                                      0.00000000000000
+  Hartree energy:                                               1.39382714084086
+  Exchange-correlation energy:                                  0.00000000000000
+  Dispersion energy:                                           -0.00000000828723
+
+  Total energy:                                                -0.01664682631576
+
+ !-----------------------------------------------------------------------------!
+                     Mulliken Population Analysis
+
+ #  Atom  Element  Kind  Atomic population                           Net charge
+       1     H        1          0.000000                              1.000000
+ # Total charge                              0.000000                  1.000000
+
+ !-----------------------------------------------------------------------------!
+
+ !-----------------------------------------------------------------------------!
+                           Hirshfeld Charges
+
+  #Atom  Element  Kind  Ref Charge     Population                    Net charge
+      1       H      1       1.000          0.000                         1.000
+
+  Total Charge                                                            1.000
+ !-----------------------------------------------------------------------------!
+
+ ENERGY| Total FORCE_EVAL ( QS ) energy (a.u.):               -0.016646826315759
+
+
+ DISTRIBUTION OF THE NEIGHBOR LISTS
+              Total number of particle pairs:                                  3
+              Total number of matrix elements:                               588
+              Average number of particle pairs:                                1
+              Maximum number of particle pairs:                                3
+              Average number of matrix element:                                3
+              Maximum number of matrix elements:                             588
+
+
+ DISTRIBUTION OF THE OVERLAP MATRIX
+              Number  of non-zero blocks:                                      1
+              Percentage non-zero blocks:                                 100.00
+              Average number of blocks per CPU:                                1
+              Maximum number of blocks per CPU:                                1
+              Average number of matrix elements per CPU:                       1
+              Maximum number of matrix elements per CPU:                     206
+
+ Number of electrons:                                                          0
+ Number of occupied orbitals:                                                  0
+ Number of molecular orbitals:                                                 0
+
+ Number of orbital functions:                                                 14
+ Number of independent orbital functions:                                     14
+
+ Parameters for the always stable predictor-corrector (ASPC) method:
+
+  ASPC order: 1
+
+  B(1) =   2.500000
+  B(2) =  -2.000000
+  B(3) =   0.500000
+
+ Extrapolation method: ASPC
+
+
+ SCF WAVEFUNCTION OPTIMIZATION
+
+  ----------------------------------- OT ---------------------------------------
+  Minimizer      : DIIS                : direct inversion
+                                         in the iterative subspace
+                                         using   7 DIIS vectors
+                                         safer DIIS on
+  Preconditioner : FULL_KINETIC        : inversion of T + eS
+  Precond_solver : DEFAULT
+  stepsize       :    0.15000000                  energy_gap     :    0.20000000
+  eps_taylor     :   0.10000E-15                  max_taylor     :             4
+  ----------------------------------- OT ---------------------------------------
+
+  Step     Update method      Time    Convergence         Total energy    Change
+  ------------------------------------------------------------------------------
+
+  Trace(PS):                                    0.0000000000
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+     1 OT DIIS     0.15E+00    0.3     0.0000E+00        -0.0166487436 -1.66E-02
+
+  *** SCF run converged in     1 steps ***
+
+
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+  Overlap energy of the core charge distribution:               0.00000000000000
+  Self energy of the core charge distribution:                 -1.41047395886939
+  Core Hamiltonian energy:                                      0.00000000000000
+  Hartree energy:                                               1.39382522355519
+  Exchange-correlation energy:                                  0.00000000000000
+  Dispersion energy:                                           -0.00000000828723
+
+  Total energy:                                                -0.01664874360142
+
+ !-----------------------------------------------------------------------------!
+                     Mulliken Population Analysis
+
+ #  Atom  Element  Kind  Atomic population                           Net charge
+       1     H        1          0.000000                              1.000000
+ # Total charge                              0.000000                  1.000000
+
+ !-----------------------------------------------------------------------------!
+
+ !-----------------------------------------------------------------------------!
+                           Hirshfeld Charges
+
+  #Atom  Element  Kind  Ref Charge     Population                    Net charge
+      1       H      1       1.000          0.000                         1.000
+
+  Total Charge                                                            1.000
+ !-----------------------------------------------------------------------------!
+
+ ENERGY| Total FORCE_EVAL ( QS ) energy (a.u.):               -0.016648743601424
+
+
+ *******************************************************************************
+ ***                 MNBRACK - NUMBER OF ENERGY EVALUATIONS :       3        ***
+ *******************************************************************************
+
+ DISTRIBUTION OF THE NEIGHBOR LISTS
+              Total number of particle pairs:                                  3
+              Total number of matrix elements:                               588
+              Average number of particle pairs:                                1
+              Maximum number of particle pairs:                                3
+              Average number of matrix element:                                3
+              Maximum number of matrix elements:                             588
+
+
+ DISTRIBUTION OF THE OVERLAP MATRIX
+              Number  of non-zero blocks:                                      1
+              Percentage non-zero blocks:                                 100.00
+              Average number of blocks per CPU:                                1
+              Maximum number of blocks per CPU:                                1
+              Average number of matrix elements per CPU:                       1
+              Maximum number of matrix elements per CPU:                     206
+
+ Number of electrons:                                                          0
+ Number of occupied orbitals:                                                  0
+ Number of molecular orbitals:                                                 0
+
+ Number of orbital functions:                                                 14
+ Number of independent orbital functions:                                     14
+
+ Parameters for the always stable predictor-corrector (ASPC) method:
+
+  ASPC order: 2
+
+  B(1) =   2.800000
+  B(2) =  -2.800000
+  B(3) =   1.200000
+  B(4) =  -0.200000
+
+ Extrapolation method: ASPC
+
+
+ SCF WAVEFUNCTION OPTIMIZATION
+
+  ----------------------------------- OT ---------------------------------------
+  Minimizer      : DIIS                : direct inversion
+                                         in the iterative subspace
+                                         using   7 DIIS vectors
+                                         safer DIIS on
+  Preconditioner : FULL_KINETIC        : inversion of T + eS
+  Precond_solver : DEFAULT
+  stepsize       :    0.15000000                  energy_gap     :    0.20000000
+  eps_taylor     :   0.10000E-15                  max_taylor     :             4
+  ----------------------------------- OT ---------------------------------------
+
+  Step     Update method      Time    Convergence         Total energy    Change
+  ------------------------------------------------------------------------------
+
+  Trace(PS):                                    0.0000000000
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+     1 OT DIIS     0.15E+00    0.3     0.0000E+00        -0.0166493712 -1.66E-02
+
+  *** SCF run converged in     1 steps ***
+
+
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+  Overlap energy of the core charge distribution:               0.00000000000000
+  Self energy of the core charge distribution:                 -1.41047395886939
+  Core Hamiltonian energy:                                      0.00000000000000
+  Hartree energy:                                               1.39382459598412
+  Exchange-correlation energy:                                  0.00000000000000
+  Dispersion energy:                                           -0.00000000828723
+
+  Total energy:                                                -0.01664937117250
+
+ !-----------------------------------------------------------------------------!
+                     Mulliken Population Analysis
+
+ #  Atom  Element  Kind  Atomic population                           Net charge
+       1     H        1          0.000000                              1.000000
+ # Total charge                              0.000000                  1.000000
+
+ !-----------------------------------------------------------------------------!
+
+ !-----------------------------------------------------------------------------!
+                           Hirshfeld Charges
+
+  #Atom  Element  Kind  Ref Charge     Population                    Net charge
+      1       H      1       1.000          0.000                         1.000
+
+  Total Charge                                                            1.000
+ !-----------------------------------------------------------------------------!
+
+  Trace(PS):                                    0.0000000000
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+
+ ENERGY| Total FORCE_EVAL ( QS ) energy (a.u.):               -0.016649371172499
+
+
+ DISTRIBUTION OF THE NEIGHBOR LISTS
+              Total number of particle pairs:                                  3
+              Total number of matrix elements:                               588
+              Average number of particle pairs:                                1
+              Maximum number of particle pairs:                                3
+              Average number of matrix element:                                3
+              Maximum number of matrix elements:                             588
+
+
+ DISTRIBUTION OF THE OVERLAP MATRIX
+              Number  of non-zero blocks:                                      1
+              Percentage non-zero blocks:                                 100.00
+              Average number of blocks per CPU:                                1
+              Maximum number of blocks per CPU:                                1
+              Average number of matrix elements per CPU:                       1
+              Maximum number of matrix elements per CPU:                     206
+
+ Number of electrons:                                                          0
+ Number of occupied orbitals:                                                  0
+ Number of molecular orbitals:                                                 0
+
+ Number of orbital functions:                                                 14
+ Number of independent orbital functions:                                     14
+
+ Parameters for the always stable predictor-corrector (ASPC) method:
+
+  ASPC order: 3
+
+  B(1) =   3.000000
+  B(2) =  -3.428571
+  B(3) =   1.928571
+  B(4) =  -0.571429
+  B(5) =   0.071429
+
+ Extrapolation method: ASPC
+
+
+ SCF WAVEFUNCTION OPTIMIZATION
+
+  ----------------------------------- OT ---------------------------------------
+  Minimizer      : DIIS                : direct inversion
+                                         in the iterative subspace
+                                         using   7 DIIS vectors
+                                         safer DIIS on
+  Preconditioner : FULL_KINETIC        : inversion of T + eS
+  Precond_solver : DEFAULT
+  stepsize       :    0.15000000                  energy_gap     :    0.20000000
+  eps_taylor     :   0.10000E-15                  max_taylor     :             4
+  ----------------------------------- OT ---------------------------------------
+
+  Step     Update method      Time    Convergence         Total energy    Change
+  ------------------------------------------------------------------------------
+
+  Trace(PS):                                    0.0000000000
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                1.0000000000       -0.0000000000
+  Total charge density on r-space grids:        1.0000000000
+  Total charge density g-space grids:           1.0000000000
+
+     1 OT DIIS     0.15E+00    0.3     0.0000E+00        -0.0166485325 -1.66E-02
+
+  *** SCF run converged in     1 steps ***
+
+
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                1.0000000000       -0.0000000000
+  Total charge density on r-space grids:        1.0000000000
+  Total charge density g-space grids:           1.0000000000
+
+  Overlap energy of the core charge distribution:               0.00000000000000
+  Self energy of the core charge distribution:                 -1.41047395886939
+  Core Hamiltonian energy:                                      0.00000000000000
+  Hartree energy:                                               1.39382543469670
+  Exchange-correlation energy:                                  0.00000000000000
+  Dispersion energy:                                           -0.00000000828723
+
+  Total energy:                                                -0.01664853245992
+
+ !-----------------------------------------------------------------------------!
+                     Mulliken Population Analysis
+
+ #  Atom  Element  Kind  Atomic population                           Net charge
+       1     H        1          0.000000                              1.000000
+ # Total charge                              0.000000                  1.000000
+
+ !-----------------------------------------------------------------------------!
+
+ !-----------------------------------------------------------------------------!
+                           Hirshfeld Charges
+
+  #Atom  Element  Kind  Ref Charge     Population                    Net charge
+      1       H      1       1.000          0.000                         1.000
+
+  Total Charge                                                            1.000
+ !-----------------------------------------------------------------------------!
+
+  Trace(PS):                                    0.0000000000
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                1.0000000000       -0.0000000000
+  Total charge density on r-space grids:        1.0000000000
+  Total charge density g-space grids:           1.0000000000
+
+
+ ENERGY| Total FORCE_EVAL ( QS ) energy (a.u.):               -0.016648532459922
+
+
+ DISTRIBUTION OF THE NEIGHBOR LISTS
+              Total number of particle pairs:                                  3
+              Total number of matrix elements:                               588
+              Average number of particle pairs:                                1
+              Maximum number of particle pairs:                                3
+              Average number of matrix element:                                3
+              Maximum number of matrix elements:                             588
+
+
+ DISTRIBUTION OF THE OVERLAP MATRIX
+              Number  of non-zero blocks:                                      1
+              Percentage non-zero blocks:                                 100.00
+              Average number of blocks per CPU:                                1
+              Maximum number of blocks per CPU:                                1
+              Average number of matrix elements per CPU:                       1
+              Maximum number of matrix elements per CPU:                     206
+
+ Number of electrons:                                                          0
+ Number of occupied orbitals:                                                  0
+ Number of molecular orbitals:                                                 0
+
+ Number of orbital functions:                                                 14
+ Number of independent orbital functions:                                     14
+
+ Parameters for the always stable predictor-corrector (ASPC) method:
+
+  ASPC order: 3
+
+  B(1) =   3.000000
+  B(2) =  -3.428571
+  B(3) =   1.928571
+  B(4) =  -0.571429
+  B(5) =   0.071429
+
+ Extrapolation method: ASPC
+
+
+ SCF WAVEFUNCTION OPTIMIZATION
+
+  ----------------------------------- OT ---------------------------------------
+  Minimizer      : DIIS                : direct inversion
+                                         in the iterative subspace
+                                         using   7 DIIS vectors
+                                         safer DIIS on
+  Preconditioner : FULL_KINETIC        : inversion of T + eS
+  Precond_solver : DEFAULT
+  stepsize       :    0.15000000                  energy_gap     :    0.20000000
+  eps_taylor     :   0.10000E-15                  max_taylor     :             4
+  ----------------------------------- OT ---------------------------------------
+
+  Step     Update method      Time    Convergence         Total energy    Change
+  ------------------------------------------------------------------------------
+
+  Trace(PS):                                    0.0000000000
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+     1 OT DIIS     0.15E+00    0.3     0.0000E+00        -0.0166496706 -1.66E-02
+
+  *** SCF run converged in     1 steps ***
+
+
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+  Overlap energy of the core charge distribution:               0.00000000000000
+  Self energy of the core charge distribution:                 -1.41047395886939
+  Core Hamiltonian energy:                                      0.00000000000000
+  Hartree energy:                                               1.39382429654752
+  Exchange-correlation energy:                                  0.00000000000000
+  Dispersion energy:                                           -0.00000000828723
+
+  Total energy:                                                -0.01664967060910
+
+ !-----------------------------------------------------------------------------!
+                     Mulliken Population Analysis
+
+ #  Atom  Element  Kind  Atomic population                           Net charge
+       1     H        1          0.000000                              1.000000
+ # Total charge                              0.000000                  1.000000
+
+ !-----------------------------------------------------------------------------!
+
+ !-----------------------------------------------------------------------------!
+                           Hirshfeld Charges
+
+  #Atom  Element  Kind  Ref Charge     Population                    Net charge
+      1       H      1       1.000          0.000                         1.000
+
+  Total Charge                                                            1.000
+ !-----------------------------------------------------------------------------!
+
+  Trace(PS):                                    0.0000000000
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+
+ ENERGY| Total FORCE_EVAL ( QS ) energy (a.u.):               -0.016649670609102
+
+
+ DISTRIBUTION OF THE NEIGHBOR LISTS
+              Total number of particle pairs:                                  3
+              Total number of matrix elements:                               588
+              Average number of particle pairs:                                1
+              Maximum number of particle pairs:                                3
+              Average number of matrix element:                                3
+              Maximum number of matrix elements:                             588
+
+
+ DISTRIBUTION OF THE OVERLAP MATRIX
+              Number  of non-zero blocks:                                      1
+              Percentage non-zero blocks:                                 100.00
+              Average number of blocks per CPU:                                1
+              Maximum number of blocks per CPU:                                1
+              Average number of matrix elements per CPU:                       1
+              Maximum number of matrix elements per CPU:                     206
+
+ Number of electrons:                                                          0
+ Number of occupied orbitals:                                                  0
+ Number of molecular orbitals:                                                 0
+
+ Number of orbital functions:                                                 14
+ Number of independent orbital functions:                                     14
+
+ Parameters for the always stable predictor-corrector (ASPC) method:
+
+  ASPC order: 3
+
+  B(1) =   3.000000
+  B(2) =  -3.428571
+  B(3) =   1.928571
+  B(4) =  -0.571429
+  B(5) =   0.071429
+
+ Extrapolation method: ASPC
+
+
+ SCF WAVEFUNCTION OPTIMIZATION
+
+  ----------------------------------- OT ---------------------------------------
+  Minimizer      : DIIS                : direct inversion
+                                         in the iterative subspace
+                                         using   7 DIIS vectors
+                                         safer DIIS on
+  Preconditioner : FULL_KINETIC        : inversion of T + eS
+  Precond_solver : DEFAULT
+  stepsize       :    0.15000000                  energy_gap     :    0.20000000
+  eps_taylor     :   0.10000E-15                  max_taylor     :             4
+  ----------------------------------- OT ---------------------------------------
+
+  Step     Update method      Time    Convergence         Total energy    Change
+  ------------------------------------------------------------------------------
+
+  Trace(PS):                                    0.0000000000
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+     1 OT DIIS     0.15E+00    0.3     0.0000E+00        -0.0166496843 -1.66E-02
+
+  *** SCF run converged in     1 steps ***
+
+
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+  Overlap energy of the core charge distribution:               0.00000000000000
+  Self energy of the core charge distribution:                 -1.41047395886939
+  Core Hamiltonian energy:                                      0.00000000000000
+  Hartree energy:                                               1.39382428283863
+  Exchange-correlation energy:                                  0.00000000000000
+  Dispersion energy:                                           -0.00000000828723
+
+  Total energy:                                                -0.01664968431799
+
+ !-----------------------------------------------------------------------------!
+                     Mulliken Population Analysis
+
+ #  Atom  Element  Kind  Atomic population                           Net charge
+       1     H        1          0.000000                              1.000000
+ # Total charge                              0.000000                  1.000000
+
+ !-----------------------------------------------------------------------------!
+
+ !-----------------------------------------------------------------------------!
+                           Hirshfeld Charges
+
+  #Atom  Element  Kind  Ref Charge     Population                    Net charge
+      1       H      1       1.000          0.000                         1.000
+
+  Total Charge                                                            1.000
+ !-----------------------------------------------------------------------------!
+
+  Trace(PS):                                    0.0000000000
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+
+ ENERGY| Total FORCE_EVAL ( QS ) energy (a.u.):               -0.016649684317986
+
+
+ DISTRIBUTION OF THE NEIGHBOR LISTS
+              Total number of particle pairs:                                  3
+              Total number of matrix elements:                               588
+              Average number of particle pairs:                                1
+              Maximum number of particle pairs:                                3
+              Average number of matrix element:                                3
+              Maximum number of matrix elements:                             588
+
+
+ DISTRIBUTION OF THE OVERLAP MATRIX
+              Number  of non-zero blocks:                                      1
+              Percentage non-zero blocks:                                 100.00
+              Average number of blocks per CPU:                                1
+              Maximum number of blocks per CPU:                                1
+              Average number of matrix elements per CPU:                       1
+              Maximum number of matrix elements per CPU:                     206
+
+ Number of electrons:                                                          0
+ Number of occupied orbitals:                                                  0
+ Number of molecular orbitals:                                                 0
+
+ Number of orbital functions:                                                 14
+ Number of independent orbital functions:                                     14
+
+ Parameters for the always stable predictor-corrector (ASPC) method:
+
+  ASPC order: 3
+
+  B(1) =   3.000000
+  B(2) =  -3.428571
+  B(3) =   1.928571
+  B(4) =  -0.571429
+  B(5) =   0.071429
+
+ Extrapolation method: ASPC
+
+
+ SCF WAVEFUNCTION OPTIMIZATION
+
+  ----------------------------------- OT ---------------------------------------
+  Minimizer      : DIIS                : direct inversion
+                                         in the iterative subspace
+                                         using   7 DIIS vectors
+                                         safer DIIS on
+  Preconditioner : FULL_KINETIC        : inversion of T + eS
+  Precond_solver : DEFAULT
+  stepsize       :    0.15000000                  energy_gap     :    0.20000000
+  eps_taylor     :   0.10000E-15                  max_taylor     :             4
+  ----------------------------------- OT ---------------------------------------
+
+  Step     Update method      Time    Convergence         Total energy    Change
+  ------------------------------------------------------------------------------
+
+  Trace(PS):                                    0.0000000000
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+     1 OT DIIS     0.15E+00    0.3     0.0000E+00        -0.0166496843 -1.66E-02
+
+  *** SCF run converged in     1 steps ***
+
+
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+  Overlap energy of the core charge distribution:               0.00000000000000
+  Self energy of the core charge distribution:                 -1.41047395886939
+  Core Hamiltonian energy:                                      0.00000000000000
+  Hartree energy:                                               1.39382428280753
+  Exchange-correlation energy:                                  0.00000000000000
+  Dispersion energy:                                           -0.00000000828723
+
+  Total energy:                                                -0.01664968434909
+
+ !-----------------------------------------------------------------------------!
+                     Mulliken Population Analysis
+
+ #  Atom  Element  Kind  Atomic population                           Net charge
+       1     H        1          0.000000                              1.000000
+ # Total charge                              0.000000                  1.000000
+
+ !-----------------------------------------------------------------------------!
+
+ !-----------------------------------------------------------------------------!
+                           Hirshfeld Charges
+
+  #Atom  Element  Kind  Ref Charge     Population                    Net charge
+      1       H      1       1.000          0.000                         1.000
+
+  Total Charge                                                            1.000
+ !-----------------------------------------------------------------------------!
+
+  Trace(PS):                                    0.0000000000
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+
+ ENERGY| Total FORCE_EVAL ( QS ) energy (a.u.):               -0.016649684349087
+
+
+ DISTRIBUTION OF THE NEIGHBOR LISTS
+              Total number of particle pairs:                                  3
+              Total number of matrix elements:                               588
+              Average number of particle pairs:                                1
+              Maximum number of particle pairs:                                3
+              Average number of matrix element:                                3
+              Maximum number of matrix elements:                             588
+
+
+ DISTRIBUTION OF THE OVERLAP MATRIX
+              Number  of non-zero blocks:                                      1
+              Percentage non-zero blocks:                                 100.00
+              Average number of blocks per CPU:                                1
+              Maximum number of blocks per CPU:                                1
+              Average number of matrix elements per CPU:                       1
+              Maximum number of matrix elements per CPU:                     206
+
+ Number of electrons:                                                          0
+ Number of occupied orbitals:                                                  0
+ Number of molecular orbitals:                                                 0
+
+ Number of orbital functions:                                                 14
+ Number of independent orbital functions:                                     14
+
+ Parameters for the always stable predictor-corrector (ASPC) method:
+
+  ASPC order: 3
+
+  B(1) =   3.000000
+  B(2) =  -3.428571
+  B(3) =   1.928571
+  B(4) =  -0.571429
+  B(5) =   0.071429
+
+ Extrapolation method: ASPC
+
+
+ SCF WAVEFUNCTION OPTIMIZATION
+
+  ----------------------------------- OT ---------------------------------------
+  Minimizer      : DIIS                : direct inversion
+                                         in the iterative subspace
+                                         using   7 DIIS vectors
+                                         safer DIIS on
+  Preconditioner : FULL_KINETIC        : inversion of T + eS
+  Precond_solver : DEFAULT
+  stepsize       :    0.15000000                  energy_gap     :    0.20000000
+  eps_taylor     :   0.10000E-15                  max_taylor     :             4
+  ----------------------------------- OT ---------------------------------------
+
+  Step     Update method      Time    Convergence         Total energy    Change
+  ------------------------------------------------------------------------------
+
+  Trace(PS):                                    0.0000000000
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+     1 OT DIIS     0.15E+00    0.3     0.0000E+00        -0.0166496843 -1.66E-02
+
+  *** SCF run converged in     1 steps ***
+
+
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+  Overlap energy of the core charge distribution:               0.00000000000000
+  Self energy of the core charge distribution:                 -1.41047395886939
+  Core Hamiltonian energy:                                      0.00000000000000
+  Hartree energy:                                               1.39382428284026
+  Exchange-correlation energy:                                  0.00000000000000
+  Dispersion energy:                                           -0.00000000828723
+
+  Total energy:                                                -0.01664968431635
+
+ !-----------------------------------------------------------------------------!
+                     Mulliken Population Analysis
+
+ #  Atom  Element  Kind  Atomic population                           Net charge
+       1     H        1          0.000000                              1.000000
+ # Total charge                              0.000000                  1.000000
+
+ !-----------------------------------------------------------------------------!
+
+ !-----------------------------------------------------------------------------!
+                           Hirshfeld Charges
+
+  #Atom  Element  Kind  Ref Charge     Population                    Net charge
+      1       H      1       1.000          0.000                         1.000
+
+  Total Charge                                                            1.000
+ !-----------------------------------------------------------------------------!
+
+  Trace(PS):                                    0.0000000000
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+
+ ENERGY| Total FORCE_EVAL ( QS ) energy (a.u.):               -0.016649684316354
+
+
+ *******************************************************************************
+ ***                 BRENT   - NUMBER OF ENERGY EVALUATIONS :       6        ***
+ *******************************************************************************
+
+ --------  Informations at step =     1 ------------
+  Optimization Method        =                   SD
+  Total Energy               =        -0.0166496843
+  Real energy change         =        -0.0000003132
+  Decrease in energy         =                  YES
+  Used time                  =                8.705
+
+  Convergence check :
+  Max. step size             =         0.0199590109
+  Conv. limit for step size  =         0.0030000000
+  Convergence in step size   =                   NO
+  RMS step size              =         0.0150886195
+  Conv. limit for RMS step   =         0.0015000000
+  Convergence in RMS step    =                   NO
+  Max. gradient              =         0.0000177067
+  Conv. limit for gradients  =         0.0004500000
+  Conv. in gradients         =                  YES
+  RMS gradient               =         0.0000133859
+  Conv. limit for RMS grad.  =         0.0003000000
+  Conv. in RMS gradients     =                  YES
+ ---------------------------------------------------
+
+ DISTRIBUTION OF THE NEIGHBOR LISTS
+              Total number of particle pairs:                                  3
+              Total number of matrix elements:                               588
+              Average number of particle pairs:                                1
+              Maximum number of particle pairs:                                3
+              Average number of matrix element:                                3
+              Maximum number of matrix elements:                             588
+
+
+ DISTRIBUTION OF THE OVERLAP MATRIX
+              Number  of non-zero blocks:                                      1
+              Percentage non-zero blocks:                                 100.00
+              Average number of blocks per CPU:                                1
+              Maximum number of blocks per CPU:                                1
+              Average number of matrix elements per CPU:                       1
+              Maximum number of matrix elements per CPU:                     206
+
+ Number of electrons:                                                          0
+ Number of occupied orbitals:                                                  0
+ Number of molecular orbitals:                                                 0
+
+ Number of orbital functions:                                                 14
+ Number of independent orbital functions:                                     14
+
+ Parameters for the always stable predictor-corrector (ASPC) method:
+
+  ASPC order: 3
+
+  B(1) =   3.000000
+  B(2) =  -3.428571
+  B(3) =   1.928571
+  B(4) =  -0.571429
+  B(5) =   0.071429
+
+ Extrapolation method: ASPC
+
+
+ SCF WAVEFUNCTION OPTIMIZATION
+
+  ----------------------------------- OT ---------------------------------------
+  Minimizer      : DIIS                : direct inversion
+                                         in the iterative subspace
+                                         using   7 DIIS vectors
+                                         safer DIIS on
+  Preconditioner : FULL_KINETIC        : inversion of T + eS
+  Precond_solver : DEFAULT
+  stepsize       :    0.15000000                  energy_gap     :    0.20000000
+  eps_taylor     :   0.10000E-15                  max_taylor     :             4
+  ----------------------------------- OT ---------------------------------------
+
+  Step     Update method      Time    Convergence         Total energy    Change
+  ------------------------------------------------------------------------------
+
+  Trace(PS):                                    0.0000000000
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+     1 OT DIIS     0.15E+00    0.3     0.0000E+00        -0.0166496843 -1.66E-02
+
+  *** SCF run converged in     1 steps ***
+
+
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+  Overlap energy of the core charge distribution:               0.00000000000000
+  Self energy of the core charge distribution:                 -1.41047395886939
+  Core Hamiltonian energy:                                      0.00000000000000
+  Hartree energy:                                               1.39382428280753
+  Exchange-correlation energy:                                  0.00000000000000
+  Dispersion energy:                                           -0.00000000828723
+
+  Total energy:                                                -0.01664968434909
+
+ !-----------------------------------------------------------------------------!
+                     Mulliken Population Analysis
+
+ #  Atom  Element  Kind  Atomic population                           Net charge
+       1     H        1          0.000000                              1.000000
+ # Total charge                              0.000000                  1.000000
+
+ !-----------------------------------------------------------------------------!
+
+ !-----------------------------------------------------------------------------!
+                           Hirshfeld Charges
+
+  #Atom  Element  Kind  Ref Charge     Population                    Net charge
+      1       H      1       1.000          0.000                         1.000
+
+  Total Charge                                                            1.000
+ !-----------------------------------------------------------------------------!
+
+  Trace(PS):                                    0.0000000000
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+
+ ENERGY| Total FORCE_EVAL ( QS ) energy (a.u.):               -0.016649684349087
+
+
+ --------------------------
+ OPTIMIZATION STEP:      2
+ --------------------------
+
+ DISTRIBUTION OF THE NEIGHBOR LISTS
+              Total number of particle pairs:                                  3
+              Total number of matrix elements:                               588
+              Average number of particle pairs:                                1
+              Maximum number of particle pairs:                                3
+              Average number of matrix element:                                3
+              Maximum number of matrix elements:                             588
+
+
+ DISTRIBUTION OF THE OVERLAP MATRIX
+              Number  of non-zero blocks:                                      1
+              Percentage non-zero blocks:                                 100.00
+              Average number of blocks per CPU:                                1
+              Maximum number of blocks per CPU:                                1
+              Average number of matrix elements per CPU:                       1
+              Maximum number of matrix elements per CPU:                     206
+
+ Number of electrons:                                                          0
+ Number of occupied orbitals:                                                  0
+ Number of molecular orbitals:                                                 0
+
+ Number of orbital functions:                                                 14
+ Number of independent orbital functions:                                     14
+
+ Parameters for the always stable predictor-corrector (ASPC) method:
+
+  ASPC order: 3
+
+  B(1) =   3.000000
+  B(2) =  -3.428571
+  B(3) =   1.928571
+  B(4) =  -0.571429
+  B(5) =   0.071429
+
+ Extrapolation method: ASPC
+
+
+ SCF WAVEFUNCTION OPTIMIZATION
+
+  ----------------------------------- OT ---------------------------------------
+  Minimizer      : DIIS                : direct inversion
+                                         in the iterative subspace
+                                         using   7 DIIS vectors
+                                         safer DIIS on
+  Preconditioner : FULL_KINETIC        : inversion of T + eS
+  Precond_solver : DEFAULT
+  stepsize       :    0.15000000                  energy_gap     :    0.20000000
+  eps_taylor     :   0.10000E-15                  max_taylor     :             4
+  ----------------------------------- OT ---------------------------------------
+
+  Step     Update method      Time    Convergence         Total energy    Change
+  ------------------------------------------------------------------------------
+
+  Trace(PS):                                    0.0000000000
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+     1 OT DIIS     0.15E+00    0.3     0.0000E+00        -0.0166496843 -1.66E-02
+
+  *** SCF run converged in     1 steps ***
+
+
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+  Overlap energy of the core charge distribution:               0.00000000000000
+  Self energy of the core charge distribution:                 -1.41047395886939
+  Core Hamiltonian energy:                                      0.00000000000000
+  Hartree energy:                                               1.39382428280753
+  Exchange-correlation energy:                                  0.00000000000000
+  Dispersion energy:                                           -0.00000000828723
+
+  Total energy:                                                -0.01664968434909
+
+ !-----------------------------------------------------------------------------!
+                     Mulliken Population Analysis
+
+ #  Atom  Element  Kind  Atomic population                           Net charge
+       1     H        1          0.000000                              1.000000
+ # Total charge                              0.000000                  1.000000
+
+ !-----------------------------------------------------------------------------!
+
+ !-----------------------------------------------------------------------------!
+                           Hirshfeld Charges
+
+  #Atom  Element  Kind  Ref Charge     Population                    Net charge
+      1       H      1       1.000          0.000                         1.000
+
+  Total Charge                                                            1.000
+ !-----------------------------------------------------------------------------!
+
+ ENERGY| Total FORCE_EVAL ( QS ) energy (a.u.):               -0.016649684349087
+
+
+ DISTRIBUTION OF THE NEIGHBOR LISTS
+              Total number of particle pairs:                                  3
+              Total number of matrix elements:                               588
+              Average number of particle pairs:                                1
+              Maximum number of particle pairs:                                3
+              Average number of matrix element:                                3
+              Maximum number of matrix elements:                             588
+
+
+ DISTRIBUTION OF THE OVERLAP MATRIX
+              Number  of non-zero blocks:                                      1
+              Percentage non-zero blocks:                                 100.00
+              Average number of blocks per CPU:                                1
+              Maximum number of blocks per CPU:                                1
+              Average number of matrix elements per CPU:                       1
+              Maximum number of matrix elements per CPU:                     206
+
+ Number of electrons:                                                          0
+ Number of occupied orbitals:                                                  0
+ Number of molecular orbitals:                                                 0
+
+ Number of orbital functions:                                                 14
+ Number of independent orbital functions:                                     14
+
+ Parameters for the always stable predictor-corrector (ASPC) method:
+
+  ASPC order: 3
+
+  B(1) =   3.000000
+  B(2) =  -3.428571
+  B(3) =   1.928571
+  B(4) =  -0.571429
+  B(5) =   0.071429
+
+ Extrapolation method: ASPC
+
+
+ SCF WAVEFUNCTION OPTIMIZATION
+
+  ----------------------------------- OT ---------------------------------------
+  Minimizer      : DIIS                : direct inversion
+                                         in the iterative subspace
+                                         using   7 DIIS vectors
+                                         safer DIIS on
+  Preconditioner : FULL_KINETIC        : inversion of T + eS
+  Precond_solver : DEFAULT
+  stepsize       :    0.15000000                  energy_gap     :    0.20000000
+  eps_taylor     :   0.10000E-15                  max_taylor     :             4
+  ----------------------------------- OT ---------------------------------------
+
+  Step     Update method      Time    Convergence         Total energy    Change
+  ------------------------------------------------------------------------------
+
+  Trace(PS):                                    0.0000000000
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+     1 OT DIIS     0.15E+00    0.3     0.0000E+00        -0.0166496761 -1.66E-02
+
+  *** SCF run converged in     1 steps ***
+
+
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+  Overlap energy of the core charge distribution:               0.00000000000000
+  Self energy of the core charge distribution:                 -1.41047395886939
+  Core Hamiltonian energy:                                      0.00000000000000
+  Hartree energy:                                               1.39382429104724
+  Exchange-correlation energy:                                  0.00000000000000
+  Dispersion energy:                                           -0.00000000828723
+
+  Total energy:                                                -0.01664967610937
+
+ !-----------------------------------------------------------------------------!
+                     Mulliken Population Analysis
+
+ #  Atom  Element  Kind  Atomic population                           Net charge
+       1     H        1          0.000000                              1.000000
+ # Total charge                              0.000000                  1.000000
+
+ !-----------------------------------------------------------------------------!
+
+ !-----------------------------------------------------------------------------!
+                           Hirshfeld Charges
+
+  #Atom  Element  Kind  Ref Charge     Population                    Net charge
+      1       H      1       1.000          0.000                         1.000
+
+  Total Charge                                                            1.000
+ !-----------------------------------------------------------------------------!
+
+ ENERGY| Total FORCE_EVAL ( QS ) energy (a.u.):               -0.016649676109375
+
+
+ DISTRIBUTION OF THE NEIGHBOR LISTS
+              Total number of particle pairs:                                  3
+              Total number of matrix elements:                               588
+              Average number of particle pairs:                                1
+              Maximum number of particle pairs:                                3
+              Average number of matrix element:                                3
+              Maximum number of matrix elements:                             588
+
+
+ DISTRIBUTION OF THE OVERLAP MATRIX
+              Number  of non-zero blocks:                                      1
+              Percentage non-zero blocks:                                 100.00
+              Average number of blocks per CPU:                                1
+              Maximum number of blocks per CPU:                                1
+              Average number of matrix elements per CPU:                       1
+              Maximum number of matrix elements per CPU:                     206
+
+ Number of electrons:                                                          0
+ Number of occupied orbitals:                                                  0
+ Number of molecular orbitals:                                                 0
+
+ Number of orbital functions:                                                 14
+ Number of independent orbital functions:                                     14
+
+ Parameters for the always stable predictor-corrector (ASPC) method:
+
+  ASPC order: 3
+
+  B(1) =   3.000000
+  B(2) =  -3.428571
+  B(3) =   1.928571
+  B(4) =  -0.571429
+  B(5) =   0.071429
+
+ Extrapolation method: ASPC
+
+
+ SCF WAVEFUNCTION OPTIMIZATION
+
+  ----------------------------------- OT ---------------------------------------
+  Minimizer      : DIIS                : direct inversion
+                                         in the iterative subspace
+                                         using   7 DIIS vectors
+                                         safer DIIS on
+  Preconditioner : FULL_KINETIC        : inversion of T + eS
+  Precond_solver : DEFAULT
+  stepsize       :    0.15000000                  energy_gap     :    0.20000000
+  eps_taylor     :   0.10000E-15                  max_taylor     :             4
+  ----------------------------------- OT ---------------------------------------
+
+  Step     Update method      Time    Convergence         Total energy    Change
+  ------------------------------------------------------------------------------
+
+  Trace(PS):                                    0.0000000000
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+     1 OT DIIS     0.15E+00    0.3     0.0000E+00        -0.0166490987 -1.66E-02
+
+  *** SCF run converged in     1 steps ***
+
+
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+  Overlap energy of the core charge distribution:               0.00000000000000
+  Self energy of the core charge distribution:                 -1.41047395886939
+  Core Hamiltonian energy:                                      0.00000000000000
+  Hartree energy:                                               1.39382486842662
+  Exchange-correlation energy:                                  0.00000000000000
+  Dispersion energy:                                           -0.00000000828723
+
+  Total energy:                                                -0.01664909873000
+
+ !-----------------------------------------------------------------------------!
+                     Mulliken Population Analysis
+
+ #  Atom  Element  Kind  Atomic population                           Net charge
+       1     H        1          0.000000                              1.000000
+ # Total charge                              0.000000                  1.000000
+
+ !-----------------------------------------------------------------------------!
+
+ !-----------------------------------------------------------------------------!
+                           Hirshfeld Charges
+
+  #Atom  Element  Kind  Ref Charge     Population                    Net charge
+      1       H      1       1.000          0.000                         1.000
+
+  Total Charge                                                            1.000
+ !-----------------------------------------------------------------------------!
+
+ ENERGY| Total FORCE_EVAL ( QS ) energy (a.u.):               -0.016649098729998
+
+
+ *******************************************************************************
+ ***                 MNBRACK - NUMBER OF ENERGY EVALUATIONS :       3        ***
+ *******************************************************************************
+
+ DISTRIBUTION OF THE NEIGHBOR LISTS
+              Total number of particle pairs:                                  3
+              Total number of matrix elements:                               588
+              Average number of particle pairs:                                1
+              Maximum number of particle pairs:                                3
+              Average number of matrix element:                                3
+              Maximum number of matrix elements:                             588
+
+
+ DISTRIBUTION OF THE OVERLAP MATRIX
+              Number  of non-zero blocks:                                      1
+              Percentage non-zero blocks:                                 100.00
+              Average number of blocks per CPU:                                1
+              Maximum number of blocks per CPU:                                1
+              Average number of matrix elements per CPU:                       1
+              Maximum number of matrix elements per CPU:                     206
+
+ Number of electrons:                                                          0
+ Number of occupied orbitals:                                                  0
+ Number of molecular orbitals:                                                 0
+
+ Number of orbital functions:                                                 14
+ Number of independent orbital functions:                                     14
+
+ Parameters for the always stable predictor-corrector (ASPC) method:
+
+  ASPC order: 3
+
+  B(1) =   3.000000
+  B(2) =  -3.428571
+  B(3) =   1.928571
+  B(4) =  -0.571429
+  B(5) =   0.071429
+
+ Extrapolation method: ASPC
+
+
+ SCF WAVEFUNCTION OPTIMIZATION
+
+  ----------------------------------- OT ---------------------------------------
+  Minimizer      : DIIS                : direct inversion
+                                         in the iterative subspace
+                                         using   7 DIIS vectors
+                                         safer DIIS on
+  Preconditioner : FULL_KINETIC        : inversion of T + eS
+  Precond_solver : DEFAULT
+  stepsize       :    0.15000000                  energy_gap     :    0.20000000
+  eps_taylor     :   0.10000E-15                  max_taylor     :             4
+  ----------------------------------- OT ---------------------------------------
+
+  Step     Update method      Time    Convergence         Total energy    Change
+  ------------------------------------------------------------------------------
+
+  Trace(PS):                                    0.0000000000
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+     1 OT DIIS     0.15E+00    0.3     0.0000E+00        -0.0166496843 -1.66E-02
+
+  *** SCF run converged in     1 steps ***
+
+
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+  Overlap energy of the core charge distribution:               0.00000000000000
+  Self energy of the core charge distribution:                 -1.41047395886939
+  Core Hamiltonian energy:                                      0.00000000000000
+  Hartree energy:                                               1.39382428280753
+  Exchange-correlation energy:                                  0.00000000000000
+  Dispersion energy:                                           -0.00000000828723
+
+  Total energy:                                                -0.01664968434909
+
+ !-----------------------------------------------------------------------------!
+                     Mulliken Population Analysis
+
+ #  Atom  Element  Kind  Atomic population                           Net charge
+       1     H        1          0.000000                              1.000000
+ # Total charge                              0.000000                  1.000000
+
+ !-----------------------------------------------------------------------------!
+
+ !-----------------------------------------------------------------------------!
+                           Hirshfeld Charges
+
+  #Atom  Element  Kind  Ref Charge     Population                    Net charge
+      1       H      1       1.000          0.000                         1.000
+
+  Total Charge                                                            1.000
+ !-----------------------------------------------------------------------------!
+
+  Trace(PS):                                    0.0000000000
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+
+ ENERGY| Total FORCE_EVAL ( QS ) energy (a.u.):               -0.016649684349087
+
+
+ DISTRIBUTION OF THE NEIGHBOR LISTS
+              Total number of particle pairs:                                  3
+              Total number of matrix elements:                               588
+              Average number of particle pairs:                                1
+              Maximum number of particle pairs:                                3
+              Average number of matrix element:                                3
+              Maximum number of matrix elements:                             588
+
+
+ DISTRIBUTION OF THE OVERLAP MATRIX
+              Number  of non-zero blocks:                                      1
+              Percentage non-zero blocks:                                 100.00
+              Average number of blocks per CPU:                                1
+              Maximum number of blocks per CPU:                                1
+              Average number of matrix elements per CPU:                       1
+              Maximum number of matrix elements per CPU:                     206
+
+ Number of electrons:                                                          0
+ Number of occupied orbitals:                                                  0
+ Number of molecular orbitals:                                                 0
+
+ Number of orbital functions:                                                 14
+ Number of independent orbital functions:                                     14
+
+ Parameters for the always stable predictor-corrector (ASPC) method:
+
+  ASPC order: 3
+
+  B(1) =   3.000000
+  B(2) =  -3.428571
+  B(3) =   1.928571
+  B(4) =  -0.571429
+  B(5) =   0.071429
+
+ Extrapolation method: ASPC
+
+
+ SCF WAVEFUNCTION OPTIMIZATION
+
+  ----------------------------------- OT ---------------------------------------
+  Minimizer      : DIIS                : direct inversion
+                                         in the iterative subspace
+                                         using   7 DIIS vectors
+                                         safer DIIS on
+  Preconditioner : FULL_KINETIC        : inversion of T + eS
+  Precond_solver : DEFAULT
+  stepsize       :    0.15000000                  energy_gap     :    0.20000000
+  eps_taylor     :   0.10000E-15                  max_taylor     :             4
+  ----------------------------------- OT ---------------------------------------
+
+  Step     Update method      Time    Convergence         Total energy    Change
+  ------------------------------------------------------------------------------
+
+  Trace(PS):                                    0.0000000000
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+     1 OT DIIS     0.15E+00    0.3     0.0000E+00        -0.0166497200 -1.66E-02
+
+  *** SCF run converged in     1 steps ***
+
+
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+  Overlap energy of the core charge distribution:               0.00000000000000
+  Self energy of the core charge distribution:                 -1.41047395886939
+  Core Hamiltonian energy:                                      0.00000000000000
+  Hartree energy:                                               1.39382424719205
+  Exchange-correlation energy:                                  0.00000000000000
+  Dispersion energy:                                           -0.00000000828723
+
+  Total energy:                                                -0.01664971996457
+
+ !-----------------------------------------------------------------------------!
+                     Mulliken Population Analysis
+
+ #  Atom  Element  Kind  Atomic population                           Net charge
+       1     H        1          0.000000                              1.000000
+ # Total charge                              0.000000                  1.000000
+
+ !-----------------------------------------------------------------------------!
+
+ !-----------------------------------------------------------------------------!
+                           Hirshfeld Charges
+
+  #Atom  Element  Kind  Ref Charge     Population                    Net charge
+      1       H      1       1.000          0.000                         1.000
+
+  Total Charge                                                            1.000
+ !-----------------------------------------------------------------------------!
+
+  Trace(PS):                                    0.0000000000
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+
+ ENERGY| Total FORCE_EVAL ( QS ) energy (a.u.):               -0.016649719964567
+
+
+ DISTRIBUTION OF THE NEIGHBOR LISTS
+              Total number of particle pairs:                                  3
+              Total number of matrix elements:                               588
+              Average number of particle pairs:                                1
+              Maximum number of particle pairs:                                3
+              Average number of matrix element:                                3
+              Maximum number of matrix elements:                             588
+
+
+ DISTRIBUTION OF THE OVERLAP MATRIX
+              Number  of non-zero blocks:                                      1
+              Percentage non-zero blocks:                                 100.00
+              Average number of blocks per CPU:                                1
+              Maximum number of blocks per CPU:                                1
+              Average number of matrix elements per CPU:                       1
+              Maximum number of matrix elements per CPU:                     206
+
+ Number of electrons:                                                          0
+ Number of occupied orbitals:                                                  0
+ Number of molecular orbitals:                                                 0
+
+ Number of orbital functions:                                                 14
+ Number of independent orbital functions:                                     14
+
+ Parameters for the always stable predictor-corrector (ASPC) method:
+
+  ASPC order: 3
+
+  B(1) =   3.000000
+  B(2) =  -3.428571
+  B(3) =   1.928571
+  B(4) =  -0.571429
+  B(5) =   0.071429
+
+ Extrapolation method: ASPC
+
+
+ SCF WAVEFUNCTION OPTIMIZATION
+
+  ----------------------------------- OT ---------------------------------------
+  Minimizer      : DIIS                : direct inversion
+                                         in the iterative subspace
+                                         using   7 DIIS vectors
+                                         safer DIIS on
+  Preconditioner : FULL_KINETIC        : inversion of T + eS
+  Precond_solver : DEFAULT
+  stepsize       :    0.15000000                  energy_gap     :    0.20000000
+  eps_taylor     :   0.10000E-15                  max_taylor     :             4
+  ----------------------------------- OT ---------------------------------------
+
+  Step     Update method      Time    Convergence         Total energy    Change
+  ------------------------------------------------------------------------------
+
+  Trace(PS):                                    0.0000000000
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+     1 OT DIIS     0.15E+00    0.3     0.0000E+00        -0.0166497201 -1.66E-02
+
+  *** SCF run converged in     1 steps ***
+
+
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+  Overlap energy of the core charge distribution:               0.00000000000000
+  Self energy of the core charge distribution:                 -1.41047395886939
+  Core Hamiltonian energy:                                      0.00000000000000
+  Hartree energy:                                               1.39382424708061
+  Exchange-correlation energy:                                  0.00000000000000
+  Dispersion energy:                                           -0.00000000828723
+
+  Total energy:                                                -0.01664972007601
+
+ !-----------------------------------------------------------------------------!
+                     Mulliken Population Analysis
+
+ #  Atom  Element  Kind  Atomic population                           Net charge
+       1     H        1          0.000000                              1.000000
+ # Total charge                              0.000000                  1.000000
+
+ !-----------------------------------------------------------------------------!
+
+ !-----------------------------------------------------------------------------!
+                           Hirshfeld Charges
+
+  #Atom  Element  Kind  Ref Charge     Population                    Net charge
+      1       H      1       1.000          0.000                         1.000
+
+  Total Charge                                                            1.000
+ !-----------------------------------------------------------------------------!
+
+  Trace(PS):                                    0.0000000000
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+
+ ENERGY| Total FORCE_EVAL ( QS ) energy (a.u.):               -0.016649720076007
+
+
+ DISTRIBUTION OF THE NEIGHBOR LISTS
+              Total number of particle pairs:                                  3
+              Total number of matrix elements:                               588
+              Average number of particle pairs:                                1
+              Maximum number of particle pairs:                                3
+              Average number of matrix element:                                3
+              Maximum number of matrix elements:                             588
+
+
+ DISTRIBUTION OF THE OVERLAP MATRIX
+              Number  of non-zero blocks:                                      1
+              Percentage non-zero blocks:                                 100.00
+              Average number of blocks per CPU:                                1
+              Maximum number of blocks per CPU:                                1
+              Average number of matrix elements per CPU:                       1
+              Maximum number of matrix elements per CPU:                     206
+
+ Number of electrons:                                                          0
+ Number of occupied orbitals:                                                  0
+ Number of molecular orbitals:                                                 0
+
+ Number of orbital functions:                                                 14
+ Number of independent orbital functions:                                     14
+
+ Parameters for the always stable predictor-corrector (ASPC) method:
+
+  ASPC order: 3
+
+  B(1) =   3.000000
+  B(2) =  -3.428571
+  B(3) =   1.928571
+  B(4) =  -0.571429
+  B(5) =   0.071429
+
+ Extrapolation method: ASPC
+
+
+ SCF WAVEFUNCTION OPTIMIZATION
+
+  ----------------------------------- OT ---------------------------------------
+  Minimizer      : DIIS                : direct inversion
+                                         in the iterative subspace
+                                         using   7 DIIS vectors
+                                         safer DIIS on
+  Preconditioner : FULL_KINETIC        : inversion of T + eS
+  Precond_solver : DEFAULT
+  stepsize       :    0.15000000                  energy_gap     :    0.20000000
+  eps_taylor     :   0.10000E-15                  max_taylor     :             4
+  ----------------------------------- OT ---------------------------------------
+
+  Step     Update method      Time    Convergence         Total energy    Change
+  ------------------------------------------------------------------------------
+
+  Trace(PS):                                    0.0000000000
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+     1 OT DIIS     0.15E+00    0.3     0.0000E+00        -0.0166497201 -1.66E-02
+
+  *** SCF run converged in     1 steps ***
+
+
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+  Overlap energy of the core charge distribution:               0.00000000000000
+  Self energy of the core charge distribution:                 -1.41047395886939
+  Core Hamiltonian energy:                                      0.00000000000000
+  Hartree energy:                                               1.39382424708378
+  Exchange-correlation energy:                                  0.00000000000000
+  Dispersion energy:                                           -0.00000000828723
+
+  Total energy:                                                -0.01664972007284
+
+ !-----------------------------------------------------------------------------!
+                     Mulliken Population Analysis
+
+ #  Atom  Element  Kind  Atomic population                           Net charge
+       1     H        1          0.000000                              1.000000
+ # Total charge                              0.000000                  1.000000
+
+ !-----------------------------------------------------------------------------!
+
+ !-----------------------------------------------------------------------------!
+                           Hirshfeld Charges
+
+  #Atom  Element  Kind  Ref Charge     Population                    Net charge
+      1       H      1       1.000          0.000                         1.000
+
+  Total Charge                                                            1.000
+ !-----------------------------------------------------------------------------!
+
+  Trace(PS):                                    0.0000000000
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+
+ ENERGY| Total FORCE_EVAL ( QS ) energy (a.u.):               -0.016649720072841
+
+
+ *******************************************************************************
+ ***                 BRENT   - NUMBER OF ENERGY EVALUATIONS :       4        ***
+ *******************************************************************************
+
+ --------  Informations at step =     2 ------------
+  Optimization Method        =                   CG
+  Total Energy               =        -0.0166497201
+  Real energy change         =        -0.0000000357
+  Decrease in energy         =                  YES
+  Used time                  =                9.165
+
+  Convergence check :
+  Max. step size             =         0.0088644062
+  Conv. limit for step size  =         0.0030000000
+  Convergence in step size   =                   NO
+  RMS step size              =         0.0057136216
+  Conv. limit for RMS step   =         0.0015000000
+  Convergence in RMS step    =                   NO
+  Max. gradient              =         0.0000071067
+  Conv. limit for gradients  =         0.0004500000
+  Conv. in gradients         =                  YES
+  RMS gradient               =         0.0000045807
+  Conv. limit for RMS grad.  =         0.0003000000
+  Conv. in RMS gradients     =                  YES
+ ---------------------------------------------------
+
+ DISTRIBUTION OF THE NEIGHBOR LISTS
+              Total number of particle pairs:                                  3
+              Total number of matrix elements:                               588
+              Average number of particle pairs:                                1
+              Maximum number of particle pairs:                                3
+              Average number of matrix element:                                3
+              Maximum number of matrix elements:                             588
+
+
+ DISTRIBUTION OF THE OVERLAP MATRIX
+              Number  of non-zero blocks:                                      1
+              Percentage non-zero blocks:                                 100.00
+              Average number of blocks per CPU:                                1
+              Maximum number of blocks per CPU:                                1
+              Average number of matrix elements per CPU:                       1
+              Maximum number of matrix elements per CPU:                     206
+
+ Number of electrons:                                                          0
+ Number of occupied orbitals:                                                  0
+ Number of molecular orbitals:                                                 0
+
+ Number of orbital functions:                                                 14
+ Number of independent orbital functions:                                     14
+
+ Parameters for the always stable predictor-corrector (ASPC) method:
+
+  ASPC order: 3
+
+  B(1) =   3.000000
+  B(2) =  -3.428571
+  B(3) =   1.928571
+  B(4) =  -0.571429
+  B(5) =   0.071429
+
+ Extrapolation method: ASPC
+
+
+ SCF WAVEFUNCTION OPTIMIZATION
+
+  ----------------------------------- OT ---------------------------------------
+  Minimizer      : DIIS                : direct inversion
+                                         in the iterative subspace
+                                         using   7 DIIS vectors
+                                         safer DIIS on
+  Preconditioner : FULL_KINETIC        : inversion of T + eS
+  Precond_solver : DEFAULT
+  stepsize       :    0.15000000                  energy_gap     :    0.20000000
+  eps_taylor     :   0.10000E-15                  max_taylor     :             4
+  ----------------------------------- OT ---------------------------------------
+
+  Step     Update method      Time    Convergence         Total energy    Change
+  ------------------------------------------------------------------------------
+
+  Trace(PS):                                    0.0000000000
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+     1 OT DIIS     0.15E+00    0.3     0.0000E+00        -0.0166497201 -1.66E-02
+
+  *** SCF run converged in     1 steps ***
+
+
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+  Overlap energy of the core charge distribution:               0.00000000000000
+  Self energy of the core charge distribution:                 -1.41047395886939
+  Core Hamiltonian energy:                                      0.00000000000000
+  Hartree energy:                                               1.39382424708061
+  Exchange-correlation energy:                                  0.00000000000000
+  Dispersion energy:                                           -0.00000000828723
+
+  Total energy:                                                -0.01664972007601
+
+ !-----------------------------------------------------------------------------!
+                     Mulliken Population Analysis
+
+ #  Atom  Element  Kind  Atomic population                           Net charge
+       1     H        1          0.000000                              1.000000
+ # Total charge                              0.000000                  1.000000
+
+ !-----------------------------------------------------------------------------!
+
+ !-----------------------------------------------------------------------------!
+                           Hirshfeld Charges
+
+  #Atom  Element  Kind  Ref Charge     Population                    Net charge
+      1       H      1       1.000          0.000                         1.000
+
+  Total Charge                                                            1.000
+ !-----------------------------------------------------------------------------!
+
+  Trace(PS):                                    0.0000000000
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+
+ ENERGY| Total FORCE_EVAL ( QS ) energy (a.u.):               -0.016649720076007
+
+
+ --------------------------
+ OPTIMIZATION STEP:      3
+ --------------------------
+
+ DISTRIBUTION OF THE NEIGHBOR LISTS
+              Total number of particle pairs:                                  3
+              Total number of matrix elements:                               588
+              Average number of particle pairs:                                1
+              Maximum number of particle pairs:                                3
+              Average number of matrix element:                                3
+              Maximum number of matrix elements:                             588
+
+
+ DISTRIBUTION OF THE OVERLAP MATRIX
+              Number  of non-zero blocks:                                      1
+              Percentage non-zero blocks:                                 100.00
+              Average number of blocks per CPU:                                1
+              Maximum number of blocks per CPU:                                1
+              Average number of matrix elements per CPU:                       1
+              Maximum number of matrix elements per CPU:                     206
+
+ Number of electrons:                                                          0
+ Number of occupied orbitals:                                                  0
+ Number of molecular orbitals:                                                 0
+
+ Number of orbital functions:                                                 14
+ Number of independent orbital functions:                                     14
+
+ Parameters for the always stable predictor-corrector (ASPC) method:
+
+  ASPC order: 3
+
+  B(1) =   3.000000
+  B(2) =  -3.428571
+  B(3) =   1.928571
+  B(4) =  -0.571429
+  B(5) =   0.071429
+
+ Extrapolation method: ASPC
+
+
+ SCF WAVEFUNCTION OPTIMIZATION
+
+  ----------------------------------- OT ---------------------------------------
+  Minimizer      : DIIS                : direct inversion
+                                         in the iterative subspace
+                                         using   7 DIIS vectors
+                                         safer DIIS on
+  Preconditioner : FULL_KINETIC        : inversion of T + eS
+  Precond_solver : DEFAULT
+  stepsize       :    0.15000000                  energy_gap     :    0.20000000
+  eps_taylor     :   0.10000E-15                  max_taylor     :             4
+  ----------------------------------- OT ---------------------------------------
+
+  Step     Update method      Time    Convergence         Total energy    Change
+  ------------------------------------------------------------------------------
+
+  Trace(PS):                                    0.0000000000
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+     1 OT DIIS     0.15E+00    0.3     0.0000E+00        -0.0166497201 -1.66E-02
+
+  *** SCF run converged in     1 steps ***
+
+
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+  Overlap energy of the core charge distribution:               0.00000000000000
+  Self energy of the core charge distribution:                 -1.41047395886939
+  Core Hamiltonian energy:                                      0.00000000000000
+  Hartree energy:                                               1.39382424708061
+  Exchange-correlation energy:                                  0.00000000000000
+  Dispersion energy:                                           -0.00000000828723
+
+  Total energy:                                                -0.01664972007601
+
+ !-----------------------------------------------------------------------------!
+                     Mulliken Population Analysis
+
+ #  Atom  Element  Kind  Atomic population                           Net charge
+       1     H        1          0.000000                              1.000000
+ # Total charge                              0.000000                  1.000000
+
+ !-----------------------------------------------------------------------------!
+
+ !-----------------------------------------------------------------------------!
+                           Hirshfeld Charges
+
+  #Atom  Element  Kind  Ref Charge     Population                    Net charge
+      1       H      1       1.000          0.000                         1.000
+
+  Total Charge                                                            1.000
+ !-----------------------------------------------------------------------------!
+
+ ENERGY| Total FORCE_EVAL ( QS ) energy (a.u.):               -0.016649720076007
+
+
+ DISTRIBUTION OF THE NEIGHBOR LISTS
+              Total number of particle pairs:                                  3
+              Total number of matrix elements:                               588
+              Average number of particle pairs:                                1
+              Maximum number of particle pairs:                                3
+              Average number of matrix element:                                3
+              Maximum number of matrix elements:                             588
+
+
+ DISTRIBUTION OF THE OVERLAP MATRIX
+              Number  of non-zero blocks:                                      1
+              Percentage non-zero blocks:                                 100.00
+              Average number of blocks per CPU:                                1
+              Maximum number of blocks per CPU:                                1
+              Average number of matrix elements per CPU:                       1
+              Maximum number of matrix elements per CPU:                     206
+
+ Number of electrons:                                                          0
+ Number of occupied orbitals:                                                  0
+ Number of molecular orbitals:                                                 0
+
+ Number of orbital functions:                                                 14
+ Number of independent orbital functions:                                     14
+
+ Parameters for the always stable predictor-corrector (ASPC) method:
+
+  ASPC order: 3
+
+  B(1) =   3.000000
+  B(2) =  -3.428571
+  B(3) =   1.928571
+  B(4) =  -0.571429
+  B(5) =   0.071429
+
+ Extrapolation method: ASPC
+
+
+ SCF WAVEFUNCTION OPTIMIZATION
+
+  ----------------------------------- OT ---------------------------------------
+  Minimizer      : DIIS                : direct inversion
+                                         in the iterative subspace
+                                         using   7 DIIS vectors
+                                         safer DIIS on
+  Preconditioner : FULL_KINETIC        : inversion of T + eS
+  Precond_solver : DEFAULT
+  stepsize       :    0.15000000                  energy_gap     :    0.20000000
+  eps_taylor     :   0.10000E-15                  max_taylor     :             4
+  ----------------------------------- OT ---------------------------------------
+
+  Step     Update method      Time    Convergence         Total energy    Change
+  ------------------------------------------------------------------------------
+
+  Trace(PS):                                    0.0000000000
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+     1 OT DIIS     0.15E+00    0.3     0.0000E+00        -0.0166496991 -1.66E-02
+
+  *** SCF run converged in     1 steps ***
+
+
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+  Overlap energy of the core charge distribution:               0.00000000000000
+  Self energy of the core charge distribution:                 -1.41047395886939
+  Core Hamiltonian energy:                                      0.00000000000000
+  Hartree energy:                                               1.39382426806512
+  Exchange-correlation energy:                                  0.00000000000000
+  Dispersion energy:                                           -0.00000000828723
+
+  Total energy:                                                -0.01664969909149
+
+ !-----------------------------------------------------------------------------!
+                     Mulliken Population Analysis
+
+ #  Atom  Element  Kind  Atomic population                           Net charge
+       1     H        1          0.000000                              1.000000
+ # Total charge                              0.000000                  1.000000
+
+ !-----------------------------------------------------------------------------!
+
+ !-----------------------------------------------------------------------------!
+                           Hirshfeld Charges
+
+  #Atom  Element  Kind  Ref Charge     Population                    Net charge
+      1       H      1       1.000          0.000                         1.000
+
+  Total Charge                                                            1.000
+ !-----------------------------------------------------------------------------!
+
+ ENERGY| Total FORCE_EVAL ( QS ) energy (a.u.):               -0.016649699091493
+
+
+ DISTRIBUTION OF THE NEIGHBOR LISTS
+              Total number of particle pairs:                                  3
+              Total number of matrix elements:                               588
+              Average number of particle pairs:                                1
+              Maximum number of particle pairs:                                3
+              Average number of matrix element:                                3
+              Maximum number of matrix elements:                             588
+
+
+ DISTRIBUTION OF THE OVERLAP MATRIX
+              Number  of non-zero blocks:                                      1
+              Percentage non-zero blocks:                                 100.00
+              Average number of blocks per CPU:                                1
+              Maximum number of blocks per CPU:                                1
+              Average number of matrix elements per CPU:                       1
+              Maximum number of matrix elements per CPU:                     206
+
+ Number of electrons:                                                          0
+ Number of occupied orbitals:                                                  0
+ Number of molecular orbitals:                                                 0
+
+ Number of orbital functions:                                                 14
+ Number of independent orbital functions:                                     14
+
+ Parameters for the always stable predictor-corrector (ASPC) method:
+
+  ASPC order: 3
+
+  B(1) =   3.000000
+  B(2) =  -3.428571
+  B(3) =   1.928571
+  B(4) =  -0.571429
+  B(5) =   0.071429
+
+ Extrapolation method: ASPC
+
+
+ SCF WAVEFUNCTION OPTIMIZATION
+
+  ----------------------------------- OT ---------------------------------------
+  Minimizer      : DIIS                : direct inversion
+                                         in the iterative subspace
+                                         using   7 DIIS vectors
+                                         safer DIIS on
+  Preconditioner : FULL_KINETIC        : inversion of T + eS
+  Precond_solver : DEFAULT
+  stepsize       :    0.15000000                  energy_gap     :    0.20000000
+  eps_taylor     :   0.10000E-15                  max_taylor     :             4
+  ----------------------------------- OT ---------------------------------------
+
+  Step     Update method      Time    Convergence         Total energy    Change
+  ------------------------------------------------------------------------------
+
+  Trace(PS):                                    0.0000000000
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+     1 OT DIIS     0.15E+00    0.3     0.0000E+00        -0.0166496431 -1.66E-02
+
+  *** SCF run converged in     1 steps ***
+
+
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+  Overlap energy of the core charge distribution:               0.00000000000000
+  Self energy of the core charge distribution:                 -1.41047395886939
+  Core Hamiltonian energy:                                      0.00000000000000
+  Hartree energy:                                               1.39382432404782
+  Exchange-correlation energy:                                  0.00000000000000
+  Dispersion energy:                                           -0.00000000828723
+
+  Total energy:                                                -0.01664964310880
+
+ !-----------------------------------------------------------------------------!
+                     Mulliken Population Analysis
+
+ #  Atom  Element  Kind  Atomic population                           Net charge
+       1     H        1          0.000000                              1.000000
+ # Total charge                              0.000000                  1.000000
+
+ !-----------------------------------------------------------------------------!
+
+ !-----------------------------------------------------------------------------!
+                           Hirshfeld Charges
+
+  #Atom  Element  Kind  Ref Charge     Population                    Net charge
+      1       H      1       1.000          0.000                         1.000
+
+  Total Charge                                                            1.000
+ !-----------------------------------------------------------------------------!
+
+ ENERGY| Total FORCE_EVAL ( QS ) energy (a.u.):               -0.016649643108800
+
+
+ *******************************************************************************
+ ***                 MNBRACK - NUMBER OF ENERGY EVALUATIONS :       3        ***
+ *******************************************************************************
+
+ DISTRIBUTION OF THE NEIGHBOR LISTS
+              Total number of particle pairs:                                  3
+              Total number of matrix elements:                               588
+              Average number of particle pairs:                                1
+              Maximum number of particle pairs:                                3
+              Average number of matrix element:                                3
+              Maximum number of matrix elements:                             588
+
+
+ DISTRIBUTION OF THE OVERLAP MATRIX
+              Number  of non-zero blocks:                                      1
+              Percentage non-zero blocks:                                 100.00
+              Average number of blocks per CPU:                                1
+              Maximum number of blocks per CPU:                                1
+              Average number of matrix elements per CPU:                       1
+              Maximum number of matrix elements per CPU:                     206
+
+ Number of electrons:                                                          0
+ Number of occupied orbitals:                                                  0
+ Number of molecular orbitals:                                                 0
+
+ Number of orbital functions:                                                 14
+ Number of independent orbital functions:                                     14
+
+ Parameters for the always stable predictor-corrector (ASPC) method:
+
+  ASPC order: 3
+
+  B(1) =   3.000000
+  B(2) =  -3.428571
+  B(3) =   1.928571
+  B(4) =  -0.571429
+  B(5) =   0.071429
+
+ Extrapolation method: ASPC
+
+
+ SCF WAVEFUNCTION OPTIMIZATION
+
+  ----------------------------------- OT ---------------------------------------
+  Minimizer      : DIIS                : direct inversion
+                                         in the iterative subspace
+                                         using   7 DIIS vectors
+                                         safer DIIS on
+  Preconditioner : FULL_KINETIC        : inversion of T + eS
+  Precond_solver : DEFAULT
+  stepsize       :    0.15000000                  energy_gap     :    0.20000000
+  eps_taylor     :   0.10000E-15                  max_taylor     :             4
+  ----------------------------------- OT ---------------------------------------
+
+  Step     Update method      Time    Convergence         Total energy    Change
+  ------------------------------------------------------------------------------
+
+  Trace(PS):                                    0.0000000000
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+     1 OT DIIS     0.15E+00    0.3     0.0000E+00        -0.0166497201 -1.66E-02
+
+  *** SCF run converged in     1 steps ***
+
+
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+  Overlap energy of the core charge distribution:               0.00000000000000
+  Self energy of the core charge distribution:                 -1.41047395886939
+  Core Hamiltonian energy:                                      0.00000000000000
+  Hartree energy:                                               1.39382424708061
+  Exchange-correlation energy:                                  0.00000000000000
+  Dispersion energy:                                           -0.00000000828723
+
+  Total energy:                                                -0.01664972007601
+
+ !-----------------------------------------------------------------------------!
+                     Mulliken Population Analysis
+
+ #  Atom  Element  Kind  Atomic population                           Net charge
+       1     H        1          0.000000                              1.000000
+ # Total charge                              0.000000                  1.000000
+
+ !-----------------------------------------------------------------------------!
+
+ !-----------------------------------------------------------------------------!
+                           Hirshfeld Charges
+
+  #Atom  Element  Kind  Ref Charge     Population                    Net charge
+      1       H      1       1.000          0.000                         1.000
+
+  Total Charge                                                            1.000
+ !-----------------------------------------------------------------------------!
+
+  Trace(PS):                                    0.0000000000
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+
+ ENERGY| Total FORCE_EVAL ( QS ) energy (a.u.):               -0.016649720076007
+
+
+ DISTRIBUTION OF THE NEIGHBOR LISTS
+              Total number of particle pairs:                                  3
+              Total number of matrix elements:                               588
+              Average number of particle pairs:                                1
+              Maximum number of particle pairs:                                3
+              Average number of matrix element:                                3
+              Maximum number of matrix elements:                             588
+
+
+ DISTRIBUTION OF THE OVERLAP MATRIX
+              Number  of non-zero blocks:                                      1
+              Percentage non-zero blocks:                                 100.00
+              Average number of blocks per CPU:                                1
+              Maximum number of blocks per CPU:                                1
+              Average number of matrix elements per CPU:                       1
+              Maximum number of matrix elements per CPU:                     206
+
+ Number of electrons:                                                          0
+ Number of occupied orbitals:                                                  0
+ Number of molecular orbitals:                                                 0
+
+ Number of orbital functions:                                                 14
+ Number of independent orbital functions:                                     14
+
+ Parameters for the always stable predictor-corrector (ASPC) method:
+
+  ASPC order: 3
+
+  B(1) =   3.000000
+  B(2) =  -3.428571
+  B(3) =   1.928571
+  B(4) =  -0.571429
+  B(5) =   0.071429
+
+ Extrapolation method: ASPC
+
+
+ SCF WAVEFUNCTION OPTIMIZATION
+
+  ----------------------------------- OT ---------------------------------------
+  Minimizer      : DIIS                : direct inversion
+                                         in the iterative subspace
+                                         using   7 DIIS vectors
+                                         safer DIIS on
+  Preconditioner : FULL_KINETIC        : inversion of T + eS
+  Precond_solver : DEFAULT
+  stepsize       :    0.15000000                  energy_gap     :    0.20000000
+  eps_taylor     :   0.10000E-15                  max_taylor     :             4
+  ----------------------------------- OT ---------------------------------------
+
+  Step     Update method      Time    Convergence         Total energy    Change
+  ------------------------------------------------------------------------------
+
+  Trace(PS):                                    0.0000000000
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+     1 OT DIIS     0.15E+00    0.3     0.0000E+00        -0.0166497161 -1.66E-02
+
+  *** SCF run converged in     1 steps ***
+
+
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+  Overlap energy of the core charge distribution:               0.00000000000000
+  Self energy of the core charge distribution:                 -1.41047395886939
+  Core Hamiltonian energy:                                      0.00000000000000
+  Hartree energy:                                               1.39382425101015
+  Exchange-correlation energy:                                  0.00000000000000
+  Dispersion energy:                                           -0.00000000828723
+
+  Total energy:                                                -0.01664971614647
+
+ !-----------------------------------------------------------------------------!
+                     Mulliken Population Analysis
+
+ #  Atom  Element  Kind  Atomic population                           Net charge
+       1     H        1          0.000000                              1.000000
+ # Total charge                              0.000000                  1.000000
+
+ !-----------------------------------------------------------------------------!
+
+ !-----------------------------------------------------------------------------!
+                           Hirshfeld Charges
+
+  #Atom  Element  Kind  Ref Charge     Population                    Net charge
+      1       H      1       1.000          0.000                         1.000
+
+  Total Charge                                                            1.000
+ !-----------------------------------------------------------------------------!
+
+  Trace(PS):                                    0.0000000000
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+
+ ENERGY| Total FORCE_EVAL ( QS ) energy (a.u.):               -0.016649716146469
+
+
+ DISTRIBUTION OF THE NEIGHBOR LISTS
+              Total number of particle pairs:                                  3
+              Total number of matrix elements:                               588
+              Average number of particle pairs:                                1
+              Maximum number of particle pairs:                                3
+              Average number of matrix element:                                3
+              Maximum number of matrix elements:                             588
+
+
+ DISTRIBUTION OF THE OVERLAP MATRIX
+              Number  of non-zero blocks:                                      1
+              Percentage non-zero blocks:                                 100.00
+              Average number of blocks per CPU:                                1
+              Maximum number of blocks per CPU:                                1
+              Average number of matrix elements per CPU:                       1
+              Maximum number of matrix elements per CPU:                     206
+
+ Number of electrons:                                                          0
+ Number of occupied orbitals:                                                  0
+ Number of molecular orbitals:                                                 0
+
+ Number of orbital functions:                                                 14
+ Number of independent orbital functions:                                     14
+
+ Parameters for the always stable predictor-corrector (ASPC) method:
+
+  ASPC order: 3
+
+  B(1) =   3.000000
+  B(2) =  -3.428571
+  B(3) =   1.928571
+  B(4) =  -0.571429
+  B(5) =   0.071429
+
+ Extrapolation method: ASPC
+
+
+ SCF WAVEFUNCTION OPTIMIZATION
+
+  ----------------------------------- OT ---------------------------------------
+  Minimizer      : DIIS                : direct inversion
+                                         in the iterative subspace
+                                         using   7 DIIS vectors
+                                         safer DIIS on
+  Preconditioner : FULL_KINETIC        : inversion of T + eS
+  Precond_solver : DEFAULT
+  stepsize       :    0.15000000                  energy_gap     :    0.20000000
+  eps_taylor     :   0.10000E-15                  max_taylor     :             4
+  ----------------------------------- OT ---------------------------------------
+
+  Step     Update method      Time    Convergence         Total energy    Change
+  ------------------------------------------------------------------------------
+
+  Trace(PS):                                    0.0000000000
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+     1 OT DIIS     0.15E+00    0.3     0.0000E+00        -0.0166497203 -1.66E-02
+
+  *** SCF run converged in     1 steps ***
+
+
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+  Overlap energy of the core charge distribution:               0.00000000000000
+  Self energy of the core charge distribution:                 -1.41047395886939
+  Core Hamiltonian energy:                                      0.00000000000000
+  Hartree energy:                                               1.39382424681373
+  Exchange-correlation energy:                                  0.00000000000000
+  Dispersion energy:                                           -0.00000000828723
+
+  Total energy:                                                -0.01664972034289
+
+ !-----------------------------------------------------------------------------!
+                     Mulliken Population Analysis
+
+ #  Atom  Element  Kind  Atomic population                           Net charge
+       1     H        1          0.000000                              1.000000
+ # Total charge                              0.000000                  1.000000
+
+ !-----------------------------------------------------------------------------!
+
+ !-----------------------------------------------------------------------------!
+                           Hirshfeld Charges
+
+  #Atom  Element  Kind  Ref Charge     Population                    Net charge
+      1       H      1       1.000          0.000                         1.000
+
+  Total Charge                                                            1.000
+ !-----------------------------------------------------------------------------!
+
+  Trace(PS):                                    0.0000000000
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+
+ ENERGY| Total FORCE_EVAL ( QS ) energy (a.u.):               -0.016649720342891
+
+
+ DISTRIBUTION OF THE NEIGHBOR LISTS
+              Total number of particle pairs:                                  3
+              Total number of matrix elements:                               588
+              Average number of particle pairs:                                1
+              Maximum number of particle pairs:                                3
+              Average number of matrix element:                                3
+              Maximum number of matrix elements:                             588
+
+
+ DISTRIBUTION OF THE OVERLAP MATRIX
+              Number  of non-zero blocks:                                      1
+              Percentage non-zero blocks:                                 100.00
+              Average number of blocks per CPU:                                1
+              Maximum number of blocks per CPU:                                1
+              Average number of matrix elements per CPU:                       1
+              Maximum number of matrix elements per CPU:                     206
+
+ Number of electrons:                                                          0
+ Number of occupied orbitals:                                                  0
+ Number of molecular orbitals:                                                 0
+
+ Number of orbital functions:                                                 14
+ Number of independent orbital functions:                                     14
+
+ Parameters for the always stable predictor-corrector (ASPC) method:
+
+  ASPC order: 3
+
+  B(1) =   3.000000
+  B(2) =  -3.428571
+  B(3) =   1.928571
+  B(4) =  -0.571429
+  B(5) =   0.071429
+
+ Extrapolation method: ASPC
+
+
+ SCF WAVEFUNCTION OPTIMIZATION
+
+  ----------------------------------- OT ---------------------------------------
+  Minimizer      : DIIS                : direct inversion
+                                         in the iterative subspace
+                                         using   7 DIIS vectors
+                                         safer DIIS on
+  Preconditioner : FULL_KINETIC        : inversion of T + eS
+  Precond_solver : DEFAULT
+  stepsize       :    0.15000000                  energy_gap     :    0.20000000
+  eps_taylor     :   0.10000E-15                  max_taylor     :             4
+  ----------------------------------- OT ---------------------------------------
+
+  Step     Update method      Time    Convergence         Total energy    Change
+  ------------------------------------------------------------------------------
+
+  Trace(PS):                                    0.0000000000
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+     1 OT DIIS     0.15E+00    0.3     0.0000E+00        -0.0166497203 -1.66E-02
+
+  *** SCF run converged in     1 steps ***
+
+
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+  Overlap energy of the core charge distribution:               0.00000000000000
+  Self energy of the core charge distribution:                 -1.41047395886939
+  Core Hamiltonian energy:                                      0.00000000000000
+  Hartree energy:                                               1.39382424681375
+  Exchange-correlation energy:                                  0.00000000000000
+  Dispersion energy:                                           -0.00000000828723
+
+  Total energy:                                                -0.01664972034287
+
+ !-----------------------------------------------------------------------------!
+                     Mulliken Population Analysis
+
+ #  Atom  Element  Kind  Atomic population                           Net charge
+       1     H        1          0.000000                              1.000000
+ # Total charge                              0.000000                  1.000000
+
+ !-----------------------------------------------------------------------------!
+
+ !-----------------------------------------------------------------------------!
+                           Hirshfeld Charges
+
+  #Atom  Element  Kind  Ref Charge     Population                    Net charge
+      1       H      1       1.000          0.000                         1.000
+
+  Total Charge                                                            1.000
+ !-----------------------------------------------------------------------------!
+
+  Trace(PS):                                    0.0000000000
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+
+ ENERGY| Total FORCE_EVAL ( QS ) energy (a.u.):               -0.016649720342867
+
+
+ *******************************************************************************
+ ***                 BRENT   - NUMBER OF ENERGY EVALUATIONS :       4        ***
+ *******************************************************************************
+
+ --------  Informations at step =     3 ------------
+  Optimization Method        =                   CG
+  Total Energy               =        -0.0166497203
+  Real energy change         =        -0.0000000003
+  Decrease in energy         =                  YES
+  Used time                  =                8.879
+
+  Convergence check :
+  Max. step size             =         0.0005164254
+  Conv. limit for step size  =         0.0030000000
+  Convergence in step size   =                  YES
+  RMS step size              =         0.0004604833
+  Conv. limit for RMS step   =         0.0015000000
+  Convergence in RMS step    =                  YES
+  Max. gradient              =         0.0000004454
+  Conv. limit for gradients  =         0.0004500000
+  Conv. in gradients         =                  YES
+  RMS gradient               =         0.0000003971
+  Conv. limit for RMS grad.  =         0.0003000000
+  Conv. in RMS gradients     =                  YES
+ ---------------------------------------------------
+
+ *******************************************************************************
+ ***                    GEOMETRY OPTIMIZATION COMPLETED                      ***
+ *******************************************************************************
+
+                    Reevaluating energy at the minimum
+
+ DISTRIBUTION OF THE NEIGHBOR LISTS
+              Total number of particle pairs:                                  3
+              Total number of matrix elements:                               588
+              Average number of particle pairs:                                1
+              Maximum number of particle pairs:                                3
+              Average number of matrix element:                                3
+              Maximum number of matrix elements:                             588
+
+
+ DISTRIBUTION OF THE OVERLAP MATRIX
+              Number  of non-zero blocks:                                      1
+              Percentage non-zero blocks:                                 100.00
+              Average number of blocks per CPU:                                1
+              Maximum number of blocks per CPU:                                1
+              Average number of matrix elements per CPU:                       1
+              Maximum number of matrix elements per CPU:                     206
+
+ Number of electrons:                                                          0
+ Number of occupied orbitals:                                                  0
+ Number of molecular orbitals:                                                 0
+
+ Number of orbital functions:                                                 14
+ Number of independent orbital functions:                                     14
+
+ Parameters for the always stable predictor-corrector (ASPC) method:
+
+  ASPC order: 3
+
+  B(1) =   3.000000
+  B(2) =  -3.428571
+  B(3) =   1.928571
+  B(4) =  -0.571429
+  B(5) =   0.071429
+
+ Extrapolation method: ASPC
+
+
+ SCF WAVEFUNCTION OPTIMIZATION
+
+  ----------------------------------- OT ---------------------------------------
+  Minimizer      : DIIS                : direct inversion
+                                         in the iterative subspace
+                                         using   7 DIIS vectors
+                                         safer DIIS on
+  Preconditioner : FULL_KINETIC        : inversion of T + eS
+  Precond_solver : DEFAULT
+  stepsize       :    0.15000000                  energy_gap     :    0.20000000
+  eps_taylor     :   0.10000E-15                  max_taylor     :             4
+  ----------------------------------- OT ---------------------------------------
+
+  Step     Update method      Time    Convergence         Total energy    Change
+  ------------------------------------------------------------------------------
+
+  Trace(PS):                                    0.0000000000
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+     1 OT DIIS     0.15E+00    0.3     0.0000E+00        -0.0166497203 -1.66E-02
+
+  *** SCF run converged in     1 steps ***
+
+
+  Electronic density on regular grids:          0.0000000000        0.0000000000
+  Core density on regular grids:                0.9999999999       -0.0000000001
+  Total charge density on r-space grids:        0.9999999999
+  Total charge density g-space grids:           0.9999999999
+
+  Overlap energy of the core charge distribution:               0.00000000000000
+  Self energy of the core charge distribution:                 -1.41047395886939
+  Core Hamiltonian energy:                                      0.00000000000000
+  Hartree energy:                                               1.39382424681373
+  Exchange-correlation energy:                                  0.00000000000000
+  Dispersion energy:                                           -0.00000000828723
+
+  Total energy:                                                -0.01664972034289
+
+ !-----------------------------------------------------------------------------!
+                     Mulliken Population Analysis
+
+ #  Atom  Element  Kind  Atomic population                           Net charge
+       1     H        1          0.000000                              1.000000
+ # Total charge                              0.000000                  1.000000
+
+ !-----------------------------------------------------------------------------!
+
+ !-----------------------------------------------------------------------------!
+                           Hirshfeld Charges
+
+  #Atom  Element  Kind  Ref Charge     Population                    Net charge
+      1       H      1       1.000          0.000                         1.000
+
+  Total Charge                                                            1.000
+ !-----------------------------------------------------------------------------!
+
+ ENERGY| Total FORCE_EVAL ( QS ) energy (a.u.):               -0.016649720342891
+
+
+ -------------------------------------------------------------------------------
+ -                                                                             -
+ -                                DBCSR STATISTICS                             -
+ -                                                                             -
+ -------------------------------------------------------------------------------
+ COUNTER                                    TOTAL       BLAS       SMM       ACC
+ flops total                                    0       0.0%      0.0%      0.0%
+ flops max/rank                                 0       0.0%      0.0%      0.0%
+ matmuls inhomo. stacks                         0       0.0%      0.0%      0.0%
+ matmuls total                                  0       0.0%      0.0%      0.0%
+ number of processed stacks                     0       0.0%      0.0%      0.0%
+ average stack size                                     0.0       0.0       0.0
+ marketing flops                     0.000000E+00
+ -------------------------------------------------------------------------------
+ max memory usage/rank             179.212288E+06
+ # max total images/rank                        1
+ # MPI messages exchanged                 3240960
+ # MPI messages filtered                        0
+ MPI messages size (elements):
+  total size                       446.880000E+03
+  min size                           0.000000E+00
+  max size                         196.000000E+00
+  average size                     137.885064E-03
+ MPI breakdown and total messages size (bytes):
+             size <=      128             3238680                        0
+       128 < size <=     8192                2280                  3575040
+      8192 < size <=    32768                   0                        0
+     32768 < size <=   131072                   0                        0
+    131072 < size <=  4194304                   0                        0
+   4194304 < size <= 16777216                   0                        0
+  16777216 < size                               0                        0
+ -------------------------------------------------------------------------------
+ 
+ MEMORY| Estimated peak process memory [MiB]                                 171
+
+ -------------------------------------------------------------------------------
+ ----                             MULTIGRID INFO                            ----
+ -------------------------------------------------------------------------------
+ count for grid        1:          39884          cutoff [a.u.]          150.00
+ count for grid        2:          27245          cutoff [a.u.]           50.00
+ count for grid        3:           7357          cutoff [a.u.]           16.67
+ count for grid        4:           1024          cutoff [a.u.]            5.56
+ total gridlevel count  :          75510
+
+ -------------------------------------------------------------------------------
+ -                                                                             -
+ -                         MESSAGE PASSING PERFORMANCE                         -
+ -                                                                             -
+ -------------------------------------------------------------------------------
+
+ ROUTINE             CALLS  TOT TIME [s]  AVE VOLUME [Bytes]  PERFORMANCE [MB/s]
+ MP_Group                5         0.000
+ MP_Bcast              240         0.012             526046.            10896.92
+ MP_Allreduce         2666         5.624               1582.                0.75
+ MP_Gather             108         0.106               7168.                7.29
+ MP_Sync               592         0.434
+ MP_Alltoall          4928         7.030
+ MP_SendRecv         17340         0.045                  1.                0.38
+ MP_ISendRecv        49980         0.124              17004.             6863.83
+ MP_Wait            119274         5.243
+ MP_ISend            41122         0.485              39750.             3371.70
+ MP_IRecv            42682         0.049              38519.            33379.20
+ MP_Memory           12424         0.004
+ -------------------------------------------------------------------------------
+
+
+ -------------------------------------------------------------------------------
+ -                                                                             -
+ -                           R E F E R E N C E S                               -
+ -                                                                             -
+ -------------------------------------------------------------------------------
+ 
+ CP2K version 3.0, the CP2K developers group (2015).
+ CP2K is freely available from https://www.cp2k.org/ .
+
+ Borstnik, U; VandeVondele, J; Weber, V; Hutter, J. 
+ PARALLEL COMPUTING, 40 (5-6), 47-58 (2014). 
+ Sparse matrix multiplication: The distributed block-compressed sparse
+ row library.
+ http://dx.doi.org/10.1016/j.parco.2014.03.012
+
+
+ Hutter, J; Iannuzzi, M; Schiffmann, F; VandeVondele, J. 
+ WILEY INTERDISCIPLINARY REVIEWS-COMPUTATIONAL MOLECULAR SCIENCE, 4 (1), 15-25 (2014). 
+ CP2K: atomistic simulations of condensed matter systems.
+ http://dx.doi.org/10.1002/wcms.1159
+
+
+ Grimme, S; Ehrlich, S; Goerigk, L. 
+ JOURNAL OF COMPUTATIONAL CHEMISTRY, 32, 1456 (2011). 
+ Effect of the damping function in dispersion corrected density functional theory.
+ http://dx.doi.org/10.1002/jcc.21759
+
+
+ Grimme, S; Antony, J; Ehrlich, S; Krieg, H. 
+ JOURNAL OF CHEMICAL PHYSICS, 132 (15), 154104 (2010). 
+ A consistent and accurate ab initio parametrization of density
+ functional dispersion correction (DFT-D) for the 94 elements H-Pu.
+ http://dx.doi.org/10.1063/1.3382344
+
+
+ Perdew, JP; Ruzsinszky, A; Csonka, GI; Vydrov, OA; Scuseria, GE;
+ Constantin, LA; Zhou, X; Burke, K. 
+ PHYSICAL REVIEW LETTERS, 100 (13), 136406-136409 (2008). 
+ Restoring the Density-Gradient Expansion for Exchange in Solids and Surfaces.
+ http://dx.doi.org/10.1103/PhysRevLett.100.136406
+
+
+ Krack, M. 
+ THEORETICAL CHEMISTRY ACCOUNTS, 114 (1-3), 145-152 (2005). 
+ Pseudopotentials for H to Kr optimized for gradient-corrected
+ exchange-correlation functionals.
+ http://dx.doi.org/10.1007/s00214-005-0655-y
+
+
+ VandeVondele, J; Krack, M; Mohamed, F; Parrinello, M; Chassaing, T;
+ Hutter, J. COMPUTER PHYSICS COMMUNICATIONS, 167 (2), 103-128 (2005). 
+ QUICKSTEP: Fast and accurate density functional calculations using a
+ mixed Gaussian and plane waves approach.
+ http://dx.doi.org/10.1016/j.cpc.2004.12.014
+
+
+ Frigo, M; Johnson, SG. 
+ PROCEEDINGS OF THE IEEE, 93 (2), 216-231 (2005). 
+ The design and implementation of FFTW3.
+ http://dx.doi.org/10.1109/JPROC.2004.840301
+
+
+ Kolafa, J. 
+ JOURNAL OF COMPUTATIONAL CHEMISTRY, 25 (3), 335-342 (2004). 
+ Time-reversible always stable predictor-corrector method for molecular dynamics of polarizable molecules.
+ http://dx.doi.org/10.1002/jcc.10385
+
+
+ VandeVondele, J; Hutter, J. 
+ JOURNAL OF CHEMICAL PHYSICS, 118 (10), 4365-4369 (2003). 
+ An efficient orbital transformation method for electronic structure
+ calculations.
+ http://dx.doi.org/10.1063/1.1543154
+
+
+ Hartwigsen, C; Goedecker, S; Hutter, J. 
+ PHYSICAL REVIEW B, 58 (7), 3641-3662 (1998). 
+ Relativistic separable dual-space Gaussian pseudopotentials from H to Rn.
+ http://dx.doi.org/10.1103/PhysRevB.58.3641
+
+
+ Lippert, G; Hutter, J; Parrinello, M. 
+ MOLECULAR PHYSICS, 92 (3), 477-487 (1997). 
+ A hybrid Gaussian and plane wave density functional scheme.
+ http://dx.doi.org/10.1080/002689797170220
+
+
+ Perdew, JP; Burke, K; Ernzerhof, M. 
+ PHYSICAL REVIEW LETTERS, 77 (18), 3865-3868 (1996). 
+ Generalized gradient approximation made simple.
+ http://dx.doi.org/10.1103/PhysRevLett.77.3865
+
+
+ Goedecker, S; Teter, M; Hutter, J. 
+ PHYSICAL REVIEW B, 54 (3), 1703-1710 (1996). 
+ Separable dual-space Gaussian pseudopotentials.
+ http://dx.doi.org/10.1103/PhysRevB.54.1703
+
+
+ -------------------------------------------------------------------------------
+ -                                                                             -
+ -                                T I M I N G                                  -
+ -                                                                             -
+ -------------------------------------------------------------------------------
+ SUBROUTINE                       CALLS  ASD         SELF TIME        TOTAL TIME
+                                MAXIMUM       AVERAGE  MAXIMUM  AVERAGE  MAXIMUM
+ CP2K                                 1  1.0    0.009    0.013   29.187   29.190
+ cp_geo_opt                           1  2.0    0.000    0.000   28.968   28.971
+ geoopt_cg                            1  3.0    0.000    0.000   28.968   28.971
+ cp_cg_main                           1  4.0    0.000    0.003   28.968   28.970
+ cp_eval_at                          27  8.4    0.003    0.006   28.943   28.943
+ cg_linmin                            3  5.0    0.000    0.000   24.583   24.583
+ linmin_gold                          3  6.0    0.000    0.000   24.583   24.583
+ qs_energies                         27 10.0    0.001    0.002   23.586   23.586
+ qs_forces                           17  9.3    0.011    0.011   19.688   19.688
+ cg_dbrent                            3  7.0    0.000    0.000   16.306   16.306
+ cg_deval1d                          14  8.0    0.000    0.000   16.304   16.306
+ pw_transfer                        913 16.9    0.055    0.066   11.114   15.298
+ fft_wrap_pw1pw2                    825 18.0    0.007    0.008   11.026   15.209
+ fft_wrap_pw1pw2_150                531 18.9    0.331    0.369    9.564   13.867
+ scf_env_do_scf                      27 11.0    0.001    0.003   13.053   13.053
+ fft3d_pb                           531 19.9    1.896    2.451    8.721   12.980
+ qs_rho_update_rho                   54 13.5    0.000    0.000   12.239   12.257
+ calculate_rho_elec                  54 14.5    5.236    6.158   12.238   12.257
+ rebuild_ks_matrix                   44 13.0    0.000    0.000   11.837   11.837
+ qs_ks_build_kohn_sham_matrix        44 14.0    0.014    0.026   11.837   11.837
+ density_rs2pw                       54 15.5    0.001    0.003    6.523   10.705
+ rs_pw_transfer                     490 16.7    0.006    0.007    8.686    8.829
+ cg_mnbrak                            3  7.0    0.000    0.000    8.277    8.277
+ cg_eval1d                            9  8.0    0.000    0.000    8.277    8.277
+ cube_transpose_3                   274 21.0    2.346    7.567    2.346    7.567
+ init_scf_run                        27 11.0    0.001    0.008    7.028    7.028
+ scf_env_initial_rho_setup           27 12.0    0.000    0.004    7.027    7.028
+ init_scf_loop                       27 12.0    0.000    0.001    6.697    6.698
+ wfi_extrapolate                     27 13.0    0.019    0.068    6.562    6.570
+ qs_ks_update_qs_env                 54 13.0    0.000    0.000    6.523    6.523
+ scf_env_do_scf_inner_loop           27 12.0    0.001    0.006    6.333    6.340
+ cube_transpose_1                   406 21.3    1.584    6.220    1.584    6.220
+ qs_vxc_create                       44 15.0    0.001    0.001    5.793    5.816
+ xc_vxc_pw_create                    44 16.0    0.317    0.356    5.792    5.815
+ qs_ks_update_qs_env_forces          17 10.3    0.000    0.000    5.327    5.327
+ sum_up_and_integrate                44 15.0    0.033    0.036    4.412    4.437
+ integrate_v_rspace                  44 16.0    0.002    0.091    4.379    4.406
+ potential_pw2rs                     44 17.0    0.005    0.005    4.262    4.291
+ rs_pw_transfer_RS2PW_150           108 16.5    3.073    3.166    3.073    3.166
+ rs_pw_transfer_PW2RS_150            88 17.4    2.324    2.825    2.545    3.043
+ cube_transpose_4                   257 20.7    2.432    2.725    2.432    2.725
+ xc_rho_set_and_dset_create          44 17.0    0.028    0.032    2.468    2.478
+ scf_post_calculation_gpw            27 11.0    0.001    0.001    1.764    1.773
+ write_available_results             27 12.0    0.000    0.000    1.762    1.771
+ write_mo_free_results               27 13.0    0.064    0.083    1.762    1.770
+ qs_energies_init_hamiltonians       27 11.0    0.000    0.000    1.714    1.715
+ qs_env_update_s_mstruct             27 12.0    0.000    0.000    1.625    1.626
+ fft3d_ps                           294 20.2    0.084    0.211    1.429    1.597
+ calculate_rho_core                  27 13.0    0.057    0.067    1.313    1.340
+ rs_pw_transfer_PW2RS_50             44 19.0    0.945    1.118    0.993    1.166
+ fft_wrap_pw1pw2_50                  98 19.2    0.008    0.017    0.884    1.017
+ rs_pw_transfer_PW2RS_20             44 19.0    0.454    0.929    0.454    0.929
+ calculate_hirshfeld_normalizat      27 14.0    0.002    0.028    0.839    0.870
+ hirshfeld_integration               27 14.0    0.087    0.129    0.851    0.854
+ cube_transpose_2                   419 20.7    0.572    0.854    0.572    0.854
+ rs_grid_zero                       402 16.5    0.752    0.803    0.752    0.803
+ xz_to_yz                           162 20.5    0.718    0.772    0.718    0.772
+ rs_pw_transfer_RS2PW_20             54 17.5    0.621    0.655    0.621    0.655
+ write_mo_set_to_restart             27 13.0    0.002    0.143    0.636    0.642
+ rs_pw_transfer_RS2PW_50             54 17.5    0.591    0.622    0.591    0.622
+ write_mo_set_low                    27 14.0    0.002    0.462    0.610    0.611
+ yz_to_xz                           132 22.0    0.511    0.611    0.511    0.611
+ cp_fm_write_unformatted             27 15.0    0.608    0.611    0.608    0.611
+ integrate_v_core_rspace             17 13.3    0.001    0.003    0.486    0.524
+ fft_wrap_pw1pw2_20                  98 19.2    0.002    0.008    0.434    0.468
+ dbcsr_mm_cannon_multiply           422 17.1    0.055    0.058    0.454    0.457
+ qs_scf_new_mos                      27 13.0    0.000    0.000    0.418    0.419
+ qs_scf_loop_do_ot                   27 14.0    0.000    0.000    0.418    0.419
+ pw_gather_p                        419 19.7    0.292    0.392    0.292    0.392
+ ot_scf_mini                         27 15.0    0.001    0.001    0.388    0.389
+ qs_create_task_list                 27 13.0    0.000    0.000    0.310    0.355
+ generate_qs_task_list               27 14.0    0.002    0.005    0.310    0.355
+ distribute_tasks                    27 15.0    0.001    0.001    0.307    0.353
+ pw_poisson_solve                    44 15.0    0.224    0.233    0.330    0.330
+ load_balance_distributed            54 16.0    0.000    0.000    0.257    0.302
+ -------------------------------------------------------------------------------
+
+ The number of warnings for this run is : 1
+ 
+ -------------------------------------------------------------------------------
+  **** **** ******  **  PROGRAM ENDED AT                 2016-04-21 10:15:42.420
+ ***** ** ***  *** **   PROGRAM RAN ON                               node-sw-001
+ **    ****   ******    PROGRAM RAN BY                                     jb459
+ ***** **    ** ** **   PROGRAM PROCESS ID                                  2567
+  **** **  *******  **  PROGRAM STOPPED IN /beegfs/scratch/user/g/jb459/new_surf
+                                           ace_Curtin/NEW/110_surface_540atoms/b
+                                           etterbasis/referencestates/2coordinat
+                                           e/OH-inbox

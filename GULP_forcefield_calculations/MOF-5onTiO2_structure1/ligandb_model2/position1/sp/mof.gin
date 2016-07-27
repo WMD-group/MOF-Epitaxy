@@ -1,0 +1,734 @@
+# 
+# Keywords:
+# 
+sing noenergy qok fix molmec phon pot prop comp conv  
+# 
+# Options:
+# 
+cell
+  17.724000  19.461000  114.868  90.000000  90.000000  90.000000
+Cart
+O176             15.846790898        10.281164564        40.814425403
+O170              2.581934838        18.266684268        47.869816766
+O176             15.864571615         8.101791395        40.335160411
+O170              4.767968688        18.162904594        47.618191275
+O176              3.847933572        17.388640924        40.851798924
+O170             13.450250873         9.643396456        47.202130871
+O176              1.637100301        17.487119423        40.930442081
+O170             13.365659538         7.446471412        47.095966042
+O171              3.985221904        18.282288098        50.646381906
+O171             12.865525478         8.546665963        50.024308012
+O170              5.603754542        15.555543167        51.219462590
+O170              1.255178232         0.435819365        50.101895614
+O170              6.632241042        16.663673914        49.640034411
+O170              2.510897046         1.607120518        51.453984654
+O170              6.605509705         0.431722824        49.578855115
+O170              1.242936265        16.681163515        50.114030209
+O170              5.605282351         1.539555818        51.177394851
+O170              2.510689675        15.504282893        51.451152676
+O170              4.215467298        19.396597713        53.549639422
+O173             11.355804020         8.375594042        59.798723882
+O170              4.194175457        17.192797097        53.554539601
+O172             13.634383736         8.362444245        59.905111837
+H21              13.529891894         8.341694926        60.857008129
+O170             13.855616477         8.504671071        53.005822506
+O172              4.622039906        19.436245608        60.438999668
+H21               4.676846059        19.368692585        61.392878344
+O170             11.656020222         8.517768324        52.928835627
+O173              4.598576875        17.155422246        60.422093621
+O170             10.186642133         6.908133445        50.694868794
+O170             14.330041874        11.383999973        49.601047521
+O170             11.274621011         5.885961935        49.095771244
+O170             15.534183848        10.146905071        50.943396274
+O170             14.348304684         5.745270582        49.524704273
+O170             11.275562155        11.215946453        49.124837632
+O170             15.551051779         6.956299420        50.893476234
+O170             10.188987018        10.166148108        50.707346659
+C912             14.969328830         9.994414513        43.359480673
+C912              2.083971968        18.016133624        45.180579514
+C912             14.897442059         7.620754397        43.117912993
+C912              4.450446773        17.889987422        44.820446375
+C912              4.223354478        17.732076976        43.477548390
+C912             14.467025353         9.885594439        44.635441009
+C912              1.856608496        17.866542755        43.832395171
+C912             14.407929992         7.512193155        44.406471337
+C916             15.671066300         9.074496935        41.167023765
+C913              3.600875191        18.163864021        47.140814267
+C916              2.768568558        17.521680212        41.510413910
+C913             13.626386668         8.564293737        46.572702417
+C902             15.170083261         8.868691022        42.587595170
+C902              3.375349698        18.020422828        45.665251009
+C902              2.934963242        17.714727494        42.989899028
+C902             14.182259162         8.646059128        45.162738056
+C912              7.400229052        13.361482781        51.052770678
+C912             17.072386002         2.510922441        49.845292707
+C912              8.568322182        14.508971455        49.331975331
+C912              0.669061504         3.833322691        51.318993726
+C912              8.554052590         2.589204314        49.267457735
+C912             17.048644704        14.603127665        49.892020336
+C912              7.400918515         3.720034371        51.009261205
+C912              0.668921484        13.284724705        51.347510882
+C912              4.384300805         0.035997012        56.346526146
+C912             11.411778185         8.437676578        57.100913462
+C912              4.361268467        17.104434426        56.353760561
+C912             13.805126118         8.424176483        57.186396273
+C912             13.852369440         8.451906462        55.811574178
+C912              4.465365064         0.041263158        57.720035234
+C912             11.461205104         8.465879460        55.726529036
+C912              4.442205113        17.107534564        57.726995033
+C912              8.288655186         4.777216220        50.915110826
+C912             16.142969573        13.564877477        49.786499138
+C912              9.447299652         3.645448143        49.177529576
+C912             17.482748002        12.247470920        51.247027171
+C912             16.167226639         3.547753923        49.721552454
+C912              9.457436008        13.450487665        49.233671385
+C912             17.480936609         4.866900293        51.204410200
+C912              8.286313846        12.302921147        50.952415693
+C913              6.534961096        15.639073671        50.372040522
+C913              1.472711974         1.497619309        50.745921625
+C913              6.523826879         1.454390590        50.316259147
+C913              1.464204454        15.618836177        50.756494341
+C913              4.242049753        18.295681158        54.162796878
+C914             12.520869892         8.381286385        59.332906492
+C913             12.734172914         8.500374082        53.579812855
+C914              4.580461175        18.301453291        59.911548150
+C913             10.318749739         5.918996983        49.920477419
+C913             15.347893974        11.233825274        50.330135837
+C913             15.361709832         5.879598188        50.263893309
+C913             10.319497692        11.167683173        49.948616977
+C902              7.530108751        14.476160209        50.245210839
+C902              0.471336104         2.647328483        50.638254989
+C902              7.522526424         2.614145531        50.188854487
+C902              0.460102633        14.469420865        50.666943779
+C902              4.332155024        18.298966175        55.667812702
+C902             12.583595128         8.415755708        57.827221291
+C902             12.681029273         8.472007729        55.086184596
+C902              4.493500141        18.306176476        58.406609561
+C902              9.326228780         4.749743127        50.002836474
+C902             16.353472204        12.378058122        50.460672837
+C902             16.364202313         4.733905765        50.400746476
+C902              9.328290082        12.337069364        50.044955703
+H915             15.191414095        10.968359719        42.940476730
+H915              1.261394039        18.129495895        45.875521047
+H915             15.051546922         6.732161245        42.520923554
+H915              5.454929659        17.904536465        45.224183386
+H915              5.047949399        17.625037583        42.785387344
+H915             14.292351788        10.766374000        45.241037943
+H915              0.850619070        17.860305505        43.433275142
+H915             14.180747305         6.543006163        44.832400753
+H915              6.588411362        13.329979315        51.768402810
+H915             16.919103533         1.580674965        49.312966755
+H915              8.678285423        15.377307652        48.694952029
+H915              1.547202401         3.940984835        51.942852624
+H915              8.657406551         1.728512397        48.619072195
+H915             16.884563002        15.532347601        49.361179027
+H915              6.593530054         3.745458222        51.730119623
+H915              1.556918698        13.179787101        51.957784869
+H915              4.360052600         0.962023397        55.785605803
+H915             10.460761517         8.431832440        57.619894793
+H915              4.319262587        16.174786348        55.799997397
+H915             14.718794773         8.407772806        57.767569547
+H915             14.799098672         8.457986078        55.285839010
+H915              4.506575136         0.976438160        58.264633089
+H915             10.553635277         8.482656788        55.136010237
+H915              4.465634468        16.176997118        58.281427573
+H915              8.186334534         5.637956789        51.563668000
+H915             15.256356604        13.668205656        49.173805097
+H915             10.255896890         3.617414572        48.458275946
+H915             17.647999488        11.318219847        51.777250594
+H915             15.291186036         3.441531892        49.094389583
+H915             10.270577680        13.484094866        48.519781348
+H915             17.634807515         5.797005704        51.736624590
+H915              8.177598374        11.435390636        51.590794912
+Zn172            4.078744362        16.613834293        51.748373006
+Zn172            2.221609463        18.289311573        49.702166281
+Zn172            5.545662360        18.265722895        49.360226452
+Zn172            4.085461758         0.495385593        51.736856297
+Zn172           14.496317808         8.536415854        51.214416521
+Zn172           12.929666862        10.218830981        48.946225669
+Zn172           11.174361660         8.532603444        51.089311769
+Zn172           12.919344404         6.891140100        48.886985848
+space
+  1
+totalenergy         -8572.6016484893 eV
+observables
+fbond
+ 162  532   2.282000      1000.000000
+fbond
+ 164  532   2.180000      1000.000000
+end
+species  21
+C913   core    1.070500                  
+O170   core   -1.080000                  
+O172   core   -0.690000                  
+O173   core   -0.690000                  
+C914   core    1.070500                  
+O175   core   -1.080000                  
+C915   core    1.070500                  
+C917   core    1.070500                  
+O177   core   -1.080000                  
+O176   core   -1.080000                  
+C916   core    1.070500                  
+C902   core    0.005000                  
+H915   core    0.112500                  
+C912   core   -0.070250                  
+H21    core    0.220000                  
+H22    core    0.120000                  
+O2     core   -1.218000                  
+Ti     core    2.436000                  
+O3     core   -0.338000                  
+Zn172  core    2.000000                  
+O171   core   -2.000000                  
+epsilon/sigma mm3
+O170  core 0.255850E-02  3.64000    
+epsilon/sigma mm3
+O175  core 0.255850E-02  3.64000    
+epsilon/sigma mm3
+O176  core 0.255850E-02  3.64000    
+epsilon/sigma mm3
+O177  core 0.255850E-02  3.64000    
+epsilon/sigma mm3
+O173  core 0.255850E-02  3.64000    
+epsilon/sigma mm3
+O172  core 0.255850E-02  3.64000    
+epsilon/sigma mm3
+O2    core 0.820315E-02  3.18752    
+epsilon/sigma mm3
+O3    core 0.100315E-02  3.18752    
+epsilon/sigma mm3
+Ti    core 0.193134E-01  2.90071    
+epsilon/sigma mm3
+Ti3   core 0.193134E-01  2.90071    
+epsilon/sigma mm3
+O171  core 0.820315E-02  3.18752    
+epsilon/sigma mm3
+Zn172 core 0.381700E-02  4.27900    
+epsilon/sigma
+O170  core 0.520373E-02  1.70000    
+epsilon/sigma
+O175  core 0.520373E-02  1.70000    
+epsilon/sigma
+O176  core 0.520373E-02  1.70000    
+epsilon/sigma
+O177  core 0.520373E-02  1.70000    
+epsilon/sigma
+O173  core 0.520373E-02  1.70000    
+epsilon/sigma
+O172  core 0.520373E-02  1.70000    
+epsilon/sigma
+C912  core 0.303551E-02  1.99240    
+epsilon/sigma
+C902  core 0.303551E-02  1.99240    
+epsilon/sigma
+H915  core 0.130093E-02  1.35820    
+epsilon/sigma
+H21   core 0.199000E-02 0.224500    
+epsilon/sigma
+H22   core 0.199000E-02 0.224500    
+epsilon/sigma
+C913  core 0.303551E-02  2.00000    
+epsilon/sigma
+C915  core 0.303551E-02  2.00000    
+epsilon/sigma
+C916  core 0.303551E-02  2.00000    
+epsilon/sigma
+C917  core 0.303551E-02  2.00000    
+epsilon/sigma
+C914  core 0.303551E-02  2.00000    
+mm3buck combine x13 
+O175  core Zn172 core  184000.00      11.500000      2.5500000     &
+                      0.00 12.00
+mm3buck combine x13 
+O176  core Zn172 core  184000.00      11.500000      2.5500000     &
+                      0.00 12.00
+mm3buck combine x13 
+O177  core Zn172 core  184000.00      11.500000      2.5500000     &
+                      0.00 12.00
+mm3buck combine x13 
+O170  core Zn172 core  184000.00      11.500000      2.5500000     &
+                      0.00 12.00
+mm3buck combine x13 
+O171  core Zn172 core  184000.00      11.500000      2.5500000     &
+                      0.00 12.00
+mm3buck combine x13 
+O3    core Ti    core  184000.00      11.500000      2.5500000     &
+                      0.00 12.00
+mm3buck combine x13 
+O2    core Ti    core  184000.00      11.500000      2.5500000     &
+                      0.00 12.00
+mm3buck combine x13 
+O3    core O3    core  184000.00      11.500000      2.5500000     &
+                      0.00 12.00
+mm3buck combine x13 
+O2    core O2    core  184000.00      11.500000      2.5500000     &
+                      0.00 12.00
+mm3buck combine x13 
+O2    core O172  core  184000.00      11.500000      2.5500000     &
+                      0.00  0.00
+mm3buck combine x13 
+O2    core O173  core  184000.00      11.500000      2.5500000     &
+                      0.00  0.00
+mm3buck combine x13 
+O2    core O170  core  184000.00      11.500000      2.5500000     &
+                      0.00 12.00
+mm3buck combine x13 
+O3    core O172  core  184000.00      11.500000      2.5500000     &
+                      0.00  0.00
+mm3buck combine x13 
+O3    core O173  core  184000.00      11.500000      2.5500000     &
+                      0.00  0.00
+mm3buck combine x13 
+O3    core O170  core  184000.00      11.500000      2.5500000     &
+                      0.00 12.00
+mm3buck combine x13 
+O3    core O175  core  184000.00      11.500000      2.5500000     &
+                      0.00 12.00
+mm3buck combine x13 
+O2    core O175  core  184000.00      11.500000      2.5500000     &
+                      0.00 12.00
+mm3buck combine x13 
+O3    core O176  core  184000.00      11.500000      2.5500000     &
+                      0.00 12.00
+mm3buck combine x13 
+O2    core O176  core  184000.00      11.500000      2.5500000     &
+                      0.00 12.00
+mm3buck combine x13 
+O3    core O177  core  184000.00      11.500000      2.5500000     &
+                      0.00 12.00
+mm3buck combine x13 
+O2    core O177  core  184000.00      11.500000      2.5500000     &
+                      0.00 12.00
+mm3buck combine x13 
+O172  core Ti    core  184000.00      11.500000      2.5500000     &
+                      0.00 12.00
+mm3buck combine x13 
+O170  core Ti    core  184000.00      11.500000      2.5500000     &
+                      0.00 12.00
+mm3buck combine x13 
+O173  core Ti    core  184000.00      11.500000      2.5500000     &
+                      0.00 12.00
+mm3buck combine x13 
+O175  core Ti    core  184000.00      11.500000      2.5500000     &
+                      0.00 12.00
+mm3buck combine x13 
+O176  core Ti    core  184000.00      11.500000      2.5500000     &
+                      0.00 12.00
+mm3buck combine x13 
+O177  core Ti    core  184000.00      11.500000      2.5500000     &
+                      0.00 12.00
+mm3buck combine x13 
+Ti    core Ti    core  184000.00      11.500000      2.5500000     &
+                      0.00 12.00
+mm3buck combine x13 
+Ti3   core Ti3   core  184000.00      11.500000      2.5500000     &
+                      0.00 12.00
+harmonic intra bond
+H21   core O172  core  47.2670     0.960000      0.00000    
+harmonic intra bond
+H22   core O3    core  47.2670     0.960000      0.00000    
+harmonic intra bond
+C902  core C913  core  17.3458      1.50000      0.00000    
+harmonic intra bond
+C902  core C915  core  17.3458      1.50000      0.00000    
+harmonic intra bond
+C902  core C916  core  17.3458      1.50000      0.00000    
+harmonic intra bond
+C902  core C917  core  17.3458      1.50000      0.00000    
+harmonic intra bond
+C902  core C914  core  17.3458      1.50000      0.00000    
+harmonic intra bond
+C912  core C912  core  26.4523      1.37500      0.00000    
+harmonic intra bond
+C902  core C912  core  26.4523      1.37500      0.00000    
+harmonic intra bond
+H915  core C912  core  29.4878      1.08000      0.00000    
+harmonic intra bond
+C914  core O173  core  45.5327      1.26000      0.00000    
+harmonic intra bond
+C914  core O172  core  45.5327      1.26000      0.00000    
+harmonic intra bond
+C913  core O170  core  45.5327      1.26000      0.00000    
+harmonic intra bond
+C915  core O175  core  45.5327      1.26000      0.00000    
+harmonic intra bond
+C916  core O176  core  45.5327      1.26000      0.00000    
+harmonic intra bond
+C917  core O177  core  45.5327      1.26000      0.00000    
+lenn epsilon geometric 12  6 x13 
+C916  core O3    core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C917  core O3    core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+O3    core O175  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C915  core O3    core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C902  core O3    core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C914  core O3    core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C913  core O3    core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C912  core O3    core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+H915  core O3    core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+H21   core O3    core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C916  core O2    core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C917  core O2    core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C915  core O2    core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C902  core O2    core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C914  core O2    core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C913  core O2    core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C912  core O2    core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+H915  core O2    core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+H21   core O2    core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+H22   core O176  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+H22   core O177  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+H22   core O175  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+H22   core C916  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+H22   core C917  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+H22   core C915  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+O176  core O176  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+O176  core O177  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C916  core O176  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C917  core O176  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+O175  core O176  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C915  core O176  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C902  core O176  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C914  core O176  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C913  core O176  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C912  core O176  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+H915  core O176  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+O172  core O176  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+O170  core O176  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+O173  core O176  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+H21   core O176  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+O177  core O177  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C916  core O177  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C917  core O177  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+O175  core O177  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C915  core O177  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C902  core O177  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C914  core O177  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C913  core O177  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C912  core O177  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+H915  core O177  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+O172  core O177  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+O170  core O177  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+O173  core O177  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+H21   core O177  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C916  core C917  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C916  core C916  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C916  core O175  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C915  core C916  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C902  core C916  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C914  core C916  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C913  core C916  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C912  core C916  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+H915  core C916  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C916  core O172  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C916  core O170  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C916  core O173  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+H21   core C916  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C915  core O175  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C915  core C915  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C902  core C915  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C914  core C915  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C913  core C915  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C912  core C915  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+H915  core C915  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C915  core O172  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C915  core O170  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C915  core O173  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+H21   core C915  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+O175  core O175  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C902  core O175  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C914  core O175  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C913  core O175  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C912  core O175  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+H915  core O175  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+O172  core O175  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+O170  core O175  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+O173  core O175  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+H21   core O175  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+H22   core C902  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+H22   core C914  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+H22   core C913  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+H22   core C912  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+H22   core H915  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+H22   core O172  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+H22   core O170  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+H22   core O173  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+H21   core H22   core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+H22   core H22   core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C902  core C914  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C914  core C914  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C913  core C914  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C912  core C914  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+H915  core C914  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C914  core O172  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C914  core O170  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C902  core O173  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C914  core O173  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C913  core O173  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C912  core O173  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+H915  core O173  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+H21   core O173  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+O172  core O173  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+O170  core O173  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+O173  core O173  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+H21   core O3    core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+H21   core O2    core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+H21   core H21   core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+H21   core O170  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+H21   core C913  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+H21   core C902  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+H21   core C912  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+H21   core H915  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+H21   core O172  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+H915  core O172  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C902  core O172  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C912  core O172  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C913  core O172  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C912  core O170  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C912  core C912  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C902  core O170  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C902  core C912  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C902  core C902  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+H915  core O170  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+H915  core C912  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+H915  core C902  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+H915  core H915  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C913  core O170  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C912  core C913  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C902  core C913  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+H915  core C913  core  0.000 12.500
+lenn epsilon geometric 12  6 x13 
+C913  core C913  core  0.000 12.500
+three bond intra regular  
+O172  core H21   core C914  core 4.7700     115.00    
+three bond intra regular  
+C914  core O172  core O173  core 8.6729     133.00    
+three bond intra regular  
+C913  core O170  core O170  core 8.6729     133.00    
+three bond intra regular  
+C915  core O175  core O175  core 8.6729     133.00    
+three bond intra regular  
+C916  core O176  core O176  core 8.6729     133.00    
+three bond intra regular  
+C917  core O177  core O177  core 8.6729     133.00    
+three bond intra regular  
+C912  core C902  core C912  core 3.4692     120.00    
+three bond intra regular  
+C902  core C912  core C912  core 3.4692     120.00    
+three bond intra regular  
+C902  core C912  core C917  core 3.9028     119.00    
+three bond intra regular  
+C902  core C912  core C916  core 3.9028     119.00    
+three bond intra regular  
+C902  core C912  core C915  core 3.9028     119.00    
+three bond intra regular  
+C902  core C912  core C913  core 3.9028     119.00    
+three bond intra regular  
+C902  core C912  core C914  core 3.9028     119.00    
+three bond intra regular  
+C912  core H915  core C902  core 2.6019     120.00    
+three bond intra regular  
+C912  core H915  core C912  core 2.6019     120.00    
+three bond intra regular  
+C913  core C902  core O170  core 3.4692     116.00    
+three bond intra regular  
+C915  core C902  core O175  core 3.4692     116.00    
+three bond intra regular  
+C916  core C902  core O176  core 3.4692     116.00    
+three bond intra regular  
+C917  core C902  core O177  core 3.4692     116.00    
+three bond intra regular  
+C914  core C902  core O172  core 3.4692     116.00    
+three bond intra regular  
+C914  core C902  core O173  core 3.4692     116.00    
+torsion bond intra
+C902  cor C912  cor C912  cor C902  cor  0.13443       2 180.00    
+torsion bond intra
+C912  cor C902  cor C912  cor C912  cor  0.13443       2 180.00    
+torsion bond intra
+C902  cor C912  cor C912  cor H915  cor  0.18213       2 180.00    
+torsion bond intra
+C912  cor C902  cor C912  cor H915  cor  0.18213       2 180.00    
+torsion bond intra
+O170  cor C913  cor C902  cor C912  cor   1.0602       2 180.00    
+torsion bond intra
+O175  cor C915  cor C902  cor C912  cor   1.0602       2 180.00    
+torsion bond intra
+O176  cor C916  cor C902  cor C912  cor   1.0602       2 180.00    
+torsion bond intra
+O177  cor C917  cor C902  cor C912  cor   1.0602       2 180.00    
+torsion bond intra
+O172  cor C914  cor C902  cor C912  cor   1.0602       2 180.00    
+torsion bond intra
+O173  cor C914  cor C902  cor C912  cor   1.0602       2 180.00    
+torsion bond intra
+C913  cor C902  cor C912  cor C912  cor  0.13443       2 180.00    
+torsion bond intra
+C915  cor C902  cor C912  cor C912  cor  0.13443       2 180.00    
+torsion bond intra
+C916  cor C902  cor C912  cor C912  cor  0.13443       2 180.00    
+torsion bond intra
+C917  cor C902  cor C912  cor C912  cor  0.13443       2 180.00    
+torsion bond intra
+C913  cor C902  cor C912  cor H915  cor  0.10407       2 180.00    
+torsion bond intra
+C915  cor C902  cor C912  cor H915  cor  0.10407       2 180.00    
+torsion bond intra
+C916  cor C902  cor C912  cor H915  cor  0.10407       2 180.00    
+torsion bond intra
+C917  cor C902  cor C912  cor H915  cor  0.10407       2 180.00    
+torsion bond intra
+H915  cor C912  cor C912  cor H915  cor  0.10407       2 180.00    
+torsion bond intra
+C902  cor C914  cor O172  cor H21   cor  0.88896E-01   2 180.00    
+torsion bond intra
+O173  cor C914  cor O172  cor H21   cor  0.88896E-01   2 180.00    
+default_weight coord                 0.00000100
+default_weight frac                  0.00000100
+variables
+charge   2
+O172  C913 
+end
+element
+covalent Ti    0.00000
+covalent Zn    0.00000
+end
+dump every      1 fit1.res                                                    
+output xyz 
