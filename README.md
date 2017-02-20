@@ -5,7 +5,7 @@ The following files contain the data used in: "Chemical bonding at the metal-org
 The files are structured in 2 parent directories:
 
 cp2k_DFT_calculations:
-#input and output files supplied for cp2k first prinicples calculations
+#input and output files supplied for cp2k first-principles calculations
 
 	Reference states:
 	#File contains all reference states used to calculate binding energies between BDC and TiO2 surface.
