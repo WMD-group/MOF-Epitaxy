@@ -84,7 +84,7 @@ GULP_forcefield_calculations
                                 position2
                                 position3
                                 position4
-#From structure 1 files - surface is already reconstructed from structure 1 optimisation
+#From structure 1 files - reconstructed structure 1 optimisation
                                 FROMSTRUCTURE1
 					ligandb_model2_1
 					ligandb_model2_2
