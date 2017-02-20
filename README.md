@@ -1,11 +1,6 @@
-# Epitaxy-MOF-5-TiO2-
+# MOF-Oxide Heteroepitaxy 
 
-The following files contain the data used in the following publication:
-
-"Chemical bonding at the metal-organic framework / metal oxide interface",
-
-Jessica K. Bristow, Keith T. Butler, Katrine L. Svane, Julian D. Gale, Aron Walsh,
-......(Journal) (2016)
+The following files contain the data used in: "Chemical bonding at the metal-organic framework / metal oxide interface: simulated epitaxial growth of MOF-5 on rutile TiO<sub>2</sub>".
 
 The files are structured in 2 parent directories:
 
